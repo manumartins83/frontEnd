@@ -1,0 +1,164 @@
+version 1.1.0 -> 1.1.1 :
+----------------------
+- un bug concernant la non reconnaissance de variables locales en mode éditeur de texte a été fixé
+
+version 1.0.3 -> 1.1.0 :
+----------------------
+- compatibilité avec Qt 6
+
+version 1.0.2 -> 1.0.3 :
+----------------------
+- compatibilité avec Qt >=5.12
+
+version 1.0.1 -> 1.0.2 :
+----------------------
+- un bug concernant la déclaration de variables locales a été fixé
+
+version 1.0 -> 1.0.1 :
+----------------------
+- ajout de l'option "-dpiscale x" à la ligne de commande qui permet de forcer une échelle d'affichage de l'interface si le dpi du moniteur est mal reconnu
+- l'algorithme ne peut être lançé que si la page est bien totalement chargée (ajout d'un splash screen en attendant le chargement complet de la page)
+
+version 0.9 -> 1.0 :
+--------------------
+- on peut maintenant définir des fonctions locales que l'on peut ensuite utiliser dans l'algorithme
+- compatibilité avec les écrans highdpi
+- passage plus direct entre le mode d'édition "normal" et le mode "éditeur texte" (à réserver aux bons connaisseurs de la syntaxe pour le mode éditeur de texte...)
+- les options d'exécution de l'algorithme (arroni, nombre max de boucles,...) sont enregistrées avec l'algorithme afin de garantir les mêmes résultats d'une installation d'algobox à une autre
+- passage de webkit à webengine (chromium) pour le moteur javascript/html
+- fin de la compatibilité avec l'antique Qt4. Qt>=5.7 est nécessaire.
+- installateur windows au format msi afin de faciliter le déploiement rapide sur des réseaux pédagogiques
+
+version 0.8 -> 0.9 :
+--------------------
+Version de maintenance :
+- un bug dans l'utilisation de formules mathématiques pour la fonction F2 a été corrigé
+- la taille de la police est fixée à 9 lors de l'export au format odf
+- la police monaco est utilisée par défaut comme police à chasse fixe sous mac afin d'éviter un mauvais affichage de la police liberation 
+- il est maintenant plus possible de modifier par couper/coller les résultats affichés dans la console afin d'en maintenir l'intégrité
+- un petit problème de coloration syntaxique des lignes commentées lors de l'export en page web a été corrigé
+- l'export en latex fonctionne maintenant aussi si on utilise une taille de police de 11pt ou 12 pt
+
+version 0.7.x -> 0.8.x :
+--------------------
+Nouvelles fonctionnalités :
+- support de Qt 5.x (compilation possible sous Qt4 et Qt5)
+- les versions windows et macosx lion sont compilés avec Qt5 (support des écrans highdpi sous macosx)
+- il est maintenant possible d'afficher durectement le résultat d'un calcul sans passer par une variable (bouton "Ajouter AFFICHER Calcul"
+- coloration syntaxique du code dans la fenêtre de test
+- l'export vers LaTeX a été amélioré grâce à l'utilisation d'un environnement dédié (conservation de la structure, mots clefs mis en évidence...). Le code LaTeX généré peut maintenant être visualisé avant d'être enregistré, ce qui permet notamment de copier une partie du code sans enregistrer préalablement le fichier .tex.
+- des options (menu "Options") permettent de configurer le nombre maximal d'itérations par boucle, le nombre total autorisé d'itérations pour tout l'algorithme et le nombre maximal d'affichages autorisé dans la console (dans des limites raisonnables). Il est aussi possible de configurer si l'on souhaite arrondir systématiquement les calculs lors d'une affectation comme dans les versions <=0.6 (arrondi "pédagogique" pour ceux qui ne maitrisent pas les problèmes classiques d'arrondis avec les flottants en informatique)
+
+
+version 0.6 -> 0.7.x :
+--------------------
+Nouvelles fonctionnalités :
+- l'entrée des données se fait maintenant directement dans la "console" et non plus à travers une boîte de dialogue "surgissante"
+- coloration syntaxique pour l'arbre
+- ajout de la couleur "blanc" pour le tracé des segments et des points (sert en fait à effacer le segment ou le point)
+- ajout d'une commande "effacer graphique" (le repère n'est pas effacé)
+- le calcul des coefficients binomiaux et des probabilités selon la loi binomiale est maintenant possible jusqu'à n=100
+- plus d'arrondi automatique lors de la lecture et de l'affectation d'une variable
+- ajout d'une fonction "arrondir" à n décimales
+- il est maintenant possible de faire une copie d'écran de l'arbre de l'algorithme et de la sauvegarder sous forme d'image png
+- un entier commençant par 0 (ex : 056) n'est plus traité comme un octal comme c'est le cas par défaut en javascript
+- possibilité d'utiliser une extension dans un algorithme (menu "Extension" - les extensions doivent-être écrites en javascript et nécessitent une bonne connaissance de ce langage et du fonctionnement d'AlgoBox - un éditeur javascript peut-être lancé via l'option "Ecrire/modifier une extension")
+
+Correction de bug :
+- "continue" a été ajouté aux noms de variables interdits
+- le calcul de la loi normale pour x<0 a été rectifié
+- 0.7.1 : le pavé numérique peut de nouveau être utilisé pour rentrer des valeurs
+- 0.7.2 : un bug dans l'affichage trop court d'une ligne de l'arbre dans certains cas a été fixé
+
+version 0.5 -> 0.6 :
+--------------------
+- des nouvelles commandes concernant les statistiques et les probabilités ont été ajoutées :
+ALGOBOX_ALEA_ENT(p,n) : renvoie un entier pseudo-aléatoire compris entre p et n.
+ALGOBOX_COEFF_BINOMIAL(n,p) (ou ALGOBOX_NB_COMBINAISONS(n,p)) : renvoie le coefficient binomial "p parmi n".
+ALGOBOX_LOI_BINOMIALE(n,p,k) : renvoie la probabilité d'obtenir k succès en répétant n fois une expérience aléatoire dont la probabilité d'obtenir un succès est p avec le modèle de la loi binomiale.
+ALGOBOX_LOI_NORMALE_CR(x) : renvoie p(X<x) pour la loi normale centrée réduite
+ALGOBOX_LOI_NORMALE(esp,ecart,x) : renvoie p(X<x) pour la loi normale d'espérance esp et d'écart-type ecart.
+ALGOBOX_INVERSE_LOI_NORMALE_CR(p) : opération inverse de ALGOBOX_LOI_NORMALE_CR(x).
+ALGOBOX_INVERSE_LOI_NORMALE(esp,ecart,p) : opération inverse de ALGOBOX_LOI_NORMALE(esp,ecart,x).
+ALGOBOX_FACTORIELLE(n) : renvoie la factorielle de l'entier n (pour n<70)
+- il est maintenant possible, via la nouvelle fonction "avancée" F2, de définir une fonction récursive (dépendant de plusieurs paramètres). Cette fonction F2 peut aussi être utilisée pour définir une fonction "par morceaux".
+- dans la boîte de dialogue d'affectation, toutes les commandes disponibles (fonctions mathématiques et commandes ALGOBOX_...) peuvent maintenant être insérées en cliquant ou en faisant un "glisser/déposer".
+- dans la boîte de dialogue pour la boucle "POUR", il est maintenant possible de "glisser/déposer" le nom des variables dans les champs "ALLANT DE" et "A".
+- la liste des variables déclarées et des commandes disponibles est maintenant affichée dans les boîtes de dialogue "SI...ALORS", "TANT...QUE", "TRACER POINT" et "TRACER SEGMENT". Le nom des variables et les commandes peuvent être insérées directement en cliquant ou en faisant un "glisser/déposer".
+- le repère n'est maintenant défini que lors de la première utilisation de la commande TRACER_POINT ou TRACER_SEGMENT : il est donc possible d'utiliser des variables pour définir le repère à condition que ces variables soient bien définies avant la première instruction TRACER_POINT ou TRACER_SEGMENT.
+- le bug concernant les fonctions arccosinus, arcsinus et arctan a été corrigé (ces fonctions peuvent maintenant être réellement utilisées).
+- possibilité de choisir le schéma de couleur "noir sur fond blanc" pour la console d'affichage des résultats
+- le nombre maximal autorisé d'itérations pour une boucle passe à 500 000 et à 5 millions pour l'ensemble des boucles.
+
+
+
+version 0.4 -> 0.5 :
+--------------------
+- correction de bugs (erreur dans l'aide concernant les tableaux à deux dimensions, non affichage éventuel du repère si le premier tracé avait lieu dans un SI, faux signalement d'une erreur de calcul dans certains cas particuliers)
+- ajout d'un mode "éditeur de texte" (menu "Edition")
+- possibilité d'exporter en pdf l'ensemble des résultats d'un algorithme (sortie, graphique, code de l'algorithme ; clic-droit sur la partie supérieure de la fenêtre de test)
+- possibilité de changer la taille de la police de l'interface (nécessite un redémarrage de l'application ; Menu "Affichage")
+- possibilité d'entrer en une seule fois les valeurs d'une liste de nombres (les valeurs doivent être séparées par le caractère ":" - cette possibilité concerne la lecture et l'affectation d'une variable de type "LISTE")
+- ajout des fonctions suivantes pour les listes :
+Somme : ALGOBOX_SOMME(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Moyenne : ALGOBOX_MOYENNE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Variance : ALGOBOX_VARIANCE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Ecart-type : ALGOBOX_ECART_TYPE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Médiane : ALGOBOX_MEDIANE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Premier quartile : ALGOBOX_QUARTILE1((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+(définition calculatrice : médiane de la sous-série inférieure)
+Troisième quartile : ALGOBOX_QUARTILE3((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+(définition calculatrice : médiane de la sous-série supérieure)
+Premier quartile Bis : ALGOBOX_QUARTILE1_BIS((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+(autre définition : plus petite valeur telle qu'au moins 25% des données lui soient inférieures)
+Troisième quartile Bis : ALGOBOX_QUARTILE3_BIS((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+(autre définition : plus petite valeur telle qu'au moins 75% des données lui soient inférieures)
+Minimum : ALGOBOX_MINIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Maximum : ALGOBOX_MAXIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Rang du minimum : ALGOBOX_POS_MINIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+Rang du maximum : ALGOBOX_POS_MAXIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)
+
+version 0.3 -> 0.4 :
+--------------------
+- possibilité d'arrêter un algorithme en cours d'exécution.
+- lors de l'interruption de l'exécution d'un algorithme suite à une erreur, le numéro de la dernière ligne exécutée est systématiquement affichée (aide au débogage)
+- ajout d'un mode "pas à pas" : affichage de l'état des variables lors de chaque affectation, lecture d'une variable et entrée dans une boucle POUR ; affichage de l'entrée et de la sortie d'un bloc SI, SINON, POUR et TANT_QUE.
+- possibilité de copier/couper/coller un bloc entier d'instructions POUR, SI, TANT_QUE avec tout ce qu'il contient.
+- pour laisser plus de place verticalement au code de l'algorithme : modification du panneau inférieur de commandes, possibilité de cacher le panneau "Présentation de l'algorithme" et la barre d'outils.
+- affichage progressif des données (plus de "freeze" de l'interface lors de l'affichage d'un grand nombre de données).
+- le bouton "Lancer Algorithme" est dorénavant désactivé et affiche le texte "Exécution en cours" pendant l'exécution d'un algorithme.
+- ajout d'une fonction "pause" qui arrête l'exécution de l'algorithme : l'utilisateur peut ensuite continuer ou arrêter définitivement l'exécution de l'algorithme.
+- ajout d'une sécurité concernant l'affichage d'un très grand nombre de données. Tous les 1000 affichages, il est demandé à l'utilisateur s'il veut stopper l'exécution de l'algorithme ou continuer à déverser un flot invraisemblable de données.
+- les résultats générés par l'algorithme sont affichés dans une zone indépendante de la page web.
+- le nombre global d'itérations pour un algorithme est limité à 1 million.
+- une liste des variables déclarées a été ajouté aux boîtes de dialogue "Affectation", "Condition", "Tant que": le nom d'une variable est inséré dans la ligne de saisie quand on clique dessus. L'utilisateur a donc sous les yeux toutes les variables pouvant servir à un calcul ou à une condition. De la même façon, une liste des variables disponibles du type NOMBRE est affichée pour la boîte de dialogue "Pour" : il n'est par contre pas possible de cliquer sur le nom d'une variable pour l'insérer à cause de la présence de deux champs à compléter.
+- augmentation de la taille du graphique (de 300 à 450 pixels - le nombre maximal de subdivisions autorisé pour les graduations passe à 45)
+- possibilité d'imprimer la partie supérieure de la fenêtre de test contenant le code et l'éventuel graphique (clic-droit->imprimer)
+- possibilité d'exporter le code de l'algorithme au format ODF (Open Document Format) utilisé par OpenOffice.org et Koffice.
+- nouveaux raccourcis-claviers (Affecter valeur à variable : Ctrl+F ; Afficher variable : Ctrl+R ; Afficher message : Ctrl+M ; Si...Alors : Ctrl+I ; Pour...De...A : Ctrl+P ; Tant...Que : Ctrl+U)
+
+
+version 0.2 -> 0.3 :
+--------------------
+- remplacement du textarea par un div pour l'affichage des résultats (affichage plus efficace et plus rapide)
+- l'utilisateur peut maintenant utiliser le caractère ' dans les messages
+- ajout d'une marge pour le repère graphique (un point situé à une extrémité du repère est pleinement affiché)
+- correction du bug concernant la légende du graphique (Xmin, Xmax,...) quand l'algorithme est relancé plusieurs fois de suite.
+- quelques ajouts dans l'aide
+- rectification de quelques exemples
+
+version 0.1 -> 0.2 :
+--------------------
+- L'utilisateur peut maintenant rentrer des calculs mathématiques quand on lui demande d'entrer la valeur d'une variable lors du test de l'algorithme (même syntaxe que quand on affecte une valeur à une variable lors de la mise au point du code de l'algorithme).
+- Les conditions (SI et TANT_QUE) peuvent maintenant contenir des calculs (même syntaxe que quand on affecte une valeur à une variable). Idem pour les bornes des boucles POUR...DE...A.
+- Plus de problèmes d'arrondis pouvant fausser certaines instructions
+- Nouvelles fonctions mathématiques : abs(), acos(), asin() et atan().
+- Le document latex produit par la commande "Exporter code vers document LaTeX" est maintenant compilable même si le nom du fichier contient "_". L'utilisateur peut choisir l'encodage UTF-8 ou ISO-8859-1.
+- Lors de la modification d'une instruction "SI ALORS", il est maintenant possible de rajouter un "SINON" (s'il n'existe pas déjà)
+- Il est maintenant possible de copier/coller/couper une ligne de code correspondant à une affectation et à un affichage (de message et de variable). Cette possibilité n'existe que pour UNE ligne de code de CE type. Pour coller une ligne de code, il faut d'abord créer une nouvelle ligne conformément aux règles d'édition en vigueur sur AlgoBox.
+- Dorénavant, le fichier temporaire utilisé est propre à chaque utilisateur (plus de conflits possibles en cas d'utilisation du programme par plusieurs utilisateurs en même temps).
+- La page web générée lors de l'utilisation de l'option "Exporter algorithme complet vers page web" correspond maitenant bien à l'algorithme courant même s'il n'a pas encore été testé.
+- Possibilité d'utiliser une fonction numérique définie préalablement.
+- Possibilité de tracer des points et des segments dans un repère graphique.
+- Ajout d'une limitation à 200000 itérations pour les boucles (POUR et TANT QUE)
+- Ajout de nouveaux exemples : approximation d'une racine par la méthode de Babylone, méthode d'Euler, courbe représentative d'une fonction, PGCD par la méthode d'Euclide, décomposition en facteurs premiers, méthode des trapèzes pour approcher une intégrale, approximation de PI par la méthode de monte carlo, suite de Syracuse.

@@ -1,0 +1,567 @@
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Aide AlgoBox</title>
+<meta name="keywords" content="algorithme,algorithmique,math,mathématiques">
+<style type="text/css">
+BODY 
+{
+font-family:  'Liberation Sans', 'Arial',sans-serif;
+background-color:#FFFFFF;
+color:#000000;
+margin-top: 5px;
+margin-left: 5px;
+margin-right: 5px;
+margin-bottom: 5px;
+}
+A:link    { color:#335d88;font-weight: bold; text-decoration: none;}
+A:visited { color:#335d88;font-weight: bold;  text-decoration: none;}
+A:hover   { color:#335d88;font-weight: bold; text-decoration: none;}
+
+textarea
+{
+border-width : 1px;
+font-family :  'Liberation Mono', 'Courier New', monospace; 
+background : #f6f6f6;
+padding : .1em .3em;
+border-color : #000;
+}
+
+tt
+{
+font-family: 'Liberation Mono', 'Courier New', monospace; 
+color : #AC0B00;
+font-size:0.8em;
+}
+.header
+{
+    font-family: 'Liberation Sans', 'Arial',sans-serif;
+    font-size: normal;
+    font-weight:bold;
+    color: #fff;
+    background-color: #69c;
+    border:2px solid #69c;
+    font-size: 12pt;
+    padding: 4px 20px;
+    margin-left: 15px; 
+    border-radius: 8px; 
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px; 
+}
+
+#footer
+{
+text-align: center;
+font-size: .8em;
+font-weight:bold;
+color:#479;
+font-family :  'Liberation Sans', 'Arial',sans-serif;
+padding: 2px;
+}
+
+.post
+{
+    margin-bottom: 20px;
+}
+
+.post > FIELDSET
+{
+    background-color: #f9f9f9;
+    padding: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border:1px solid #69c;
+    color:#000;
+    border-radius: 20px; 
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px; 
+}
+
+.title
+{
+    background-color: #69c;
+    border:2px solid #69c;
+    font-size: 12pt;
+    padding: 4px 20px;
+    margin-left: 15px; 
+    border-radius: 8px; 
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px; 
+}
+
+#title,
+LEGEND,
+LEGEND A
+{
+    font-family: 'Liberation Sans', 'Arial',sans-serif;
+    color: #fff;
+    font-weight:bold;
+}
+
+.entry
+{
+    padding: 1px 15px;
+    color: #111111;
+    line-height: 120%;
+    font-size: 1em;
+}
+.entry A:hover
+{
+    color: #6f900d;
+    text-decoration: none;
+}
+
+.entry UL,
+.entry OL
+{
+	margin-left: 0px;
+/*	padding: 15px;*/
+	padding-left: 30px;
+	/*background-color: #d0f0ff;*/
+
+}
+.entry LI
+{
+margin-top:4px;
+margin-bottom:4px;
+padding-left:4px;
+}
+</style>
+</head>
+<body>
+<div align="center" style="margin:10px;"><span class="header">AlgoBox : aide</span></div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SOMMAIRE">Sommaire</a></legend>
+<div class="entry">
+<ul>
+<li><a href="#SECTION1">1. Fonctionnement général</a></li>
+<li><a href="#SECTION2">2. Première prise en main d'AlgoBox avec un exemple très simple</a></li>
+<li><a href="#SECTION3">3. Autres règles d'utilisation d'AlgoBox</a></li>
+<ul>
+<li><a href="#SECTION31">3.1 Les types de variables</a></li>
+<li><a href="#SECTION32">3.2 Les expressions conditionnelles</a></li>
+<li><a href="#SECTION33">3.3 Les boucles</a></li>
+<li><a href="#SECTION34">3.4 Lecture et affichage des variables</a></li>
+<li><a href="#SECTION35">3.5 Affichage d'une variable ou d'un message</a></li>
+<li><a href="#SECTION36">3.6 Utilisation d'une fonction numérique</a></li>
+<li><a href="#SECTION37">3.7 Tracer des points et des segments dans un repère</a></li>
+<li><a href="#SECTION38">3.8 Utiliser des fonctions locales</a></li>
+<li><a href="#SECTION39">3.9 Copier, coller et couper une ligne ou bloc de l'algorithme</a></li>
+<li><a href="#SECTION310">3.10 Ajout de commentaires</a></li>
+<li><a href="#SECTION311">3.11 Provoquer un arrêt temporaire de l'exécution d'un algorithme avec l'instruction <i>PAUSE</i></a></li>
+<li><a href="#SECTION312">3.12 Exécution d'un algorithme en mode "pas à pas"</a></li>
+<li><a href="#SECTION313">3.13 Calculs numériques et arrondis</a></li>
+<li><a href="#SECTION314">3.14 Export des résultats d'un algorithme en pdf</a></li>
+</ul>
+</li>
+<li><a href="#SECTION4">4. Raccourcis clavier</a></li>
+<li><a href="#SECTION5">5. Tutoriel d'initiation à l'algorithmique avec AlgoBox</a></li>
+<li><a href="#SECTION6">6. Déboguer un algorithme</a></li>
+<li><a href="#SECTION7">7. Sécurités lors de l'exécution d'un algorithme</a></li>
+<li><a href="#SECTION8">8. Augmenter l'espace disponible pour la conception d'un algorithme</a></li>
+<li><a href="#SECTION9">9. Simulation de tableaux à deux dimensions</a></li>
+<li><a href="#SECTION10">10. Edition du code en mode "éditeur de texte"</a></li>
+<li><a href="#SECTION11">11. Le menu "Extension"</a></li>
+</ul>
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION1">1. Fonctionnement général</a></legend>
+<div class="entry">
+<p>
+Deux modes sont disponibles pour éditer des algorithmes avec AlgoBox (voir boutons en haut à droite de la barre d'outil):
+<ul>
+<li>Le mode "normal" (recommandé aux débutants) où l'on construit l'algorithme par blocs logiques dans un arbre;</li>
+<li>Le mode "éditeur de texte" où l'on tape directement les commandes dans un éditeur classique (voir <a href="#SECTION10">ici</a> pour plus de détails). </li>
+</ul>
+Le fonctionnement d'AlgoBox dans le mode "normal" est basé sur les deux principes suivants :
+<ol>
+<li>Pour pouvoir utiliser une variable dans son algorithme, il faut d'abord la déclarer en utilisant le bouton <span class="code">Déclarer nouvelle variable</span> qui est activable à tout moment.</li>
+<li>Pour ajouter un nouvel élément à l'algorithme (autre que la déclaration d'une variable), il faut d'abord insérer une nouvelle ligne en utilisant le bouton <span class="code">Nouvelle ligne</span> (raccourci-clavier : Ctrl+Return). Ce bouton n'est activable que s'il est possible d'ajouter une nouvelle ligne après la position actuelle dans le code. Par exemple, l'ajout d'une nouvelle ligne après "Fin_Algorithme" n'est pas autorisé.<br>Avant d'insérer une nouvelle ligne, il peut donc être nécessaire de se positionner à l'endroit voulu dans la code à l'aide de la souris ou des touches "flèches" du clavier.<br>Une fois que l'on est positionné sur une nouvelle ligne, il suffit de cliquer sur l'un des boutons disponibles dans le panneau inférieur pour insérer l'instruction (ou le bloc d'instructions) désiré.</li>
+</ol>
+Autres caractéristiques du logiciel :
+<ul>
+<li>Après avoir entré certaines instructions, il est possible d'en modifier les paramètres en cliquant sur le bouton <span class="code">Modifier Ligne</span> (le bouton n'est activable que lorsque les changements sont possibles).<br>Pour les autres instructions, notamment pour la déclaration de variables, la seule possibilité est de supprimer la ligne qui ne correspond plus au code désiré.</li>
+<li>Il est possible à tout moment d'effacer une instruction avec le bouton <span class="code">Supprimer Ligne/Bloc</span><br><b>Attention : la suppression d'une ligne "SI ALORS", "POUR...DE...A" et "TANT QUE" entraîne la suppression de tout le bloc d'instructions qui en dépend</b> (tout ce qui est contenu entre "DEBUT..." et "FIN...")</li>
+<li>Pour tester le fonctionnement de l'algorithme, il suffit de cliquer sur le bouton <span class="code">Tester</span> (dans la barre d'outils ou dans le panneau de droite). Une fenêtre apparaît alors dans laquelle il suffit de cliquer sur le bouton <span class="code">Lancer l'algorithme</span> pour précéder à l'exécution de l'algorithme. S'il n'y a pas d'erreurs de syntaxe détectée d'entrée dans le code de l'algorithme, les résultats apparaissent entre les messages "***Algorithme lancé***" et "***Algorithme terminé***".<br><b>L'exécution d'un algorithme peut-être stoppé à tout moment en cliquant sur le bouton</b> <span class="code">Arrêter</span>.<br>La détection d'une erreur de calcul (division par zéro, par exemple) entraine l'arrêt immédiat de l'exécution d'un algorithme.<br>Il est aussi possible d'imprimer la partie supérieure de la fenêtre de test contenant le code et l'éventuel graphique à l'aide d'un clic-droit sur cette zone.</li>
+<li>Les opérations standards d'ouverture et d'enregistrement sont disponibles via la barre d'outils et le menu "Fichier". Il est conseillé avant de sauvegarder son travail de remplir le champ "Présentation de l'algorithme" dans lequel on peut présenter brièvement l'algorithme sur lequel on travaille.</li>
+<li>Il est aussi possible d'imprimer et d'exporter le code de l'algorithme via le menu "Fichier".</li>
+<li>L'option <tt>"Exporter algorithme complet vers page web"</tt> du menu <tt>"Fichier"</tt> permet d'exécuter un algorithme déjà conçu à partir d'une simple page web que l'on peut aisément alors transférer sur un site internet. <br><b>Limitations importantes :</b>
+<ul>
+<li>pour les algorithmes utilisant le repère graphique, il faut utiliser un autre navigateur qu'internet explorer ou rester dans AlgoBox (internet explorer, qui n'inclut pas certaines fonctionnalités, ne peut en effet pas afficher les graphiques)</li>
+<li>certaines fonctionnalités d'AlgoBox, comme le mode "pas à pas", l'affichage progressif des données ou la possibilité d'arrêter à tout moment l'exécution d'un algorithme, ne sont plus disponibles pour les algorithmes enregistrés sous forme de simple page web. </li>
+</ul>
+<li>Une série d'exemples d'algorithmes est fournie avec le logiciel. On peut y accéder à l'aide de l'option <tt>"Ouvrir exemples"</tt> du menu <tt>"Ficher"</tt>. <i>(les exemples dont le nom commence par "prof" servent à illustrer les capacités d'AlgoBox et ne sont pas destinés à être utilisés tels quels en classe)</i></li>
+</ul>
+<!--<span class="code"></span>-->
+</p>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION2">2. Première prise en main d'AlgoBox avec un exemple très simple</a></legend>
+<div class="entry">
+<p>
+Supposons que l'on veuille calculer l'image de n'importe quel réel x par la fonction f définie par f(x)=3x+4.
+<ol>
+<li>On déclare d'abord la variable <span class="code">x</span> en cliquant sur <span class="code">Déclarer nouvelle variable</span>. On entre alors <span class="code">x</span> dans le champ <span class="code">Nom de la variable</span>, on s'assure que le type <span class="code">NOMBRE</span> est bien sélectionné et on clique sur "OK".</li>
+<li>On effectue la même opération avec la variable <span class="code">y</span>.</li>
+<li>On s'assure que la ligne courante dans le code est bien positionnée sur "DEBUT_ALGORITHME" et on clique alors sur <span class="code">Nouvelle Ligne</span>.</li>
+<li>Pour pouvoir lire la valeur de <span class="code">x</span>, on clique ensuite sur <span class="code">Ajouter LIRE variable</span> et on s'assure que la variable <span class="code">x</span> est bien sélectionnée avant de cliquer sur "OK".</li>
+<li>La ligne courante étant bien "LIRE x", on clique sur le bouton <span class="code">Nouvelle Ligne</span>, puis sur le bouton <span class="code">AFFECTER valeur à variable</span>. On sélectionne alors <span class="code">y</span> en face de "La variable" et on entre <span class="code">3*x+4</span> dans le champ après "prend la valeur" avant de cliquer sur "OK".</li>
+<li>Reste à afficher la valeur de <span class="code">y</span>. Pour cela on ajoute une nouvelle ligne après "y PREND_LA_VALEUR 3*x+4" (clic sur le bouton <span class="code">Nouvelle Ligne</span>). On clique alors sur le bouton <span class="code">Ajouter AFFICHER variable</span> et on sélectionne <span class="code">y</span> après "Afficher la variable" avant de cliquer sur "OK".</li>
+<li>Il n'y a plus qu'à tester l'algorithme en cliquant sur le bouton <span class="code">Tester</span>. Dans la fenêtre qui s'affiche, il suffit alors de cliquer sur le bouton <span class="code">Lancer l'algorithme</span>. On entre alors la valeur de x : son image par la fonction f apparaît alors dans la zone "Résultat". Pour calculer une autre image, il suffit de cliquer à nouveau sur <span class="code">Lancer algorithme</span>. Pour revenir à la fenêtre principale d'AlgoBox, cliquez sur le bouton <span class="code">Fermer</span>.</li>
+</ol>
+</p>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION3">3. Autres règles d'utilisation d'AlgoBox</a></legend>
+<div class="entry">
+<ol>
+<li><a name="SECTION31"><b>Les types de variables</b>:</a><br>
+AlgoBox permet l'utilisation de trois types de variables : les nombres (type <tt>NOMBRE</tt>), les listes de nombres (type <tt>LISTE</tt>) et les chaînes de caractères (type <tt>CHAINE</tt>).<br><br>
+<b>Opérations avec les nombres :</b><br>
+En plus des 4 opérations de base (+,-,*,/), les calculs possibles sont (<tt>x</tt> étant une variable du type <tt>NOMBRE</tt>) :
+<ul>
+<li>Racine carrée d'une variable x : <tt>sqrt(x)</tt></li>
+<li>Mettre une variable x à la puissance n : <tt>pow(x,n)</tt></li>
+<li>Obtenir un nombre pseudo-aléatoire compris en 0 et 1 : <tt>random()</tt></li>
+<li>Nombre PI : <tt>Math.PI</tt></li>
+<li>Partie entière d'une variable x : <tt>floor(x)</tt></li>
+<li>Cosinus d'une variable x (en radians): <tt>cos(x)</tt></li>
+<li>Sinus d'une variable x (en radians): <tt>sin(x)</tt></li>
+<li>Tangente d'une variable x (en radians): <tt>tan(x)</tt></li>
+<li>Exponentielle d'une variable x : <tt>exp(x)</tt></li>
+<li>Logarithme népérien d'une variable x : <tt>log(x)</tt></li>
+<li>Valeur absolue d'une variable x : <tt>abs(x)</tt></li>
+<li>Arrondi d'une variable x à l'entier le plus proche : <tt>round(x)</tt></li>
+<li>Reste de la division de la variable x par la variable y : <tt>x%y</tt></li>
+<li>ArcCosinus d'une variable x : <tt>acos(x)</tt></li>
+<li>ArcSinus d'une variable x : <tt>asin(x)</tt></li>
+<li>ArcTangente d'une variable x : <tt>atan(x)</tt></li>
+</ul>
+Il faut utiliser le . comme séparateur décimal.<br><br>
+<b>Fonctions supplémentaires :</b>
+<ul>
+<li><tt>ALGOBOX_ALEA_ENT(p,n)</tt> : renvoie un entier pseudo-aléatoire compris entre <tt>p</tt> et <tt>n</tt>.</li>
+<li><tt>ALGOBOX_COEFF_BINOMIAL(n,p)</tt> (ou <tt>ALGOBOX_NB_COMBINAISONS(n,p)</tt>) : renvoie le coefficient binomial "<tt>p</tt> parmi <tt>n</tt>".</li>
+<li><tt>ALGOBOX_LOI_BINOMIALE(n,p,k)</tt> : renvoie la probabilité d'obtenir <tt>k</tt> succès en répétant <tt>n</tt> fois une expérience aléatoire dont la probabilité d'obtenir un succès est <tt>p</tt> avec le modèle de la loi binomiale.</li>
+<li><tt>ALGOBOX_LOI_NORMALE_CR(x)</tt> : renvoie p(X&lt;<tt>x</tt>) pour la loi normale centrée réduite</li>
+<li><tt>ALGOBOX_LOI_NORMALE(esp,ecart,x)</tt> : renvoie p(X&lt;<tt>x</tt>) pour la loi normale d'espérance <tt>esp</tt> et d'écart-type <tt>ecart</tt>.</li>
+<li><tt>ALGOBOX_INVERSE_LOI_NORMALE_CR(p)</tt> : opération inverse de <tt>ALGOBOX_LOI_NORMALE_CR(x)</tt>.</li>
+<li><tt>ALGOBOX_INVERSE_LOI_NORMALE(esp,ecart,p)</tt> : opération inverse de <tt>ALGOBOX_LOI_NORMALE(esp,ecart,x)</tt>.</li>
+<li><tt>ALGOBOX_FACTORIELLE(n)</tt> : renvoie la factorielle de l'entier <tt>n</tt> (pour n&lt;70)</li>
+</ul>
+<b>Opérations avec les listes :</b>
+<ul>
+<li>Les listes AlgoBox sont des listes numérotées de nombres.</li>
+<li>Si vous sélectionnez pour <i>la variable</i> une variable du type <tt>LISTE</tt>, vous devez indiquer dans le champ <i>rang du terme de la liste</i> le numéro du terme de la liste auquel vous voulez affecter une valeur.</li>
+<li>Pour remplir directement une liste, il faut indiquer dans le champ <i>rang du terme de la liste</i> le rang du premier terme de la liste  et séparer ensuite les valeurs par le caractère <b><tt>:</tt></b> dans le champ <i>prend la valeur</i>. (on obtient alors une instruction du style <tt>maliste[1]</tt> <i>prend la valeur</i> <tt>1:2:3:4</tt> )</li>
+<li>Pour utiliser un terme d'une liste dans un calcul, il faut utiliser la syntaxe suivante : <tt>nomliste[rang]</tt> <br>Exemple : <tt>moy</tt> <i>prend la valeur</i> <tt>(maliste[1]+maliste[2]+maliste[3])/3</tt> (la variable du type <tt>NOMBRE</tt> <tt>moy</tt> contiendra la moyenne des trois premiers termes de la liste <tt>maliste</tt>)</li>
+<li>Les calculs possibles avec une liste sont (tous les résultats sont du type NOMBRE):
+<ul>
+<li>Somme : <tt>ALGOBOX_SOMME(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Moyenne : <tt>ALGOBOX_MOYENNE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Variance : <tt>ALGOBOX_VARIANCE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Ecart-type : <tt>ALGOBOX_ECART_TYPE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Médiane : <tt>ALGOBOX_MEDIANE(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Premier quartile : <tt>ALGOBOX_QUARTILE1((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt><br>(définition calculatrice : médiane de la sous-série inférieure - la série doit comporter au moins 4 valeurs, sinon une erreur est déclarée)</li>
+<li>Troisième quartile : <tt>ALGOBOX_QUARTILE3((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt><br>(définition calculatrice : médiane de la sous-série supérieure - la série doit comporter au moins 4 valeurs, sinon une erreur est déclarée)</li>
+<li>Premier quartile Bis : <tt>ALGOBOX_QUARTILE1_BIS((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt><br>(autre définition : plus petite valeur telle qu'au moins 25% des données lui soient inférieures - la série doit comporter au moins 4 valeurs, sinon une erreur est déclarée)</li>
+<li>Troisième quartile Bis : <tt>ALGOBOX_QUARTILE3_BIS((nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt><br>(autre définition : plus petite valeur telle qu'au moins 75% des données lui soient inférieures - la série doit comporter au moins 4 valeurs, sinon une erreur est déclarée)</li>
+<li>Minimum : <tt>ALGOBOX_MINIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Maximum : <tt>ALGOBOX_MAXIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Rang du minimum : <tt>ALGOBOX_POS_MINIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+<li>Rang du maximum : <tt>ALGOBOX_POS_MAXIMUM(nom_de_la_liste,rang_premier_terme,rang_dernier_terme)</tt></li>
+</ul>
+</li>
+</ul>
+<b>Opérations avec les chaînes :</b>
+<ul>
+<li>Le contenu d'une chaîne doit être encadré par des guillemets : <br>Exemple : <tt>a</tt> <i>prend la valeur</i> <tt>"bonjour"</tt> (<tt>a</tt> étant une variable du type <tt>chaine</tt>)</li>
+<li>Il est possible d'ajouter (concaténer) des chaînes :<br>Exemple : <tt>b</tt> <i>prend la valeur</i> <tt>a+"bonjour"</tt> (<tt>a</tt> et <tt>b</tt> étant des variables du type <tt>CHAINE</tt>)</li>
+<li>Il est possible d'extraire le contenu d'une chaîne avec l'instruction <tt>chaîne.substr(position_premier_caractère_à_extraire,nombre_de_caractères_à_extraire)</tt>.<br>
+Attention : la premier caractère a pour position 0 (et pas 1)<br>
+Exemple : <tt>b</tt> <i>prend la valeur</i> <tt>a.substr(4,2)</tt> (<tt>b</tt> sera alors formé des 5ème et 6ème caractères de <tt>a</tt> ; <tt>a</tt> et <tt>b</tt> étant des variables du type <tt>CHAINE</tt>)</li>
+<li>Un nombre peut-être transformé en chaîne avec l'instruction <tt>nombre.toString()</tt> <br>Exemple : <tt>machaine</tt> <i>prend la valeur</i> <tt>nb.toString()</tt> (<tt>nb</tt> étant une variable du type <tt>NOMBRE</tt> et <tt>machaine</tt> étant une variable du type <tt>CHAINE</tt>) </li>
+<li>La longueur d'une chaine peut-être obtenue avec l'instruction <tt>chaine.length</tt> <br>Exemple : <tt>longueur</tt> <i>prend la valeur</i> <tt>machaine.length</tt> (<tt>longueur</tt> étant une variable du type <tt>NOMBRE</tt> et <tt>machaine</tt> étant une variable du type <tt>CHAINE</tt>) </li>
+<li>L'instruction <tt>machaine.charCodeAt(pos)</tt> permet d'obtenir le nombre égal au code ascii de la lettre figurant à la position <tt>pos</tt> dans la chaine <tt>machaine</tt> (Attention : le premier caractère a pour position 0).</li>
+<li>Inversement, l'instruction <tt>String.fromCharCode(nombre)</tt> renvoie une chaine contenant le caractère dont le code ascii est égal à <tt>nombre</tt>.</li>
+</ul>
+</li>
+<li>
+<b><a name="SECTION32">Les expressions conditionnelles</b> (structures <tt>SI ALORS</tt> et <tt>TANT QUE</tt>) :</a><br>
+<b>Exemples de syntaxe pour la condition :</b>
+<ul>
+<li>Pour vérifier si x est égal à 2, la condition à écrire est : <tt>x==2</tt></li>
+<li>Pour vérifier si x est différent de 2, la condition à écrire est : <tt>x!=2</tt></li>
+<li>Pour vérifier si x est strictement inférieur à 2, la condition à écrire est : <tt>x&lt;2</tt></li>
+<li>Pour vérifier si x est inférieur ou égal à 2, la condition à écrire est : <tt>x&lt;=2</tt></li>
+<li>Pour vérifier si x est strictement supérieur à 2, la condition à écrire est : <tt>x&gt;2</tt></li>
+<li>Pour vérifier si x est supérieur ou égal à 2, la condition à écrire est : <tt>x&gt;=2</tt></li>
+</ul>
+<b>Il est possible de combiner plusieurs conditions avec ET et OU :</b>
+<ul>
+<li>La condition à écrire pour vérifier que x est strictement compris entre 1 et 5 est : <tt>x&gt;1 ET x&lt;5</tt></li>
+<li>La condition à écrire pour vérifier que x est égal à 3 OU à 5 est : <tt>x==3 OU x==5</tt></li>
+</ul>
+Il est aussi possible d'utiliser des calculs dans les expressions conditionnelles. Exemple de condition : <tt>x&lt;sqrt(n)</tt><br>
+<b>Avertissement :</b> le nombre d'itérations pour les boucles <tt>TANT QUE</tt> est limité à 500000 pour des raisons de sécurité.</li>
+<li><a name="SECTION33"><b>Les boucles</b></a> (structure <tt>POUR ALLANT DE A</tt>)<br>
+<ul>
+<li>La variable utilisée pour la boucle (champ <i>POUR la variable</i>) ne peut-être que du type <tt>NOMBRE</tt> et la valeur de cette variable est automatiquement augmentée de 1 à chaque boucle.</li>
+<li>Les champs <i>ALLANT DE</i> et <i>A</i> peuvent contenir des nombres ou des variables du type <tt>NOMBRE</tt>. C'est à l'utilisateur de vérifier que la valeur du champ <i>ALLANT DE</i> est bien inférieure à celle du champ <i>A</i>.</li>
+<li><b>Avertissement :</b> le nombre d'itérations des boucles est limité à 500000 pour des raisons de sécurité.</li>
+</ul>
+</li>
+<li><a name="SECTION34"><b>Lecture et affichage des variables</b></a> (commandes <tt>LIRE variable</tt> et <tt>AFFICHER variable</tt>)<br>
+Si on veut lire ou afficher le terme d'une liste, il faut sélectionner le nom de la liste et obligatoirement renseigner le champ <i>Rang du terme de la liste</i> qui peut contenir un nombre ou le nom d'une variable du type <tt>NOMBRE</tt>.
+</li>
+<li><a name="SECTION35"><b>Affichage d'une variable ou d'un message</b></a> (commandes <tt>AFFICHER variable</tt> et <tt>AFFICHER message</tt>)<br>
+Si la case <i>Ajouter un retour à la ligne</i> est cochée, le prochain affichage d'une variable ou d'un message se fera sur une nouvelle ligne. Dans le cas contraire, le prochain affichage se fera directement à la suite du précédent.
+</li>
+<li><a name="SECTION36"><b>Utilisation d'une fonction numérique</b></a><br>
+En activant l'option <span class="code">Utiliser une fonction</span> dans l'onglet "Utiliser une fonction numérique", on peut utiliser l'image de n'importe quel nombre (ou variable de type nombre) par la fonction notée <tt>F1</tt> dans le code de l'algorithme. Il suffit pour cela d'entrer l'expression de <tt>F1(x)</tt> en fonction de <tt>x</tt> dans le champ prévu pour cela.<br>Pour utiliser l'image d'un nombre <tt>nb</tt> par la fonction <tt>F1</tt> dans l'algorithme, il suffit d'utiliser le code : <tt>F1(nb)</tt> (cela peut se faire dans une affectation ou dans une expression conditionnelle).
+</li>
+<li><a name="SECTION37"><b>Tracer des points et des segments dans un repère</b></a><br>
+En activant l'option <span class="code">Utiliser un repère</span> dans l'onglet "Dessiner dans un repère", un repère graphique est automatiquement ajouté dans la fenêtre de test de l'algorithme. Il est alors possible d'inclure dans le code de l'algorithme des instructions pour tracer des points et des segments dans ce repère en utilisant les boutons <span class="code">Ajouter TRACER POINT</span> et <span class="code">Ajouter TRACER SEGMENT</span> .
+</li>
+<li><a name="SECTION38"><b>Utiliser des fonctions locales</b></a><br>
+Il est possible avec AlgoBox de définir et utiliser des fonctions locales que l'on peut appeler dans l'algorithme ensuite. Pour créer une nouvelle fonction locale, il suffit de se placer sur FONCTIONS_UTILISEES, de cliquer sur "Nouvelle ligne" puis sur "Déclarer nouvelle fonction" dans l'onglet "Fonctions locales". Pour déclarer une éventuelle variable locale nécessaire à une fonction, il faut se placer sur la ligne "VARIABLES_FONCTION" correspondant à la fonction et cliquer sur "Déclarer variable locale". Le bouton "Ajouter RENVOYER valeur" permet lui de définir ce que renverra la fonction. Quand au bouton \"Appeler Fonction\", il sert à appeler une fonction qui ne renvoie pas de valeur.
+</li>
+<li><a name="SECTION39"><b>Copier, coller et couper une ligne ou un bloc de l'algorithme</b></a><br>
+Via le menu <span class="code">Edition</span>, il est possible de copier/coller/couper :
+<ul>
+<li>une ligne de code du type <span class="code">...PREND_LA_VALEUR...</span>, <span class="code">AFFICHER....</span> et <span class="code">TRACER....</span></li>
+<li>un bloc du type <span class="code">POUR ALLANT DE A</span>, <span class="code">SI ALORS</span> et <span class="code">TANT QUE</span>. Pour copier et couper tout le contenu de ce type de bloc, il faut se placer sur la première ligne du bloc en question.</li>
+</ul>
+Remarque : pour <b>coller</b> une ligne ou un bloc de code, <b>il faut d'abord créer une nouvelle ligne</b> conformément aux règles d'édition en vigueur sur AlgoBox.
+</li>
+<li><a name="SECTION310"><b>Ajout de commentaires</b></a><br>
+L'ajout d'un commentaire dans le code de l'algorithme se fait une ligne vierge grâce au bouton <span class="code">Commentaire</span>. Tout commentaire apparaît en italique et est précédé des caractères <tt>//</tt>.
+</li>
+<li><a name="SECTION311"><b>Provoquer un arrêt temporaire de l'exécution d'un algorithme avec l'instruction <i>PAUSE</i></b></a><br>
+L'instruction <span class="code">PAUSE</span> arrête l'exécution de l'algorithme. L'utilisateur peut alors en cliquant sur les boutons <span class="code">Continuer</span> et <span class="code">Arrêter</span> décider de poursuivre ou de mettre définitivement fin à l'exécution de l'algorithme.
+</li>
+<li><a name="SECTION312"><b>Exécution d'un algorithme en mode "pas à pas"</b></a>
+<ul>
+<li>Pour lancer le mode "pas à pas", il suffit de cocher la case correspondante avant de cliquer sur le bouton <span class="code">Lancer Algorithme</span>.</li>
+<li>La ligne de l'algorithme correspondante à chaque arrêt est signalée en rouge.</li>
+<li>L'entrée et la sortie de chaque bloc SI, SINON, TANT QUE et POUR est systématiquement signalée.</li>
+<li>Après chaque instruction pouvant modifier la valeur d'une variable (LIRE, AFFECTER, DEBUT_POUR), l'état de l'ensemble de toutes les variables est affichée (les listes sont affichées sur une ligne séparée).</li>
+<li>Lors de chaque arrêt, l'utilisateur peut en cliquant sur les boutons <span class="code">Continuer</span> et <span class="code">Arrêter</span> décider de poursuivre ou de mettre définitivement fin à l'exécution de l'algorithme. Pour poursuivre l'exécution en mode "pas à pas" on peut aussi utiliser la touche "flèche bas" du clavier.</li>
+</ul>
+<li><a name="SECTION313"><b>Calculs numériques et arrondis</b></a><br>
+Dans AlgoBox, comme avec tous les langages de programmation, la représentation interne des nombres qui ne sont ni des entiers, ni des décimaux simples (du style 0.05) peut engendrer des problèmes de précision et d'arrondis. Une égalité mathématique peut donc se retrouver non vérifiée lors de l'exécution réelle d'un algorithme.<br><b>L'utilisateur doit être conscient de ces problèmes de précision dès qu'il manipule des nombres non entiers.</b> La prudence est notamment de mise lors de l'utilisation d'un bloc <tt>TANT_QUE</tt> : une condition ne prenant pas en compte les problèmes de précision en informatique peut engendrer une boucle infinie (qui sera stoppée par le mécanisme de sécurité interne d'AlgoBox). Il convient donc de tenir compte de ces limites de précision lors de la conception de certains algorithmes.
+</li>
+<li><a name="SECTION314"><b>Export des résultats d'un algorithme en pdf</b></a><br>
+Lors de l'exécution d'un algorithme, il est possible d'exporter en pdf l'ensemble des résultats d'un algorithme (sorties, graphique, code de l'algorithme) via le menu contextuel qui s'affiche en effectuant un clic-droit sur la partie supérieure de la fenêtre de test.
+</li>
+<!--<span class="code"></span>-->
+</li>
+</ol>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION4">4. Raccourcis clavier</a></legend>
+<div class="entry">
+<ul>
+<li> Menu "Fichier" :
+	<ul>
+	<li>Nouveau : Ctrl+N</li>
+	<li>Ouvrir : Ctrl+O</li>
+	<li>Sauver : Ctrl+S</li>
+	<li>Quitter : Ctrl+Q</li>
+	</ul>
+</li>
+<li> Menu "Edition" :
+	<ul>
+	<li>Copier ligne : Ctrl+C</li>
+	<li>Coller ligne : Ctrl+V</li>
+	<li>Couper ligne : Ctrl+X</li>
+	</ul>
+</li>
+<li> Mise au point de l'algorithme :
+	<ul>
+	<li>Nouvelle ligne : Ctrl+Entrée</li>
+	<li>Déclarer nouvelle variable : Ctrl+D</li>
+	<li>Tester algorithme : Ctrl+T</li>
+	<li>Lire variable : Ctrl+L</li>
+	<li>Affecter valeur à variable : Ctrl+F</li>
+	<li>Afficher variable : Ctrl+R</li>
+	<li>Afficher message : Ctrl+M</li>
+	<li>Si...Alors : Ctrl+I</li>
+	<li>Pour...De...A : Ctrl+P</li>
+	<li>Tant...Que : Ctrl+U</li>
+	</ul>
+</li>
+<li> Exécution de l'algorithme :
+	<ul>
+	<li>Lancer Algorithme : Entrée</li>
+	<li>Continuer : Flèche Bas</li>
+	<li>Arrêter : Echap</li>
+	<li>Lire variable : Ctrl+Q</li>
+	</ul>
+</li>
+</ul>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION5">5. Tutoriel d'initiation à l'algorithmique avec AlgoBox</a></legend>
+<div class="entry">
+Un module en ligne d'initiation aux principes de base de l'algorithmique avec AlgoBox peut-être lancé via l'option <tt>Initiation en ligne à l'algorithmique</tt> du menu <tt>Tutoriel</tt>.
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION6">6. Déboguer un algorithme</a></legend>
+<div class="entry">
+AlgoBox n'inclut pas de débogueur complet intégré et infaillible. Toutefois,
+<ul>
+<li>lors de l'arrêt de l'exécution d'un algorithme suite à une erreur, la dernière ligne exécutée est signalée automatiquement;</li>
+<li>une erreur de calcul entraîne automatiquement l'arrêt de l'exécution : la ligne où figure la calcul est signalée;</li>
+<li>pour aider à déboguer un algorithme qui ne donne pas les résultats attendus :
+<ul>
+<li>il est possible d'afficher à tout moment l'état d'une variable (instruction <span class="code">AFFICHER Variable</span>) et d'inclure une instruction <span class="code">PAUSE</span>;</li>
+<li>l'exécution de l'algorithme en mode "pas à pas" permet d'afficher étape pas étape la valeur de toutes les variables.</li>
+</ul>
+</li>
+</ul>
+Remarque : si l'algorithme ne se lance pas, c'est que le code contient une grave erreur de syntaxe empêchant son démarrage. L'utilisateur est alors invité à vérifier notamment la syntaxe des affectations et des conditions (ainsi que les éventuels tracés graphiques et la définition de la fonction F1)
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION7">7. Sécurités lors de l'exécution d'un algorithme</a></legend>
+<div class="entry">
+Toute activité de programmation comporte des risques. Pour limiter ces risques, AlgoBox dispose de 4 sécurités lors de l'exécution d'un algorithme (afin d'empêcher notamment les boucles infinies) :
+<ul>
+<li>Une boucle seule ne peut aller au delà de 500 000 itérations;</li>
+<li>Le nombre global d'itérations pour tout l'algorithme ne peut dépasser 5 millions;</li>
+<li>Le nombre d'affichages consécutifs est limité à 1000 : au-delà, l'utilisateur doit confirmer sa volonté de continuer à afficher des données;</li>
+<li>L'utilisateur peut arrêter l'exécution d'un algorithme à tout moment.</li>
+<li>Le nombre de récursions pour la fonction "avancée" F2 est limité à 100 000.</li>
+</ul>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION8">8. Augmenter l'espace disponible pour la conception d'un algorithme</a></legend>
+<div class="entry">
+Afin d'augmenter la hauteur du panneau contenant le code de l'algorithme, il est possible :
+<ul>
+<li>de cacher la barre d'outils et le cadre de présentation de l'algorithme via le menu Affichage</li>
+<li>de replier un bloc de code en cliquant sur le "triangle" correspondant (un autre clic sur ce même triangle permet de déplier le bloc)</li>
+</ul>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION9">9. Simulation de tableaux à deux dimensions</a></legend>
+<div class="entry">
+Pour utiliser un tableau dans AlgoBox :
+<ul>
+<li>On se sert d'une variable de type <tt>LISTE</tt>. Exemple : <tt>montableau est du type LISTE</tt></li>
+<li>Pour affecter une valeur à l'élément du tableau correspondant à la ligne <tt>li</tt> et à la colonne <tt>col</tt>, il suffit de remplir le champ <i>Rang du terme de la liste</i> par : <tt>li*(nombre de colonnes)+col</tt>. On obtient alors une ligne de la forme : <tt>montableau[li*(nombre de colonnes)+col] PREND_LA_VALEUR...</tt></li>
+<li>Pour réutiliser la valeur d'un élément du tableau dans un calcul, on utilise la syntaxe : <tt>montableau[li*(nombre de colonnes)+col]</tt>.</li>
+</ul>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION10">10. Edition du code en mode "éditeur de texte"</a></legend>
+<div class="entry">
+Via l'option <tt>"Mode Edition"</tt> du menu <tt>"Edition"</tt>, il est possible de passer du mode d'édition du code par défaut (avec boîtes de dialogue) à un mode d'édition du code comme sur un éditeur de texte classique. Ce mode d'édition, <b>à réserver aux utilisateurs expérimentés</b>, répond aux caractéristiques suivantes :
+<ul>
+<li><b>Une ligne ne peut contenir qu'une instruction</b> et chaque ligne doit correspondre exactement à une branche de l'arbre utilisé dans le mode d'édition "normal". Ainsi,par exemple, chaque variable doit être déclarée sur une ligne séparée.</li>
+<li><b>Chaque instruction doit respecter strictement la syntaxe AlgoBox</b>, à l'exception de l'instruction <tt>AFFICHER</tt> qui doit être suivie d'une étoile pour indiquer un retour à la ligne et des instructions <tt>TRACER_POINT</tt> et <tt>TRACER_SEGMENT</tt> qui peuvent être suivies de la couleur à utiliser. (exemple : TRACER_POINT_Bleu, TRACER_POINT_Rouge ou TRACER_POINT_Vert)</li>
+<li>Lors de l'utilisation de l'auto-complétion et des commandes du panneau inférieur, le symbole <tt>•</tt> représente un champ à compléter : pour passer au champ suivant, il suffit d'utiliser la touche <tt>Tab</tt>.</li>
+<li>Toutes les commandes habituelles d'un éditeur de texte (Copier, Couper, Coller, Défaire, Refaire, Chercher, Remplacer, Indenter, Commenter...) sont disponibles via le menu contextuel qui s'affiche après un clic-droit dans la zone d'édition.</li>
+<li>Il est aussi possible de défnir trois signets en cliquant dans la bande où figurent les numéros de ligne. Le menu contextuel permet alors d'atteindre la position définie par un signet.</li>
+<li>Avant d'exécuter un algorithme édité dans le mode "éditeur de texte", <b>il est vivement recommandé de vérifier d'abord si le code tapé est bien reconnu par AlgoBox</b>. Pour cela, il suffit d'utiliser le bouton <span class="code">Vérifier Code</span> : AlgoBox recrée alors l'arbre de code habituel.</li>
+<li>Le changement de mode d'édition ne peut se faire qu'à partir d'un algorithme vierge. Si un algorithme est en cours d'édition, il est demandé à l'utilisateur s'il veut enregistrer son travail avant de changer de mode.</li>
+<li>Toutes les options des menus et toutes les opérations standards (exécuter un algorithme, ouvrir, enregistrer...) restent évidemment disponibles dans le mode "éditeur de texte".</li>
+<li>Le mode d'édition utilisé ("normal" ou "éditeur de texte")</li> est enregistré à chaque fermeture du programme afin d'être rétabli par défaut lors du prochain démarrage.
+</ul>
+
+</div>
+<br clear="all">
+</fieldset>
+</div>
+
+<div class="post">
+<fieldset>
+<legend class="title"><a name="SECTION11">11. Le menu "Extension"</a></legend>
+<div class="entry">
+Il est possible d'ajouter des commandes à celles disponibles par défaut dans AlgoBox en utilisant une "extension" qui est en fait constituée d'un fichier javascript (format .js).<br><br>
+<b>ATTENTION : l'écriture d'une extension nécessite de bien connaître le langage javascript et le fonctionnement d'AlgoBox. Toute erreur dans le code de l'extension empêchera le fonctionnement de l'algorithme AlgoBox qui l'utilise.</b><br><br>
+Caractéristiques :
+<ul>
+<li>le code d'une extension doit-être écrite en pur javascript sous la forme de <b>fonctions</b>.</li>
+<li>pour pouvoir être appelées dans un algorithme AlgoBox, les fonctions de l'extension doivent retourner un nombre ou une chaine (même si ce retour n'a pas en fait d'importance).<br>
+Exemple :<br>
+<i>Code dans l'extension (en javascript!) :</i><br>
+<tt>function MON_EXTENSION()</tt><br>
+<tt>{</tt><br>
+<i>...</i><br>
+<tt>return 1;</tt><br>
+<tt>}</tt><br>
+<i>Appel de la nouvelle fonction dans un algorithme :</i><br>
+<tt>mavariable PREND_LA_VALEUR MONEXTENSION()</tt>
+</li>
+<li>pour utiliser une extension dans un algorithme AlgoBox, il suffit d'utiliser l'option <tt>"Charger une extension"</tt>. Pour des raisons de portabilité d'un poste à un autre, le chemin complet vers l'extension n'est pas enregistré dans le fichier AlgoBox : il est donc nécessaire de charger l'extension à chaque ouverture de l'algorithme.</li>
+<li>Un algorithme ne peut utiliser qu'une seule extension (il suffit d'inclure toutes les fonctions supplémentaires dans un même fichier javascript).</li>
+<li>Pour écrire ou modifier une extension, un mini-éditeur javascript est accessible via l'option <tt>"Ecrire/modifier une extension"</tt>.</li>
+</ul>
+</div>
+<br clear="all">
+</fieldset>
+</div>
+<div id="footer">AlgoBox - &copy; 2017 Pascal Brachet</div>
+</body>
+</html>
