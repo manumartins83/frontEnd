@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!-- INSTRUCTIONS -->
+<head>
+    <meta charset="UTF-8"> <!-- police de caractère universel -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- compatibilité explorateur Edge -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- page responsive : compatible multi support -->
+    <title>AFPA : Contact</title> <!-- dénomination onglet page -->
+    <link rel="stylesheet" href="CSS/normalize.css"> <!-- retrait mise en forme HTML page -->
+    <link rel="stylesheet" href="CSS/style2.css"> <!-- mise en forme CSS page CSS -->
+</head>
+<!-- STRUCTURE -->
+<body>
+    <!-- Menu -->
+    <header> 
+        <img class="logo" src="img/logo_AFPA.png" alt="Logo_AFPA"> <!-- logo -->
+        <nav> <!-- liens navigation -->
+            <ul> <!-- liste liens -->
+                <li><a href="#">Accueil</a></li> <!-- lien page -->
+                <li><a href="#">Formation</a></li> <!-- lien page -->
+                <li><a href="#">Témoignages</a></li> <!-- lien page -->
+                <li><a href="#">Références</a></li> <!-- lien page -->
+                <li><a href="contact.html" target="_blank">Contact</a></li> <!-- lien page -->
+            </ul>
+        </nav>
+    </header>
+    <!-- Titre -->
+    <h1 class="titre">Contactez-nous</h1> <!-- titre principal -->
+    <!-- Contenu -->
+    <main class="container"> <!-- formulaire -->
+        <aside>
+            <p class="texte"><b>Nom (*) : </b><input type="text" class="formulaire"></p>
+            <p class="texte"><b>Mail (*) : </b><input type="text" class="formulaire"></p>
+            <p class="texte"><b>Tél : </b><input type="text" class="formulaire"></p>
+            <p><small>* information obligatoire</small></p>
+            <section>
+                <p class="texte"><b><u>Situation :</u></b></p>
+                <p><input type="checkbox"> Demandeur d'emploi</p>
+                <p><input type="checkbox"> Salarié en transition professionnelle</p>
+                <p><input type="checkbox"> Autre</p>
+            </section>
+        </aside>
+        <article>
+            <p class="texte"><b><u>Modalités d'apprentissage privilégiées :</u></b></p>
+            <p><input type="checkbox"> En centre de formation (présentiel)</p>
+            <p><input type="checkbox"> 100% à distance</p>
+            <p><input type="checkbox"> En contrat d'alternance</p>
+            <p><input type="checkbox"> sans préférence</p>
+            <section>
+                <p class="texte"><b><u>Région :</u></b></p>
+                <select name="région" class="combo">
+                <option value="normandie">Normandie</option>
+                <option value="PACA">PACA</option>
+                </select>
+            </section>
+        </article>
+    </main>
+    <!-- Bouton lien -->
+    <div> 
+        <button id="bouton"> <!-- bouton -->
+            <p><a href="#">Envoyer</a></p> <!-- dénomination bouton -->
+        </button>
+    </div>
+</body>
+</html>
