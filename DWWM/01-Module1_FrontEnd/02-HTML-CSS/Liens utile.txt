@@ -49,6 +49,8 @@ https://htmlcheatsheet.com/ (mémo HTML)
 https://smnarnold.com/ (cours HTML-CSS-JS)
 https://41mag.fr/liste-balises-html5/ (liste balises HTML)
 
+https://www.pixelconverter.com/fr/convertisseur-pixel-en-rem/ (convertisseur taille px/rem)
+
 
 
 
