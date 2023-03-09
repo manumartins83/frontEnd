@@ -1,0 +1,63 @@
+/* ###### PARAMETRES GENERAL BOITES ###### */
+*{
+    box-sizing: border-box; /* dimension boites avec padding+bordures */
+    font-family: 'Roboto', sans-serif; /* type police : Roboto ou sans serif */
+    /* <style>@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');</style> */
+}
+/* ############# HEADER ############# */
+header{
+    background-color: darkgray; /* couleur fond : gris foncé */
+    display: flex; /* type boites : flexible */
+    flex-direction: row; /* sens deplacement boites G/D : vers la droite */
+    flex-wrap: nowrap; /* sens deplacement boites H/B : aucun */
+    /* #### ou utiliser #### flex-flow: row nowrap; #### */
+    justify-content:space-around; /* espacement boites : excentré vers extérieur */
+    align-items: center; /* alignement boites : centré */
+    /* align-content: center;    
+    gap: 1900px;
+    row-gap: 1900px; */
+}
+/* ############# NAV ############# */
+nav{
+    background-color: rgb(67, 240, 51); /* couleur fond : gris foncé */
+}
+ul{
+    margin: 0; /* marge boites : 0 */
+    padding: 2em; /* marge boites : 2em vers haut */
+    display: flex; /* type boites : flexible */
+    list-style-type: none; /* type tiret liste : aucune */
+    flex-flow: row nowrap; /* sens deplacement boites : vers la droite uniquement */
+    justify-content:center; /* espacement boites : centré */
+    gap: 5%; /* espacement intercalaire boites : 5% */
+}
+li a {
+    text-decoration-line: none; /* type ligne lien : aucune */
+    text-transform: uppercase; /* police caractère : majuscule */
+    font-weight: 700; /* police caractère : gras */
+    color: white; /* couleur police : blanc */
+}
+li a:hover{
+    color: darkorange; /* couleur police au passage souris : orange foncé */
+}
+/* ############# DIVERS : CONTENU ############# */
+.container{
+    display: flex; /* type boites : flexible */
+    flex-flow: row nowrap; /* sens deplacement boites : vers la droite uniquement */
+    justify-content: space-between; /* espacement boites : excentré extérieur */
+}
+aside{
+    background-color:rgb(21, 204, 228); /* couleur fond : bleu pastel */
+    padding: 0.5em; /* marges intérieur boite : 0.5em */
+    flex-grow: 1; /* espacement boite enfant : utilisation 1X espace boite parent */
+}
+main{
+    background-color: rgb(230, 9, 75); /* couleur fond : fushia foncé */
+    padding: 5%; /* marges intérieur boite : 5% */
+    flex-grow: 3; /* espacement boite enfant : utilisation 3X espace boite parent */
+}
+/* ############# FOOTER ############# */
+footer{
+    background-color: brown; /* couleur fond : marron */
+    padding:2% 0; /* marges intérieur boite : 2% haut+bas et 0 côté */
+    text-align: center; /* alignement texte : centré */
+}

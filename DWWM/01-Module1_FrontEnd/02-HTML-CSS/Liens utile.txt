@@ -1,0 +1,58 @@
+https://www.alsacreations.com/article/lire/1376-html5-section-article-nav-header-footer-aside.html (new balise HTML)
+https://jaetheme.com/balises-html5/ (liste balise HTML5)
+
+https://www.scriptol.fr/creation-site-web/accents-html.php (liste courante caractère spéciaux)
+https://alexandre.alapetite.fr/doc-alex/alx_special.html (liste complète caractère spéciaux)
+
+https://www.alsacreations.com/astuce/lire/78-quelle-est-la-diffrence-entre-les-chemins-relatifs-et-absolus.html (liens relatif/absolu HTML)
+
+https://alticreation.com/bem-pour-le-css/ (convention écriture CSS)
+https://www.alsacreations.com/article/lire/1641-Bonnes-pratiques-en-CSS--BEM-et-OOCSS.html (convention écriture CSS)
+
+https://www.alsacreations.com/article/lire/1159-prefixes-vendeurs-css-proprietaires.html (préfixe display comportement liste ou flux CSS)
+
+https://developer.mozilla.org/fr/ (language dev)
+https://www.w3schools.com/ (language dev)
+https://jigsaw.w3.org/css-validator/ (verif et valider code)
+
+https://www.w3schools.com/cssref/css_selectors.php (sélecteurs attribu multiple CSS)
+https://www.w3schools.com/css/css_pseudo_elements.asp (pseudo elements CSS)
+
+https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Fonts (proprièté police caractère CSS)
+https://fonts.google.com/ (police caractère google CSS)
+http://stylescss.free.fr/v2-references/colors.php (bonne pratique utilisation couleur CSS)
+https://codebeautify.org/pantone-to-hex-converter (code couleur pantone CSS)
+https://www.w3schools.com/colors/colors_picker.asp (code couleur CSS)
+https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Images/Using_CSS_gradients (code dégradé couleur CSS)
+https://developer.mozilla.org/fr/docs/Web/CSS/text-shadow (code ombrage couleur CSS)
+https://www.w3schools.com/css/css_border.asp (code bordures CSS)
+https://developer.mozilla.org/fr/docs/Web/CSS/border-radius (code bordures CSS)
+https://checklists.opquast.com/fr/assurance-qualite-web/ (bonne pratique règle CCS)
+
+https://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html (explication boite flexbox CSS)
+https://la-cascade.io/articles/flexbox-guide-complet (explication deplacement boites flexbox CSS)
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ (explication boites flexbox CSS)
+https://flexboxfroggy.com/ (exercices flexbox CSS)
+https://www.zonecss.fr/proprietes-css/position-css.html (différent positionnement CSS)
+https://www.pierre-giraud.com/html-css-apprendre-coder-cours/position/ (différent positionnement CSS)
+
+
+https://necolas.github.io/normalize.css/latest/normalize.css (suprression styles navigateur avec normalize HTML)
+https://meyerweb.com/eric/tools/css/reset/ (suprression styles navigateur avec reset HTML)
+https://github.com/necolas/normalize.css (telecharge suprression styles navigateur normalize CSS)
+
+https://www.macg.co/macos/2022/03/une-astuce-pour-inspecter-le-code-web-qui-se-cache-dans-les-preferences-systeme-de-macos-127789 (inspections code MacOS)
+https://www.freecodecamp.org/learn/responsive-web-design/basic-css/ (cours+exercices HTML/CSS)
+
+https://htmlcheatsheet.com/css/ (mémo CSS)
+https://htmlcheatsheet.com/ (mémo HTML)
+https://smnarnold.com/ (cours HTML-CSS-JS)
+https://41mag.fr/liste-balises-html5/ (liste balises HTML)
+
+https://www.pixelconverter.com/fr/convertisseur-pixel-en-rem/ (convertisseur taille px/rem)
+
+
+
+
+
+

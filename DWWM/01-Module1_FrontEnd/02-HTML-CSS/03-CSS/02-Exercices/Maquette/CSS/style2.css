@@ -1,0 +1,124 @@
+/* ###### PARAMETRES GENERAUX BOITES ###### */
+*{
+    box-sizing: border-box; /* dimension boites avec padding+bordures */
+    font-family: arial; /* type police : Arial */
+}
+/* ############# HEADER ############# */
+header{
+    padding: 0.5em; /* marge intérieur boites */
+    background-color: #7A99AC ; /* couleur fond : bleu gris pantone */
+    display: flex; /* type boites : flexible */
+    flex-flow: row nowrap; /* sens deplacement boites : vers la droite uniquement */
+    justify-content:space-around; /* espacement boites : excentré vers extérieur */
+    align-items: flex-end; /* alignement boites : vers le bas */
+    gap: 15%; /* espacement intercalaire boites */
+}
+.logo{
+    background-color: white; /* couleur fond : blanc */
+    display: block; /* type boite : block */
+    width: 10%; /* redimension largeur image */
+    height: auto; /* redimension hauteur image : proportionnel largeur */
+}
+nav{
+    display: block; /* type boites : block */
+    position: relative; /* position boites : relative */
+    top: 0.5em; /* deplacement haut */
+    left: -9em; /* deplacement gauche */
+}
+ul{
+    padding: 0;
+    margin: 0;
+    display: flex; /* type deplacement boites block : flexible */
+    list-style-type: none; /* type tiret liste : aucune */
+    justify-content:center; /* espacement boites : centré */
+    gap: 10%; /* espacement intercalaire boites */
+}
+li a {
+    text-decoration-line: none; /* type ligne lien : aucune */
+    text-transform: uppercase; /* police caractère : majuscule */
+    font-size: 25px; /* taille police */
+    font-weight:600; /* police caractère : gras */
+    color: white; /* couleur police : blanc */
+}
+li a:hover{
+    color: #440099; /* couleur police au passage souris : violet foncé pantone */
+}
+/* ############# TITRE ############# */
+.titre{
+    display: flex; /* type boites : flexible */
+    flex-flow: column wrap; /* sens deplacement boites : vers le bas */
+    justify-content: center; /* espacement boites : centré */
+    align-items: center; /* alignement boites : centré */
+    margin: 0.4em; /* marge extérieur boites */
+    font-size: 60px; /* taille police */
+    font-weight:900; /* police caractère : gras */
+    color: #FFD100; /* couleur police : rouge pantone */
+}
+/* ############# MAIN ############# */
+.container{
+    display: flex; /* type boites : flexible */
+    flex-flow: row nowrap; /* sens deplacement boites : vers la droite uniquement */
+    justify-content: space-around; /* espacement boites : excentré extérieur */
+}
+section{
+    display: block; /* type boites : block */
+    position: relative; /* position boites : relative */
+    top: 3em; /* deplacement haut */
+}
+aside{
+    display: block; /* type boites : block */
+    position: relative; /* position boites : relative */
+    top: 0.5em; /* deplacement haut */
+}
+.formulaire{
+    background-color: #7A99AC ; /* couleur fond : bleu gris pantone */
+    padding: 0.5em 2em; /* marge intérieur boites */
+    border-width: 0.1em; /* epaisseur bordure */
+    border-radius: 5px; /* arrondi bordure */
+    border-color: black; /* couleur bordure : noir */
+}
+article{
+    display: block; /* type boites : block */
+    position: relative; /* position boites : relative */
+    top: 0.5em; /* deplacement haut */
+}
+.texte{
+    font-size: 20px; /* taille police */
+    font-weight:bold; /* police caractère : gras */
+    color: black; /* couleur police : noir*/
+}
+.combo{
+    background-color: #7A99AC ; /* couleur fond : bleu gris pantone */
+    padding: 0.5em 2em; /* marge intérieur boites */
+    border-width: 0.1em; /* epaisseur bordure */
+    border-radius: 5px; /* arrondi bordure */
+    border-color: black; /* couleur bordure : noir */
+}
+/* ############# DIV ############# */
+div{
+    display: flex; /* type boites : flexible */
+    flex-flow: row nowrap; /* sens deplacement boites : vers la droite uniquement */
+    justify-content:flex-end; /* espacement boites : vers le bas */
+    align-items: flex-end; /* alignement boites : vers le bas */
+}
+#bouton{
+    display: block; /* type boites : block */
+    position: relative; /* position boites : relative */
+    top: 5em; /* deplacement haut */
+    left: -5em; /* deplacement gauche */
+    background-color: #7A99AC ; /* couleur fond : bleu gris pantone */
+    padding: 0em 2em; /* marge intérieur boites */
+    border-style: double; /* style bordures : double trait */
+    border-width: 0.3em; /* epaisseur bordure */
+    border-radius: 5px; /* arrondi bordure */
+    border-color: black; /* couleur bordure : noir */
+}
+p a {
+    text-decoration-line: none; /* type ligne lien : aucune */
+    font-size: 20px; /* taille police */
+    font-weight:bold; /* police caractère : gras */
+    color: black; /* couleur police : noir*/
+}
+p a:hover{
+    color: white; /* couleur police au passage souris : blanc */
+}
