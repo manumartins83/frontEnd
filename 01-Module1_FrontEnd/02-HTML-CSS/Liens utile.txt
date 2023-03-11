@@ -42,15 +42,25 @@ https://meyerweb.com/eric/tools/css/reset/ (suprression styles navigateur avec r
 https://github.com/necolas/normalize.css (telecharge suprression styles navigateur normalize CSS)
 
 https://www.macg.co/macos/2022/03/une-astuce-pour-inspecter-le-code-web-qui-se-cache-dans-les-preferences-systeme-de-macos-127789 (inspections code MacOS)
-https://www.freecodecamp.org/learn/responsive-web-design/basic-css/ (cours+exercices HTML/CSS)
 
-https://htmlcheatsheet.com/css/ (mémo CSS)
-https://htmlcheatsheet.com/ (mémo HTML)
+
+https://htmlcheatsheet.com/css/ (mémo cheatsheet CSS)
+https://htmlcheatsheet.com/ (mémo cheatsheet HTML)
+https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
+
+https://www.freecodecamp.org/learn/responsive-web-design/basic-css/ (cours+exercices HTML/CSS)
 https://smnarnold.com/ (cours HTML-CSS-JS)
 https://41mag.fr/liste-balises-html5/ (liste balises HTML)
 
 https://www.pixelconverter.com/fr/convertisseur-pixel-en-rem/ (convertisseur taille px/rem)
 
+
+https://bootstrap-top-design.com/carousel-bootstrap-tutoriel/ (caroussel Bootstrap)
+https://www.pierre-giraud.com/bootstrap-apprendre-cours/card/ (cartes bootstrap)
+
+https://pixelify.net/ (telecharge police)
+https://www.fontsquirrel.com/tools/webfont-generator (conversion police)
+https://www.whatfontis.com/ (telecharge + conversion police)
 
 
 

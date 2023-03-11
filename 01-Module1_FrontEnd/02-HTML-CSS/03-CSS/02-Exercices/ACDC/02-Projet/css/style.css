@@ -1,0 +1,365 @@
+/* ############# PARAMETRES GENERAUX ############# */
+/* #### Types police #### */
+@font-face {
+    font-family: 'hard_rockregular';
+    src: url('../fonts/HARD_ROCK/hard_rock-webfont.woff2') format('woff2'),
+        url('../fonts/HARD_ROCK/hard_rock-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rocknroll_typo_crazyregular';
+    src: url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff2') format('woff2'),
+        url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'the_darkregular';
+    src: url('../fonts/TheDark/thedark-webfont.woff2') format('woff2'),
+        url('../fonts/TheDark/hedark-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* #### Mise en forme générale #### */
+* {
+    /* dimensionnement boites : padding+bordures */
+    box-sizing: border-box;
+}
+
+/* ############# BODY ############# */
+/* #### Mise en forme page #### */
+body {
+    /* largeur contenu */
+    max-width: 100%;
+    /* hauteur contenu */
+    height: auto;
+    /* couleur fond : noir/rouge alterné incliné */
+    background-image: linear-gradient(to bottom right, black 70%, red 30%);
+}
+
+/* ############# Menu NAV ############# */
+/* #### Mise en forme barre navigation #### */
+#menu_fixe {
+    /* largeur contenu */
+    max-width: 70%;
+    /* hauteur contenu */
+    height: auto;
+    /* positionnement boite */
+    position: fixed;
+    /* position boite */
+    top: 0;
+    left: 0;
+    /* positionnement arrière plan boite */
+    z-index: 2;
+}
+
+/* Mise en forme logo menu */
+#logo {
+    /* largeur contenu */
+    max-width: 95px;
+    /* hauteur contenu */
+    height: auto;
+}
+
+/* Mise en forme texte menu */
+a.police {
+    /* type police */
+    font-family: 'the_darkregular';
+    /* taille police */
+    font-size: 1.5em;
+    /* type caractère */
+    text-transform: uppercase;
+    /* espacement entre lettres */
+    letter-spacing: -1px;
+    /* espacement entre mots */
+    word-spacing: 3px;
+    /* couleur police */
+    color: red;
+}
+
+/* Mise en forme liens Menu */
+a:hover {
+    /* couleur police */
+    color: white;
+}
+
+/* ############# Entête HEADER "carousel" ############# */
+/* #### Mise en forme carousel #### */
+header {
+    /* déplacement marge extérieur boites */
+    margin: 6.5em 10em 3em;
+}
+
+/* #### Mise en forme boites images carousel #### */
+#img_carousel {
+    /* déplacement marge extérieur boites */
+    margin-left: 20%;
+    /* type affichage boites */
+    display: flex;
+    /* deplacement boites : en ligne vers la droite uniquement */
+    flex-flow: row nowrap;
+    /* largeur contenu */
+    max-width: 60%;
+    /* hauteur contenu */
+    height: auto;
+    /* bordures arrondi */
+    border-radius: 10px;
+}
+
+/* #### Mise en forme images #### */
+.img1 {
+    /* déplacement marge extérieur boites */
+    margin: 0;
+}
+
+.img2 {
+    /* déplacement marge extérieur boites */
+    margin: 0;
+}
+
+.img3 {
+    /* déplacement marge extérieur boites */
+    margin: 0;
+}
+
+/* #### Mise en forme flèche défilement gauche #### */
+#flecheG {
+    /* espacement horizontal boites */
+    justify-content: flex-start;
+}
+
+/* #### Mise en forme flèche défilement droite #### */
+#flecheD {
+    /* espacement horizontal boites */
+    justify-content: flex-end;
+}
+
+/* ############# Contenu SECTION "membres" ############# */
+/* #### Mise en forme section #### */
+section {
+    /* déplacement marge extérieur boites */
+    margin: 0em 0 2em;
+}
+
+/* #### Mise en forme boites section #### */
+#cartes_membres {
+    /* type affichage boites */
+    display: flex;
+    /* deplacement boites : en ligne vers la droite uniquement */
+    flex-flow: row nowrap;
+    /* espacement horizontal boites */
+    justify-content: center;
+    /* espacement vertical boites */
+    align-items: flex-end;
+}
+
+/* #### Mise en forme boites photos #### */
+#cartes_membres>div {
+    /* dimensionnement marge intérieur boites */
+    padding: 0em 0.2em;
+}
+
+/* #### Mise en forme photos #### */
+figure>img {
+    /* largeur contenu */
+    max-width: 292px;
+    /* hauteur contenu */
+    height: 331px;
+    /* style bordure */
+    border-style: solid;
+    /* epaisseur bordures */
+    border-width: 0.3em;
+    /* bordures arrondi */
+    border-radius: 5px;
+    /* couleur bordures */
+    color: white;
+}
+
+/* #### Mise en forme texte boites #### */
+figcaption {
+    /* déplacement marge extérieur boites */
+    margin: 0.5em;
+    /* taille police */
+    font-size: 1em;
+    /* epaisseur police */
+    font-weight: bolder;
+    /* couleur police */
+    color: white;
+}
+
+/* ############# Contenu MAIN "discographie" ############# */
+/* #### Mise en forme discographie #### */
+main {
+    /* déplacement marge extérieur boites */
+    margin: 0em 0 2em;
+}
+
+
+
+
+
+
+
+
+
+/* ############# Contenu ARTICLE "tableau_agenda" ############# */
+/* #### Mise en forme tableau_agenda #### */
+article {
+    /* déplacement marge extérieur boites */
+    margin: 0em 0 2em;
+}
+
+
+
+
+
+
+/* ############# Bas page FOOTER "formulaire_contact" ############# */
+
+
+
+
+
+
+
+
+
+
+/* ############# Contenus SECTION>FOOTER ############# */
+/* #### mise en forme titres #### */
+h2 {
+    /* déplacement marge extérieur boites */
+    margin: 0em 0 1em;
+    /* type affichage boites */
+    display: flex;
+    /* deplacement boites : en ligne vers la droite uniquement */
+    flex-flow: row nowrap;
+    /* espacement horizontal boites */
+    justify-content: center;
+    /* espacement vertical boites */
+    align-items: center;
+    /* type police */
+    font-family: 'the_darkregular';
+    /* taille police */
+    font-size: 1.3em;
+    /* type caractère */
+    text-transform: uppercase;
+    /* espacement entre lettres */
+    letter-spacing: -1px;
+    /* espacement entre mots */
+    word-spacing: 3px;
+    /* couleur police */
+    color: white;
+}
+
+/* mise en forme logo titres */
+#logo_2 {
+    /* largeur contenu */
+    max-width: 75px;
+    /* hauteur contenu */
+    height: auto;
+}
+
+/* ############# PARAMETRES TABLETTE ############# */
+@media screen and (max-width: 768px) {
+
+    /* ############# Menu NAV ############# */
+    /* #### Mise en forme barre navigation #### */
+    #menu_nav {
+        /* espacement horizontal boites */
+        justify-content: flex-start;
+    }
+
+    /* ############# Entête HEADER "carousel" ############# */
+    /* #### Mise en forme boites images carousel #### */
+    #img_carousel {
+        /* déplacement marge extérieur boites */
+        margin-left: 0%;
+        /* largeur contenu */
+        max-width: 100%;
+        /* hauteur contenu */
+        height: auto;
+    }
+
+    /* ############# Contenu SECTION "membres" ############# */
+    /* #### Mise en forme boites section #### */
+    #cartes_membres {
+        /* deplacement boites : en ligne vers la droite et vers le bas */
+        flex-flow: row wrap;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* ############# Contenus SECTION>FOOTER ############# */
+    /* #### Mise en forme titres #### */
+    .tiret_titre {
+        /* retrait tirets */
+        display: none;
+    }
+
+    .titre::before {
+        /* ajout espace blanc */
+        content: "\00A0\00A0";
+    }
+}
+
+/* ############# PARAMETRES MOBILE ############# */
+@media screen and (max-width: 425px) {
+
+    /* ############# Menu NAV ############# */
+    /* #### Mise en forme barre navigation #### */
+    #menu_nav {
+        /* espacement horizontal boites */
+        justify-content: flex-start;
+    }
+
+    /* ############# Entête HEADER "carousel" ############# */
+    /* #### Mise en forme boites images carousel #### */
+    #img_carousel {
+        /* déplacement marge extérieur boites */
+        margin-left: 0%;
+        /* largeur contenu */
+        max-width: 100%;
+        /* hauteur contenu */
+        height: auto;
+    }
+
+    /* ############# Contenu SECTION "membres" ############# */
+    /* #### Mise en forme boites section #### */
+    #cartes_membres {
+        /* deplacement boites : en ligne vers la droite et vers le bas */
+        flex-flow: row wrap;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* ############# Contenus SECTION>FOOTER ############# */
+    /* #### Mise en forme titres #### */
+    .tiret_titre {
+        /* retrait tirets */
+        display: none;
+    }
+
+    .titre::before {
+        /* ajout espace blanc */
+        content: "\00A0\00A0";
+    }
+}
