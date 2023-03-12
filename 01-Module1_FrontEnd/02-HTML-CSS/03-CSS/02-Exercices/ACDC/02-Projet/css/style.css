@@ -33,12 +33,8 @@
 /* ############# BODY ############# */
 /* #### Mise en forme page #### */
 body {
-    /* largeur contenu */
-    max-width: 100%;
-    /* hauteur contenu */
-    height: auto;
     /* couleur fond : noir/rouge alterné incliné */
-    background-image: linear-gradient(to bottom right, black 70%, red 30%);
+    background-image: linear-gradient(to bottom right, black 35%, red 35% 50%, black 50% 80%, red 80%);
 }
 
 /* ############# Menu NAV ############# */
@@ -65,7 +61,7 @@ body {
     height: auto;
 }
 
-/* Mise en forme texte menu */
+/* Mise en forme liens menu */
 a.police {
     /* type police */
     font-family: 'the_darkregular';
@@ -81,7 +77,7 @@ a.police {
     color: red;
 }
 
-/* Mise en forme liens Menu */
+/* Mise en forme texte liens Menu */
 a:hover {
     /* couleur police */
     color: white;
@@ -90,13 +86,13 @@ a:hover {
 /* ############# Entête HEADER "carousel" ############# */
 /* #### Mise en forme carousel #### */
 header {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 6.5em 10em 3em;
 }
 
 /* #### Mise en forme boites images carousel #### */
 #img_carousel {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin-left: 20%;
     /* type affichage boites */
     display: flex;
@@ -112,17 +108,17 @@ header {
 
 /* #### Mise en forme images #### */
 .img1 {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 0;
 }
 
 .img2 {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 0;
 }
 
 .img3 {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 0;
 }
 
@@ -141,7 +137,7 @@ header {
 /* ############# Contenu SECTION "membres" ############# */
 /* #### Mise en forme section #### */
 section {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 0em 0 2em;
 }
 
@@ -181,8 +177,10 @@ figure>img {
 
 /* #### Mise en forme texte boites #### */
 figcaption {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 0.5em;
+    /* alignement texte */
+    text-align: center;
     /* taille police */
     font-size: 1em;
     /* epaisseur police */
@@ -194,45 +192,148 @@ figcaption {
 /* ############# Contenu MAIN "discographie" ############# */
 /* #### Mise en forme discographie #### */
 main {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 0em 0 2em;
 }
 
+div.col>div.card {
+    /* déplacement marge extérieure boites */
+    margin-top: 1em;
+    /* ombrage cartes */
+    box-shadow: 20px 20px 20px black;
+}
 
+/* Mise en forme photos */
+div.card>img {
+    /* dimensionnement marge intérieur boites */
+    padding: 0 0.5em;
+}
 
+/* Mise en forme titres cartes */
+div.card-body>h5 {
+    /* taille police */
+    font-size: 1.2em;
+    /* couleur police */
+    color: red;
+}
 
+/* Mise en forme texte cartes */
+div.card-body>p {
+    /* déplacement marge extérieure boites */
+    margin: 0 1em 1em 0;
+    /* alignement texte */
+    text-align: left;
+    /* taille police */
+    font-size: 1em;
+    /* epaisseur police */
+    font-weight: 500;
+    /* couleur police */
+    color: black;
+}
 
+/* Mise en forme liens cartes */
+div.card-body>a {
+    /* type police */
+    font-family: 'rocknroll_typo_crazyregular';
+    /* taille police */
+    font-size: 1.5em;
+    /* epaisseur police */
+    font-weight: bolder;
+    /* couleur police */
+    color: white;
+}
 
+/* Mise en forme texte liens cartes */
+div.card-body>a:hover {
+    /* couleur police */
+    color: black;
+}
 
-
+div.card-body>a.btn.btn-primary {
+    /* déplacement marge extérieure boites */
+    margin-right: 5.5em;
+    /* couleur fond : noir/rouge alterné incliné */
+    background-color: red;
+    /* style bordure */
+    border-style: none;
+}
 
 /* ############# Contenu ARTICLE "tableau_agenda" ############# */
 /* #### Mise en forme tableau_agenda #### */
 article {
-    /* déplacement marge extérieur boites */
-    margin: 0em 0 2em;
+    /* déplacement marge extérieure boites */
+    margin: 0em 5em 2em;
 }
 
+/* #### Mise en forme tableau #### */
+table {
+    /* taille police */
+    font-size: 1em;
+    /* couleur police */
+    color: white;
+}
 
-
-
-
+/* #### Mise en forme entête tableau #### */
+thead {
+    /* epaisseur police */
+    font-weight: bolder;
+    /* couleur police */
+    color: red;
+    /* paramètres bordures */
+    border-bottom: 2px solid red;
+}
 
 /* ############# Bas page FOOTER "formulaire_contact" ############# */
+/* #### Mise en forme formulaire #### */
+#formulaire {
+    /* déplacement marge extérieure boites */
+    margin: -1em 40em 1em;
+    /* type affichage boites */
+    display: flex;
+    /* deplacement boites : en ligne vers la droite et vers le bas */
+    flex-flow: row wrap;
+    /* espacement horizontal boites */
+    justify-content: center;
+    /* espacement vertical boites */
+    align-items: center;
+}
 
+/* #### Mise en forme saisies #### */
+#nom,
+#prenom,
+#mail,
+.message {
+    /* type police */
+    font-family: 'hard_rockregular';
+    /* taille police */
+    font-size: 1.5em;
+    /* couleur police */
+    color: red;
+}
 
-
-
-
-
-
-
-
+/* #### Mise en forme boutons #### */
+#envoi,
+#annule {
+    /* déplacement marge extérieure boites */
+    margin: 0.6em 0;
+    /* couleur fond : noir/rouge alterné incliné */
+    background-color: red;
+    /* type police */
+    font-family: 'rocknroll_typo_crazyregular';
+    /* taille police */
+    font-size: 1.5em;
+    /* epaisseur police */
+    font-weight: bolder;
+    /* couleur police */
+    color: white;
+    /* style bordure */
+    border-style: none;
+}
 
 /* ############# Contenus SECTION>FOOTER ############# */
 /* #### mise en forme titres #### */
 h2 {
-    /* déplacement marge extérieur boites */
+    /* déplacement marge extérieure boites */
     margin: 0em 0 1em;
     /* type affichage boites */
     display: flex;
@@ -277,7 +378,7 @@ h2 {
     /* ############# Entête HEADER "carousel" ############# */
     /* #### Mise en forme boites images carousel #### */
     #img_carousel {
-        /* déplacement marge extérieur boites */
+        /* déplacement marge extérieure boites */
         margin-left: 0%;
         /* largeur contenu */
         max-width: 100%;
@@ -292,6 +393,7 @@ h2 {
         flex-flow: row wrap;
     }
 
+    /* ############# Contenu MAIN "discographie" ############# */
 
 
 
@@ -300,11 +402,26 @@ h2 {
 
 
 
+
+
+    /* ############# Contenu ARTICLE "tableau_agenda" ############# */
+    /* #### Mise en forme tableau_agenda #### */
+    article {
+        /* déplacement marge extérieure boites */
+        margin: 0em 2em 2em;
+    }
+
+    /* ############# Bas page FOOTER "formulaire_contact" ############# */
+    /* #### Mise en forme formulaire #### */
+    #formulaire {
+        /* déplacement marge extérieure boites */
+        margin: -1em 5em 1em;
+    }
 
     /* ############# Contenus SECTION>FOOTER ############# */
     /* #### Mise en forme titres #### */
     .tiret_titre {
-        /* retrait tirets */
+        /* retrait afichage */
         display: none;
     }
 
@@ -327,7 +444,7 @@ h2 {
     /* ############# Entête HEADER "carousel" ############# */
     /* #### Mise en forme boites images carousel #### */
     #img_carousel {
-        /* déplacement marge extérieur boites */
+        /* déplacement marge extérieure boites */
         margin-left: 0%;
         /* largeur contenu */
         max-width: 100%;
@@ -342,6 +459,7 @@ h2 {
         flex-flow: row wrap;
     }
 
+    /* ############# Contenu MAIN "discographie" ############# */
 
 
 
@@ -349,12 +467,19 @@ h2 {
 
 
 
+    /* ############# Contenu ARTICLE "tableau_agenda" ############# */
+    /* #### Mise en forme tableau_agenda #### */
+    article {
+        /* déplacement marge extérieure boites */
+        margin: 0em 2em 2em;
+    }
 
-
+    /* ############# Bas page FOOTER "formulaire_contact" ############# */
+    /* Néant */
     /* ############# Contenus SECTION>FOOTER ############# */
     /* #### Mise en forme titres #### */
     .tiret_titre {
-        /* retrait tirets */
+        /* retrait affichage */
         display: none;
     }
 
