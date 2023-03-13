@@ -190,15 +190,28 @@ figcaption {
 }
 
 /* ############# Contenu MAIN "discographie" ############# */
-/* #### Mise en forme discographie #### */
+/* #### Mise en forme MAIN discographie #### */
 main {
     /* déplacement marge extérieure boites */
     margin: 0em 0 2em;
 }
 
+/* #### Mise en forme discographie #### */
+main>div.container {
+    /* type affichage boites */
+    display: flex;
+    /* deplacement boites : en ligne vers la droite et vers le bas */
+    flex-flow: row wrap;
+    /* espacement horizontal boites */
+    justify-content: center;
+    /* espacement vertical boites */
+    align-items: center;
+}
+
+/* #### Mise en forme cartes discographie #### */
 div.col>div.card {
     /* déplacement marge extérieure boites */
-    margin-top: 1em;
+    margin: 1em 3em;
     /* ombrage cartes */
     box-shadow: 20px 20px 20px black;
 }
@@ -283,6 +296,12 @@ thead {
     border-bottom: 2px solid red;
 }
 
+/* #### Mise en forme entête tableau #### */
+#ligne1>th {
+    /* couleur fond : noir/rouge alterné incliné */
+    background-color: white;
+}
+
 /* ############# Bas page FOOTER "formulaire_contact" ############# */
 /* #### Mise en forme formulaire #### */
 #formulaire {
@@ -330,6 +349,13 @@ thead {
     border-style: none;
 }
 
+/* Mise en forme liens cartes */
+#envoi:hover,
+#annule:hover {
+    /* couleur police */
+    color: black;
+}
+
 /* ############# Contenus SECTION>FOOTER ############# */
 /* #### mise en forme titres #### */
 h2 {
@@ -368,6 +394,13 @@ h2 {
 /* ############# PARAMETRES TABLETTE ############# */
 @media screen and (max-width: 768px) {
 
+    /* ############# BODY ############# */
+    /* #### Mise en forme page #### */
+    body {
+        /* couleur fond : noir/rouge alterné incliné */
+        background-image: linear-gradient(to bottom right, black 35%, red 35% 50%, black 50% 90%, red 90%);
+    }
+
     /* ############# Menu NAV ############# */
     /* #### Mise en forme barre navigation #### */
     #menu_nav {
@@ -394,15 +427,13 @@ h2 {
     }
 
     /* ############# Contenu MAIN "discographie" ############# */
-
-
-
-
-
-
-
-
-
+    /* #### Mise en forme cartes discographie #### */
+    div.col>div.card {
+        /* déplacement marge extérieure boites */
+        margin: 1em 1.5em;
+        /* ombrage cartes */
+        box-shadow: 20px 20px 20px black;
+    }
 
     /* ############# Contenu ARTICLE "tableau_agenda" ############# */
     /* #### Mise en forme tableau_agenda #### */
@@ -434,6 +465,13 @@ h2 {
 /* ############# PARAMETRES MOBILE ############# */
 @media screen and (max-width: 425px) {
 
+    /* ############# BODY ############# */
+    /* #### Mise en forme page #### */
+    body {
+        /* couleur fond : noir/rouge alterné incliné */
+        background-image: linear-gradient(to bottom right, black 35%, red 35% 50%, black 50% 90%, red 90%);
+    }
+
     /* ############# Menu NAV ############# */
     /* #### Mise en forme barre navigation #### */
     #menu_nav {
@@ -460,12 +498,13 @@ h2 {
     }
 
     /* ############# Contenu MAIN "discographie" ############# */
-
-
-
-
-
-
+    /* #### Mise en forme cartes discographie #### */
+    div.col>div.card {
+        /* déplacement marge extérieure boites */
+        margin: 1em 3.5em;
+        /* ombrage cartes */
+        box-shadow: 20px 20px 20px black;
+    }
 
     /* ############# Contenu ARTICLE "tableau_agenda" ############# */
     /* #### Mise en forme tableau_agenda #### */
