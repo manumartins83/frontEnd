@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire_HTML</title>
+</head>
+
+<body>
+    <form action="http:\\bienvu.net/script.php" method="post">
+        <input type="text" name="nom">
+        <input type="submit" value="envoyer"><br><br>
+
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom"><br><br>
+
+        <label>Sélectionnez votre métier</label>
+        <input type="text" name="metiers1" id="metiers2" list="metiers3"><br>
+        <datalist id="metiers3">
+            <option value="webmaster">
+            <option value="développeur">
+            <option value="administrateur B.D.D.">
+        </datalist>
+    </form><br><br>
+
+    <form method="post" action="post.php" id="monform" onsubmit="resultat.value 
+    = parseInt(nombre1.value) + parseInt(nombre2.value); return false;">
+        <input type="number" name="nombre1" id="nombre1"> + <input type="number" name="nombre2" id="nombre2"> = <output
+            for="number1 number2" name="resultat" form="monform"></output><br><br>
+        <input type="submit" name="envoi" value="Calculer">
+    </form>
+
+
+</body>
+
+</html>

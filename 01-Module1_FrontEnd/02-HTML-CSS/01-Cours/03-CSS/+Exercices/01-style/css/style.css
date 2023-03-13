@@ -1,0 +1,25 @@
+body
+{
+    background-color:rgb(38, 186, 212)
+}
+p
+{
+    color:red;
+}
+.premiereliste
+{
+    color:yellow
+}
+.left
+{
+ float: left;
+ width: 31.33%;
+ background-color: #00ff00;
+ margin: 1%;
+ height: 500px;
+}
+#suivant
+{
+ background-color: yellow;
+ clear : both;
+}
