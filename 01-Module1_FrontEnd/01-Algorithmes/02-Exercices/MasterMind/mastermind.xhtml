@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8" />
+        <script type="text/javascript" src="./player_files/commons.js.téléchargement" />
+        <script type="text/javascript" src="./player_files/jsonPath.js.téléchargement" />
+        <script type="text/javascript" src="./player_files/distribEngine.js.téléchargement" />
+        <script type="text/javascript" src="./player_files/ltiMgr.js.téléchargement" />
+        <script type="text/javascript" src="./player_files/scPaLib.js.téléchargement" />
+        <script type="text/javascript" charset="UTF-8" src="./player_files/distribMgr.js.téléchargement" />
+        <script type="text/javascript" xml:space="preserve">function showArea(pArea) {
+                    var vP = pArea.previousElementSibling;
+                    while(vP) {vP.setAttribute("hidden", "true"); vP=vP.previousElementSibling}
+                    var vN = pArea.nextElementSibling;
+                    while(vN) {vN.setAttribute("hidden", "true"); vN=vN.nextElementSibling}
+                    pArea.removeAttribute("hidden");
+                }
+        
+                function getShownArea() {
+                    var vChildren = sc$("areas").children;
+                    for(var i = 0 ; i &lt; vChildren.length ; i++){
+                        if(!vChildren[i].hasAttribute("hidden")) return vChildren[i];
+                    }
+                }
+        
+            </script>
+        <link href="./player_files/skin.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body class="player" cz-shortcut-listen="true">
+        <div id="areas">
+            <div class="contentArea msgBox" id="welcome" hidden="true">
+                <div>
+                    <p>Chargement en cours...</p>
+                </div>
+            </div>
+            <div class="contentArea msgBox" hidden="true" id="reloadWarning">
+                <div>
+                    <p>Une nouvelle session a été démarrée dans un autre onglet. Cette page doit être rechargée.</p>
+                </div>
+            </div>
+            <div class="contentArea" id="contentBox"><iframe id="contentFrame" allowfullscreen="true" title="Distrib XGuidances (dev)" src="./player_files/DWWM10105_2.html" style="position: absolute; width: 100%; height: 100%;" /></div>
+            <div class="contentArea" hidden="true" id="stats">
+                <h1>Statistiques</h1>
+                <div id="statPannel" />
+            </div>
+            <div class="contentArea msgBox" hidden="true" id="error">
+                <div>
+                    <p>Le service n'est actuellement pas disponible.</p>
+                    <p>Merci de vous connecter ultérieurement.</p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" xml:space="preserve">distribEngine.setConfig({
+                distribUrl : "https://afpa-xguid.scenari.eu/~~distrib",
+                urlTreeUrl : "https://afpa-xguid.scenari.eu",
+                context : "lti"
+            });
+            
+            ltiMgr.setConfig({
+                ltiSessionUrl : distribEngine.CONFIG.distribUrl + "/run/u/ltiSession"
+            });
+            
+            //Gestion des erreurs =&gt; on ressort du contexte LTI
+            distribEngine.xSendParticipantMsgs = distribEngine.sendParticipantMsgs;
+            distribEngine.sendParticipantMsgs = function(pParticipantId, pMsgs, pPooled, pCb, pCbThis, pCbError){
+                distribEngine.xSendParticipantMsgs(pParticipantId, pMsgs, pPooled, pCb, pCbThis, pCbError||ltiMgr.cbError);
+            };
+            
+            distribEngine.setContentFrameUpdater({
+                setSrc:function(pSrc){
+                    if(pSrc) {
+                        var vContentBox = sc$("contentBox");
+                        var vFrame = sc$("contentFrame");
+                        if(getShownArea().id != "reloadWarning") showArea(vContentBox);
+        
+                        if(!vFrame) {
+                            //Création dynamique de l'iframe pour éviter l'affectation auto de la précédente url
+                            //dans firefox avant le chargement de la session dans le cas d'un refresh (F5).
+                            var vBd = dom.newBd(vContentBox);
+                            vBd.elt("iframe").att("id", "contentFrame").att("allowfullscreen", "true").att("title", "Distrib XGuidances (dev)").
+                                    style({position:"absolute", width:"100%", height:"100%"}).
+                                    listen("load",function(pEvent){this.contentWindow.postMessage({"XContentApi-init":{"mode":"short"}}, "*");});
+                            vFrame = vContentBox.querySelector("#contentFrame");
+                        }
+                        /*if(pSrc == distribEngine.CONFIG.urlTreeUrl + distribEngine.findMainDepotPath()) {
+                            sc$("btnHome").setAttribute("hidden", "true");
+                        } else {
+                            sc$("btnHome").hidden = false;
+                        }*/
+                        vFrame.src = pSrc;
+                    } else {
+                        //On force les unload...
+                        if(vFrame) vFrame.remove();
+                        if(getShownArea().id != "reloadWarning") showArea(sc$("welcome"));
+                    }
+                }
+            });
+        
+            distribEngine.findMainDepotPath = function(){
+                return jsonPath(distribEngine.getSession().projects[io.parseQueryString(window.location.search).ltiConnectionId], "$..depotPath")[0];
+            };
+        
+        
+            distribEngine.addEngineListener({
+                onEngineEvent : function(pMessage){
+                    if(pMessage.type == "newSession"){
+                        var vParams = io.parseQueryString(window.location.search);
+                        var vSession = distribEngine.getSession();
+                        if(!vSession) return;
+                        if(distribMgr &amp;&amp; !distribMgr.project) {
+                            distribMgr.buildSkeleton(vParams.ltiConnectionId);
+                        }
+                        distribMgr.findLastOpenedPage();
+                        ltiMgr.onSessionLoaded(vParams);
+                    } else if(pMessage.type == "lastOpened_recordDatas") {
+                        if(pMessage.records.length &gt; 0) {
+                            var vLastOpenedPath = pMessage.records[0].content;
+                            var vHeadReq = io.openHttpRequest(distribEngine.CONFIG.urlTreeUrl + vLastOpenedPath, "HEAD");
+                            vHeadReq.onloadend = function(pEvt){
+                                if (pEvt.target.status != 404) distribEngine.setMainDepotPath(vLastOpenedPath);
+                                else distribEngine.initContentFrameFromSession();
+                            }
+                            vHeadReq.send();
+                        }
+                        else distribEngine.initContentFrameFromSession();
+                    }
+                }
+            });
+
+            getCurParticipantsKeys = function(){
+                var participants = distribEngine.getSession().participants;
+                var curParts = [];
+                for(var key in participants){
+                    if(participants[key].projectId == ltiMgr.fLtiConnectionId) curParts.push(key);
+                }
+                return curParts;
+            }
+        
+        
+            window.addEventListener("load", function() {distribEngine.reloadSession();},false);
+        </script>
+    </body>
+</html>

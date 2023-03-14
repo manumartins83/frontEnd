@@ -1,0 +1,372 @@
+var distribEngine = window.parent.distribEngine;
+var dom = window.parent.dom;
+var distribMgr = window.parent.distribMgr;
+
+var distribEvtMgr = {
+	fParticipantId: null,
+	fActivitySeq: null,
+	fRoomCode: null,
+	fActorId: null,
+	fExtTools: null,
+	fRoomId: null,
+	fListeners: {},
+	fScoKeys: {},
+	fActivityExtTools:{},
+	fPrjToolVars:{},
+	fToolsForm: null,
+	fIsSubWindow: null
+}
+
+distribEvtMgr.init = function() {
+	if(distribEngine && distribMgr) {
+		if(!distribMgr.project) distribMgr.buildSkeleton();
+		this.fParticipantId = distribMgr.getParticipantId();
+		scOnLoads[scOnLoads.length] = this;
+		distribEngine.addEngineListener(this);
+	}
+}
+
+distribEvtMgr.isTeacher = function() {
+	return distribEngine.getSession().participants[this.fParticipantId].kind == "T";
+}
+
+distribEvtMgr.isLearner = function() {
+	return distribEngine.getSession().participants[this.fParticipantId].kind == "L";
+}
+
+distribEvtMgr.onLoad = function() {
+	try {		
+		this.fActivitySeq = scPaLib.findNode("des:.activitySeq");
+		if(this.fActivitySeq) {
+			this.fRoomCode = this.fActivitySeq.getAttribute("data-roomCode");
+			this.fExtTools = scPaLib.findNodes("des:.extTool");
+			scPaLib.findNodes("des:.resourceScScorm/chi:a").forEach(function(pScoLnk) {
+				this.fScoKeys[pScoLnk.getAttribute("data-scoKey")] = {scoLnk:pScoLnk,scoLbl:scPaLib.findNode("nsi:.resourceScScormLbl/chi:", pScoLnk).nodeValue};
+			}, this);
+			scPaLib.findNodes("des:.activity_co").forEach(function(pAct) {
+				var vExtTools = scPaLib.findNodes("des:.extTool", pAct);
+				if(vExtTools.length > 0) this.fActivityExtTools[pAct.getAttribute("id")] = {extTools:vExtTools};
+			}, this);
+		}
+		if(this.fRoomCode) {
+			this.fActorId = distribMgr.getActorId(this.fRoomCode);
+			this.fRoomId = distribMgr.getRoomId(this.fRoomCode);
+		}
+		
+		scPaLib.findNodes("des:.toolVarLnk").forEach(function(pToolVarLnk) {
+			var vToolVarLnks = this.fPrjToolVars[pToolVarLnk.getAttribute("data-toolVar")];
+			if(!vToolVarLnks) vToolVarLnks = this.fPrjToolVars[pToolVarLnk.getAttribute("data-toolVar")] = [];
+			vToolVarLnks.push(pToolVarLnk)
+		}, this);
+		
+		this.fToolsForm = scPaLib.findNode("des:.toolsForm");
+		this.fIsSubWindow = scPaLib.checkNode(".subWindow", document.body);
+		
+		/*
+		 * enregistrement de la page courante comme dernière page atteinte
+		 * conditions : ne pas être sur la page des outils (toolsForm.xhtml)
+		 */
+		if(!this.fToolsForm && !this.fIsSubWindow) {
+			this.pageAttempted();
+		}
+		
+		/*
+		 * demande des pages visitées
+		 * conditions :
+		 * - être connecté en tant qu'apprenant
+		 */
+		if(distribEvtMgr.isLearner()) {
+			/*
+			this.sendMessage({
+				type:"visit_recordsGet",
+				anchor:distribEngine.findMainDepotPath(),
+				fetchChildren:true
+			});
+			*/
+		}
+		
+		/*
+		 * affectation automatique du participant à la room
+		 * conditions :
+		 * - être connecté en tant qu'apprenant
+		 * - être sur une page de type "suite d'activités"
+		 * - être sur une suite d'activités en groupe (présence d'un code de room)
+		 * - ne pas déjà avoir un actorId pour cette room
+		 */
+		if(distribEvtMgr.isLearner() && this.fActivitySeq && this.fRoomCode && !this.fActorId) {
+			/*
+			var vOptimalSize = this.fActivitySeq.getAttribute("data-optimalSize");
+			this.sendMessage({
+				type:"autoCreateActor",
+				maxUserPerRoom:parseInt(vOptimalSize),
+				roomCode:this.fRoomCode,
+				roomKind:"G",
+				actorKind:"M"
+			});
+			*/
+		}
+		
+		/*
+		 * demande des infos sur les autres actors de la room
+		 * conditions :
+		 * - être connecté en tant qu'apprenant
+		 * - être sur une page de type "suite d'activités"
+		 * - être sur une suite d'activités en groupe (présence d'un code de room)
+		 * - avoir un actorId pour cette room
+		 */
+		if(distribEvtMgr.isLearner() && this.fActivitySeq && this.fRoomCode && this.fActorId) {
+			//this.sendMessage({type:"actorsInfoGet"}, true);
+		}
+		
+		/*
+		 * demande de tous ses abstract Scos par l'apprenant
+		 * conditions :
+		 * - être connecté en tant qu'apprenant
+		 * - être sur une page de type "suite d'activités"
+		 * - TODO : vérifier qu'on a des Scos dans la suite d'activités
+		 */
+		if(distribEvtMgr.isLearner() && this.fActivitySeq) {
+			//this.sendMessage({"type": "scosAbstractGet"});
+		}
+		
+		/*
+		 * demande des tous les abstract Scos de tous les apprenants par l'enseignant
+		 * conditions :
+		 * - être connecté en tant qu'enseignant
+		 * - être sur une page de type "suite d'activités"
+		 * - TODO vérifier qu'on a des Scos dans la suite d'activités
+		 */
+		if(distribEvtMgr.isTeacher() && this.fActivitySeq) {
+			//this.sendMessage({"type": "scosAbstractGet"});
+		}
+	
+		/*
+		 * demande des participants
+	 	 * conditions :
+		 * - être connecté en tant qu'enseignant
+		 */
+		if(distribEvtMgr.isTeacher()) {
+			//this.sendMessage({type:"participantsInfoGet"});
+		}
+		
+		/*
+		 * demande des rooms
+	 	 * conditions :
+		 * - être connecté en tant qu'enseignant
+		 * - être sur une page de type "suite d'activités"
+		 * - être sur une suite d'activités en groupe (présence d'un code de room)
+		 */
+		if(distribEvtMgr.isTeacher() && this.fActivitySeq && this.fRoomCode) {
+			//this.sendMessage({type:"getRooms"});
+		}
+		
+		/*
+		 * demande des visites
+	 	 * conditions :
+		 * - être connecté en tant qu'enseignant
+		 */
+		if(distribEvtMgr.isTeacher()) {
+			//this.sendMessage({type:"visit_recordsGet",anchor:this.utils.getAnchor()});
+		}
+		
+		/*
+		 * demande des posts de forum d'un groupe
+	 	 * conditions :
+		 * - être connecté en tant qu'apprenant
+		 * - être sur une page de type "suite d'activités"
+		 * - être sur une suite d'activités en groupe (présence d'un code de room)
+		 * - avoir un actorId pour cette room
+		 */		
+		if(distribEvtMgr.isLearner() && this.fActivitySeq && this.fRoomCode && this.fActorId) {
+			//this.sendMessage({type: "grpForum_recordsGet", anchor: this.utils.getAnchor(), fetchChildren:false}, true);
+		} else {
+			/*
+			 * demande des posts du forum public
+		 	 * conditions : aucune
+			 */
+			//this.sendMessage({type: "forum_recordsGet", anchor: this.utils.getAnchor(), fetchChildren:false});
+		}
+		
+		/*
+		 * demande des posts de forum de tous les groupes
+	 	 * conditions :
+		 * - être connecté en tant qu'enseignant
+		 * - être sur une page de type "suite d'activités"
+		 * - être sur une suite d'activités en groupe (présence d'un code de room)
+		 */		
+		if(distribEvtMgr.isTeacher() && this.fActivitySeq && this.fRoomCode) {
+			//this.sendMessage({type: "grpForum_recordsGet", anchor: this.utils.getAnchor(), fetchChildren:false});
+		}
+		
+		/*
+		 * demande des outils externes du projet
+	 	 * conditions :
+		 * - être sur une page de type "suite d'activités"
+		 * - ne pas être sur une suite d'activités en groupe
+		 * - avoir des extTools
+		 */		
+		if(this.fActivitySeq && !this.fRoomCode && Object.keys(this.fActivityExtTools).length > 0) {
+			//this.sendMessage({type: "prjExtTools_recordsGet", anchor: this.utils.getAnchor(), fetchChildren:true});
+		}
+		
+		/*
+		 * demande les variables outils du projet
+		 * conditions : aucune
+		 */	
+		this.sendMessage({type: "prjToolVars_recordsGet"});
+		
+	} catch(e) {
+		console.error(e);
+	}
+
+}
+
+distribEvtMgr.dispatchEvent = function(pEvent) {
+	var vTypesListener = this.fListeners[pEvent.type];
+	if (vTypesListener) vTypesListener.forEach(function(pListener) {
+		pListener.call(this, pEvent);
+	})
+}
+
+distribEvtMgr.addListener = function (pEventType, pListener) {
+	if (!(pEventType in this.fListeners)) this.fListeners[pEventType] = [];
+	this.fListeners[pEventType].push(pListener);
+}
+
+distribEvtMgr.pageAttempted = function() {
+	this.sendMessage({
+		type:"lastOpened_recordPut",
+		anchor:distribEngine.findMainDepotPath(),
+		content:this.utils.getAnchor()
+	});
+}
+
+/*
+ * TODO à déplacer dans learnerMgr
+ */
+distribEvtMgr.showVisitedPages = function(pVisitRecords) {
+	pVisitRecords.forEach(function(pVisitRecord) {
+		scPaLib.findNodes("des:a.mnuSel_yes|a.mnuSel_no").forEach(function(pTocEntry) {
+			var vUrl = pTocEntry.getAttribute("href");
+			var vAnchor = pVisitRecord.anchor.substr(distribEngine.findMainDepotPath().length + "/co/".length);
+			if(vAnchor == vUrl) pTocEntry.parentNode.classList.add("visited");
+		});
+	});
+}
+
+/*
+ * envoi du message en tant que participant ou qu'actor si explicitement demandé
+ */
+distribEvtMgr.sendMessage = function(pMessage, pAsActor, pPooled, pCb, pCbThis, pCbError) {
+	if(!pAsActor) distribEngine.sendParticipantMsgs(this.fParticipantId, pMessage, pPooled, pCb, pCbThis, pCbError);
+	else distribEngine.sendActorMsgs(this.fActorId, pMessage, pPooled, pCb, pCbThis, pCbError);
+}
+
+distribEvtMgr.onEngineEvent = function(pEvent) {
+	if(pEvent.type == "actorCreated") {
+		// on garde la room en cache pour éviter de faire un distribEngine.reloadSession() qui refresh la page
+		var vActors = {};
+		this.fActorId = pEvent.actorId;
+		this.fRoomId = pEvent.roomId;
+		if(distribEvtMgr.isLearner() && this.fActivitySeq && this.fRoomCode && this.fActorId) this.sendMessage({type:"actorsInfoGet"}, true);
+		vActors[pEvent.actorId] = {
+			kind: pEvent.actorKind
+		}
+		distribMgr.addRoomToSkeleton(pEvent.roomId, {
+			code: pEvent.roomCode,
+			kind: pEvent.roomKind,
+			actors: vActors
+		});
+		// on redispatch l'event pour les autres listeners
+		this.dispatchEvent(pEvent);
+	} else if(pEvent.type == "scosAbstractDatas" || pEvent.type == "grpForum_recordDatas") {
+		var vEvt = Object.assign({}, pEvent);
+		if(distribEvtMgr.isTeacher()) {
+			vEvt.type += "_teacher";
+		} else if(distribEvtMgr.isLearner()) {
+			vEvt.type += "_learner";
+		}
+		this.dispatchEvent(vEvt);
+	} else if(pEvent.type == "prjExtTools_recordDatas" || pEvent.type == "roomExtTools_recordDatas") {
+		if(pEvent.records.length == 0) {
+			Object.keys(this.fActivityExtTools).forEach(function(pActivityId, pActivityCount) {
+				var vToken;
+				if(pEvent.type == "prjExtTools_recordDatas") {
+					// on enregistre un seul token commun à tous les extTools de l'activité
+					vToken = this.utils.computeExtToolToken(pActivityId);
+					this.sendMessage({type:"prjExtTools_recordPut",parentAnchor:this.utils.getAnchor(),anchor:pActivityId,content:vToken});
+					this.fActivityExtTools[pActivityId].token = vToken;
+				} else if(pEvent.type == "roomExtTools_recordDatas" && distribEvtMgr.isLearner()) {
+					vToken = this.utils.computeExtToolToken(pActivityId, this.fRoomId);
+					this.sendMessage({type:"roomExtTools_recordPut",parentAnchor:this.utils.getAnchor(),anchor:pActivityId,content:vToken}, true);
+					// enregistrer le token relativement à la room dans this.fActivityExtTools...
+				}
+			}, this);	
+		}
+	} else if(pEvent.type == "prjToolVars_recordDatas") {
+		pEvent.records.forEach(function(pToolVar) {
+			var vToolVarLnks = this.fPrjToolVars[pToolVar.anchor];
+			if(vToolVarLnks) vToolVarLnks.forEach(function(pToolVarLnk) {
+				if(pToolVar.content) {
+					pToolVarLnk.setAttribute("href", pToolVar.content);
+				}
+			}, this);
+		}, this);
+		if(distribEvtMgr.isTeacher() && this.fToolsForm) {
+			// redispatch de l'event pour l'enregistrement des outils par l'enseignant
+			var vEvt = Object.assign({}, pEvent);
+			vEvt.type += "_teacher";
+			this.dispatchEvent(vEvt);
+		}
+	} else {
+		// par défaut, on transmet aux listeners
+		this.dispatchEvent(pEvent);
+	}
+}
+
+distribEvtMgr.utils = {};
+
+distribEvtMgr.utils.getAnchor = function() {
+	var vIndex = decodeURI(window.location.pathname).lastIndexOf(distribEngine.findMainDepotPath());
+	return decodeURI(window.location.pathname).substr(vIndex);
+}
+
+distribEvtMgr.utils.getFullName = function(pPerson) {
+	return pPerson.firstname + " " + (pPerson.name || pPerson.lastname);
+}
+
+distribEvtMgr.utils.completeExtTool = function(pExtTool, pActId, pRoomId) {
+	/*
+	 * attention, pour etherpad le token doit être inférieur à 50 caractères d'après https://github.com/ether/etherpad-lite/blob/7ecf240d9e46ac41259100bf83242ca7b8fc205b/src/node/db/PadManager.js
+	 * TODO remplacer l'iri du projet par un hash (simple...) du nom de domaine
+	 * TODO voir si on peut hasher le code de l'activité sur moins de caractères
+	 * TODO réintégrer le type de pad dans le token si possible
+	 */
+	var vExtToolUrlBase = pExtTool.getAttribute("data-urlBase");
+	var vExtToolLnk = scPaLib.findNode("des:a.extToolLnk", pExtTool);
+	
+	var vToken = distribEvtMgr.utils.computeExtToolToken(pActId, pRoomId);
+	vExtToolLnk.setAttribute("href", vExtToolUrlBase + "/" + vToken);
+}
+
+distribEvtMgr.utils.computeExtToolToken = function(pActId, pRoomId) {
+	// on n'ajoute pas l'id de la room en dernier sinon le hash peut être trop simple pour qu'un groupe puisse deviner le pad d'un autre...
+	var vHash = [pRoomId || "", pActId].join("").hashCode();
+	var vToken = [btoa(location.hostname), distribMgr.project.id, vHash].join("_");
+	var vValidEtherpadToken = /^(g.[a-zA-Z0-9]{16}\$)?[^$]{1,50}$/.test(vToken);
+	if(!vValidEtherpadToken) console.error(vToken + " is not a valid token for Etherpad!");
+	return vToken;
+}
+
+String.prototype.hashCode = function(){
+  var str = this;
+  /*
+   * djb2 implementation found on http://www.erlycoder.com/49/javascript-hash-functions-to-convert-string-into-integer-hash-
+   */
+  var hash = 5381;
+    for (i = 0; i < str.length; i++) {
+        char = str.charCodeAt(i);
+        hash = ((hash << 5) + hash) + char; /* hash * 33 + c */
+    }
+    return hash.toString();
+}

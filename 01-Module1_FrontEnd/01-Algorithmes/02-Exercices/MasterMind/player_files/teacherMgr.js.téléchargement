@@ -1,0 +1,359 @@
+var teacherMgr = {
+	fPart:null,
+	fCohort:null,
+	fCohortCo:null
+}
+
+var vParticipants, vLearnerIds = [], vRooms, vGroupIds = [], vLearnerVisits = {}, vLearnerMsgCount = {}, vLearnerScores = {}, vGrpForumRecords = {};
+var vLearnerTableOutput, vGroupTableOutput;
+
+teacherMgr.init = function() {
+	if(distribEngine && distribEvtMgr) {
+		if(distribEvtMgr.isTeacher()) scOnLoads[scOnLoads.length] = this;
+	}
+}
+
+teacherMgr.onLoad = function() {
+	try {
+		//if(!distribEvtMgr.fActivitySeq) return;
+		
+		//this.fPart = scPaLib.findNode("anc:.part", distribEvtMgr.fActivitySeq);
+		this.fPart = scPaLib.findNode("des:.part");
+		this.fCohort = scPaLib.findNode("des:.cohort");
+		this.fCohortCo = scPaLib.findNode("des:.cohort_co");
+
+		if(this.fPart) sc$("root").classList.remove("hideTrainerNotes");
+				
+		//this.addSwitchBtn();
+		
+		if(distribEvtMgr.fToolsForm) {
+			this.completeToolsFormUi();
+		} else {
+			this.addToolsBtn();
+		}
+		
+		distribEvtMgr.addListener("paticipantsInfo", teacherMgr.handleParticipantsInfo);
+		distribEvtMgr.addListener("visit_recordDatas", teacherMgr.handleVisitRecordDatas);
+		distribEvtMgr.addListener("scosAbstractDatas_teacher", teacherMgr.handleScosAbstractDatas);
+		distribEvtMgr.addListener("prjToolVars_recordDatas_teacher", teacherMgr.handlePrjToolVarsDatas);
+
+		if(distribEvtMgr.fRoomCode) {
+			distribEvtMgr.addListener("roomsInfo", teacherMgr.handleRoomsInfo);
+			distribEvtMgr.addListener("grpForum_recordDatas_teacher", teacherMgr.handleGrpRecordDatas);
+	        distribEvtMgr.addListener('forum_recordDatas', teacherMgr.handleForumRecordDatas);
+			var vVisavis = scDynUiMgr.addElement("div", this.fCohortCo, "visavis");
+			var vVisavisFirst = scDynUiMgr.addElement("div", vVisavis, "first", null, {width:"50%"});
+			var vVisavisNext = scDynUiMgr.addElement("div", vVisavis, "next", null, {width:"50%"});
+			vLearnerTableOutput = vVisavisFirst;
+			vGroupTableOutput = vVisavisNext;
+		} else {
+			vLearnerTableOutput = this.fCohortCo;
+		}
+	} catch(e) {
+		console.error(e);
+	}
+}
+
+teacherMgr.handleParticipantsInfo = function(pEvent) {
+	vParticipants = pEvent.participants;
+	for(var vParticipantId in vParticipants) {
+		var vParticipant = vParticipants[vParticipantId];
+		if(vParticipant.kind == "L") vLearnerIds.push(vParticipantId);
+	}
+	var vBd = new dom.DomBuilder(document);
+	vBd.outTree();
+	vBd.elt('table', 'learners');
+	vBd.elt('tr');
+		vBd.elt('th').text("Stagiaire").up();
+		vBd.elt('th').text("Visites").up();
+		vBd.elt('th').text("Messages").up();
+		Object.keys(distribEvtMgr.fScoKeys).forEach(function(pScoKey) {
+			vBd.elt('th').text(distribEvtMgr.fScoKeys[pScoKey].scoLbl).up();
+		}, this);
+	vBd.up();
+	vLearnerIds.forEach(function(pLearnerId) {
+		var vLearner = vParticipants[pLearnerId];
+		vBd.elt('tr');
+			vBd.elt('td').text(distribEvtMgr.utils.getFullName(vLearner)).up();
+			if(vLearnerVisits[pLearnerId]) {
+				vBd.fNode.appendChild(vLearnerVisits[pLearnerId]);
+			} else {
+				vLearnerVisits[pLearnerId] = vBd.elt('td').fNode;
+				vBd.up();
+			}
+			if(vLearnerMsgCount[pLearnerId]) {
+				vBd.fNode.appendChild(vLearnerMsgCount[pLearnerId]);
+			} else {
+				vLearnerMsgCount[pLearnerId] = vBd.elt('td').fNode;
+				vBd.up();
+			}
+			Object.keys(distribEvtMgr.fScoKeys).forEach(function(pScoKey) {				
+				if(!vLearnerScores[pLearnerId]) vLearnerScores[pLearnerId] = {};
+				if(vLearnerScores[pLearnerId][pScoKey]) {
+					vBd.fNode.appendChild(vLearnerScores[pLearnerId][pScoKey]);
+				} else {
+					vLearnerScores[pLearnerId][pScoKey] = vBd.elt('td').fNode;
+					vBd.up();
+				}
+			}, this);
+		vBd.up();
+	}, this);
+	vLearnerTableOutput.appendChild(vBd.currentUp());
+}
+
+teacherMgr.handleVisitRecordDatas = function(pEvent) {
+	pEvent.records.forEach(function(pVisit) {
+		var vVisitCell = vLearnerVisits[pVisit.holderId];
+		if(vVisitCell) {
+			vVisitCell.innerText = pVisit.content;
+		} else {
+			var vBd = new dom.DomBuilder(document);
+			vBd.outTree();
+			vBd.elt('td').text(pVisit.content);
+			vLearnerVisits[pVisit.holderId] = vBd.currentUp();
+		}
+	}, this);
+}
+
+teacherMgr.handleScosAbstractDatas = function(pEvent) {
+	if(!vLearnerScores[pEvent.participantId]) vLearnerScores[pEvent.participantId] = {};
+	pEvent.scos.forEach(function(pSco) {
+		var vScoreLabel = pSco.scoreScaled ? pSco.scoreScaled*100 + "%" : "En cours";
+		var vScoreCell = vLearnerScores[pEvent.participantId][pSco.scoKey];
+		if(vScoreCell) {
+			vScoreCell.innerText = vScoreLabel;
+		} else {
+			var vBd = new dom.DomBuilder(document);
+			vBd.outTree();
+			vBd.elt('td').text(vScoreLabel);
+			vLearnerScores[pEvent.participantId][pSco.scoKey] = vBd.currentUp();
+		}
+	}, this);
+}
+
+teacherMgr.handleRoomsInfo = function(pEvent) {
+	vRooms = pEvent.rooms;
+	for(var vRoomId in vRooms) {
+		var vRoom = vRooms[vRoomId];
+		if(vRoom.code == distribEvtMgr.fRoomCode) vGroupIds.push(vRoomId);
+	}
+	var vBd = new dom.DomBuilder(document);
+	vBd.outTree();
+	vBd.elt('table', 'groups');
+	vBd.elt('tr');
+		vBd.elt('th').text("Groupe").up();
+		vBd.elt('th').text("Membres").up();
+		vBd.elt('th').text("Outils externes").up();
+		vBd.elt('th').text("Forum").up();
+	vBd.up();
+	vGroupIds.forEach(function(pGroupId) {
+		var vGroup = vRooms[pGroupId];
+		vBd.elt('tr');
+			vBd.elt('td').text("Groupe " + pGroupId).up();
+			vBd.elt('td');
+			for(var vActorId in vGroup.actors) {
+				var vActor = vGroup.actors[vActorId];
+				vBd.elt('div').text(distribEvtMgr.utils.getFullName(vActor)).up();
+			}
+			vBd.up();
+			vBd.elt('td');
+			Object.keys(distribEvtMgr.fActivityExtTools).forEach(function(pActivityId, pActivityCount) {
+				distribEvtMgr.fActivityExtTools[pActivityId].extTools.forEach(function(pExtTool) {
+					vBd.elt('div');
+					var vExtToolClone = pExtTool.cloneNode("true");
+					distribEvtMgr.utils.completeExtTool(vExtToolClone, pActivityId, pGroupId);
+					var vLnk = scPaLib.findNode("chi:a", vExtToolClone);
+					vLnk.innerText = scPaLib.checkNode(".pad",vExtToolClone) ? "Pad":"Mémo";
+					vLnk.innerText += " activité " + parseInt(pActivityCount+1);
+					vBd.fNode.appendChild(vLnk);
+					vBd.up();
+				}, this)
+			}, this);
+			vBd.up();
+			vBd.elt('td')
+				.elt('a').text('Afficher').att('href', '#').listen('click', function(e) {
+					forumMgr.reset();
+					var vRecords = vGrpForumRecords[pGroupId];
+					if(vRecords) distribEvtMgr.dispatchEvent({type:"grpForum_recordDatas_learner", records:vRecords});
+					//distribEvtMgr.sendMessage({"type":"grpForum_recordsGet", "anchor":distribEvtMgr.utils.getAnchor(), "roomId":pGroupId, "readPolicies":["toRoom"]});
+					e.preventDefault();
+				}).up()
+			.up();
+		vBd.up();
+	}, this);
+	vGroupTableOutput.appendChild(vBd.currentUp());
+}
+
+teacherMgr.handleGrpRecordDatas = function(pEvent) {
+	pEvent.records.forEach(function(pRecord) {
+		if(!vGrpForumRecords[pRecord.roomId]) vGrpForumRecords[pRecord.roomId] = [];
+		vGrpForumRecords[pRecord.roomId].push(pRecord);
+	}, this);
+}
+
+teacherMgr.handleForumRecordDatas = function(pEvent) {
+	var vCount = {};
+	pEvent.records.forEach(function(pMsg) {
+		if(!vCount[pMsg.holderId]) {
+			vCount[pMsg.holderId] = 1;
+		} else {
+			vCount[pMsg.holderId]++;
+		}
+	}, this);
+	Object.keys(vCount).forEach(function(pHolderId) {
+		var vVisitCell = vLearnerMsgCount[pHolderId];
+		if(vVisitCell) {
+			vVisitCell.innerText = vCount[pHolderId];
+		} else {
+			var vBd = new dom.DomBuilder(document);
+			vBd.outTree();
+			vBd.elt('td').text(vCount[pHolderId]);
+			vLearnerMsgCount[pHolderId] = vBd.currentUp();
+		}
+	}, this)
+}
+
+teacherMgr.handlePrjToolVarsDatas = function(pEvent) {
+	// affichage des outils déjà enregistrés
+	pEvent.records.forEach(function(pToolVar) {
+		var vToolVarLnks = distribEvtMgr.fPrjToolVars[pToolVar.anchor];
+		if(vToolVarLnks) vToolVarLnks.forEach(function(pToolVarLnk) {
+			var vInput = scPaLib.findNode("psi:input", pToolVarLnk);
+			if(vInput) {
+				vInput.value = pToolVar.content;
+				vInput.recordId = pToolVar.recordId;
+				pToolVarLnk.style.display = "inline-block";
+			}
+		}, this);
+	}, this);
+}
+
+teacherMgr.completeToolsFormUi = function() {
+	var vChangedInputs = [];
+	var vValidBtn;
+	
+	// boutons d'enregistrement et de retour
+	var vBd = new dom.DomBuilder(document);
+	vBd.outTree();
+	vBd.elt('div', 'btns');
+	vBd.elt('button', 'validBtn').text('Enregistrer').listen('click', function(e) {
+		var vMessages = [];
+		vChangedInputs.forEach(function(pInput) {
+			var vToolVarLnk = scPaLib.findNode("nsi:a.toolVarLnk", pInput);
+			if(vToolVarLnk) {
+				var vAnchor = vToolVarLnk.getAttribute("data-toolVar");
+				if(vAnchor) {
+					var vMessage = {type:"prjToolVars_recordPut",parentAnchor:distribEngine.findMainDepotPath(),anchor:vAnchor,content:pInput.value};
+					if(pInput.recordId) vMessage.recordId = pInput.recordId;
+					vMessages.push(vMessage);
+				}
+			}
+		}, this);
+		distribEvtMgr.sendMessage(vMessages, false, false, function(e) {
+			var vRespJson = JSON.parse(e.target.responseText);
+			if(Object.prototype.toString.call(vRespJson) === '[object Array]') {
+				var vAreAllRecordPutDoneMsgs = vRespJson.every(function(pMessage) {
+					return pMessage.type == "prjToolVars_recordPutDone";
+				});
+				if(vRespJson.length = vChangedInputs.length && vAreAllRecordPutDoneMsgs) teacherMgr.leaveToolsForm();
+				else teacherMgr.onToolsFormError();
+			}
+		}, this, teacherMgr.onToolsFormError);
+	});
+	vValidBtn = vBd.fNode;
+	vBd.up();
+	vValidBtn.disabled = true; 
+	vBd.elt('button', 'quitBtn').text('Quitter').listen('click', teacherMgr.leaveToolsForm).up();
+	distribEvtMgr.fToolsForm.appendChild(vBd.currentUp());
+	
+	// préparation
+	scPaLib.findNodes("des:a.toolVarLnk", distribEvtMgr.fToolsForm).forEach(function(pToolVarLnk) {
+		var vInput = document.createElement("input");
+		vInput.setAttribute("type", "url");
+		vInput.setAttribute("placeholder", "Adresse ou nom de l'outil...");
+		pToolVarLnk.parentNode.insertBefore(vInput, pToolVarLnk);
+		vInput.onchange = function(e) {
+			//var vInput = e.target;
+			if(vChangedInputs.indexOf(vInput) == -1) vChangedInputs.push(vInput);
+			if(vValidBtn.disabled) vValidBtn.disabled = false;
+		}
+		vInput.onkeyup = function(e) {
+			var vToolPropose = scPaLib.findNode("nsi:div.toolPropose", this);
+			teacherMgr.proposeTool(this, vToolPropose);
+		};
+		scDynUiMgr.addElement("div", pToolVarLnk.parentNode,"toolPropose toolPropose_hide");
+	}, this);
+}
+
+teacherMgr.proposeTool = function(vInput, vToolPropose) {
+	try{
+		var vStr = vInput.value;
+		var vSrc = window.parent.ltiMgr ? window.parent.ltiMgr.fMetisTools : [{"title": "Forum Mail de remerciement", "to": "https://int3-metis.afpa.fr/mod/forum/view.php?id=1916707"},{"title": "Forum Analyse des résultats", "to": "https://int3-metis.afpa.fr/mod/forum/view.php?id=1916707"},{"title": "Production Mes objectifs", "to": "https://int3-metis.afpa.fr/mod/assign/view.php?id=1916708"}]
+		var vWds = vSrc.filter(function(pWrd) {
+			return pWrd.title.toLowerCase().startsWith(vStr.toLowerCase());
+		});
+		var vShowProp = vWds && vWds.length>0;
+		if(vShowProp) {
+			vToolPropose.classList.remove("toolPropose_hide");
+			vToolPropose.fShown = true;
+			vToolPropose.innerHTML = "";
+			if (vWds && vWds.length>0){
+				for(var i = 0;i<vWds.length;i++){
+					var vBd = new dom.DomBuilder(document);
+					vBd.outTree();
+					var vToolBtnPropose = vBd.elt('a', 'toolBtnPropose').att('href', '#').listen('click', function(e) {
+						vInput.value = this.fUrl;
+						vToolPropose.classList.add("toolPropose_hide");
+					}).elt('span').text(vWds[i].title).up().currentUp();
+					vToolBtnPropose.fUrl = vWds[i].to;
+					vToolPropose.appendChild(vToolBtnPropose);
+				}
+			}
+		} else {
+			vToolPropose.classList.add("toolPropose_hide");
+			vToolPropose.fShown = false;
+		}
+	}catch(e){scCoLib.log("ERROR - teacherMgr.proposeTool : "+e)}
+}
+
+teacherMgr.leaveToolsForm = function() {
+	if(window.parent.location.pathname.lastIndexOf("/init.xhtml") != -1) window.parent.ltiMgr.endLtiSession();
+	else distribEngine.setMainDepotPath(distribEngine.findMainDepotPath());
+}
+
+teacherMgr.onToolsFormError = function(pError) {
+	window.alert("Echec lors de l'enregistrement de tout ou partie des outils. Merci de tenter ultérieurement ou de contacter votre administrateur.");
+}
+
+teacherMgr.addToolsBtn = function() {
+	var vBd = new dom.DomBuilder(document);
+	vBd.outTree();
+	vBd.elt('a', 'btnInHeader btnTools').att('href', './toolsForm.xhtml').att('title', 'Outils').elt('span').text('Outils').up();
+	scPaLib.findNode("des:header/chi:div.inline").insertBefore(vBd.currentUp(), sc$("tplBtnNav"));
+}
+
+teacherMgr.switchView = function(pView1, pView2) {
+	if(window.getComputedStyle) {
+		[pView1, pView2].forEach(function(pView) {
+			var vDisplayValue = window.getComputedStyle(pView).getPropertyValue("display");
+			pView.style.display = (vDisplayValue == "none") ? "block" : "none";
+		});
+	}
+}
+
+teacherMgr.addSwitchBtn = function() {
+	var vBd = new dom.DomBuilder(document);
+	vBd.outTree();
+	vBd.elt('a', 'btnInHeader btnCohort').att('href', '#').att('title', 'Cohorte').listen('click', function(e) {
+		if(scPaLib.checkNode(".active", this)) {
+			this.classList.remove("active");
+			this.setAttribute("title", "Cohorte");
+		} else {
+			this.classList.add("active");
+			this.setAttribute("title", "Retour");
+		}
+		teacherMgr.switchView(teacherMgr.fPart, teacherMgr.fCohort);
+		e.preventDefault();
+	}).elt('span').text('Cohorte').up();
+	scPaLib.findNode("des:header").insertBefore(vBd.currentUp(), scPaLib.findNode("des:header/chi:a.btnLibrary"));
+}

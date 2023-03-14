@@ -1,5 +1,5 @@
 /* ############# PARAMETRES GENERAUX ############# */
-/* #### Types police #### */
+/* #### Styles police #### */
 @font-face {
     font-family: 'hard_rockregular';
     src: url('../fonts/HARD_ROCK/hard_rock-webfont.woff2') format('woff2'),
@@ -30,20 +30,32 @@
     box-sizing: border-box;
 }
 
-/* ############# BODY ############# */
-/* #### Mise en forme page #### */
-body {
+/* ############# BODY (index) ############# */
+/* #### Mise en forme page (index) #### */
+body#index {
     /* couleur fond : noir/rouge alterné incliné */
-    background-image: linear-gradient(to bottom right, black 35%, red 35% 50%, black 50% 80%, red 80%);
+    background-image: linear-gradient(to bottom right, white 15%, blue 35%, rgb(0, 0, 112) 55%, black 100%);
 }
 
-/* ############# Menu NAV ############# */
+
+
+
+
+/* ############# Entête HEADER (index) ############# */
+
+
+
+
+
+
 /* #### Mise en forme barre navigation #### */
-#menu_fixe {
+header#header_fixe {
     /* largeur contenu */
     max-width: 70%;
     /* hauteur contenu */
     height: auto;
+
+    
     /* positionnement boite */
     position: fixed;
     /* position boite */
@@ -53,477 +65,24 @@ body {
     z-index: 2;
 }
 
-/* Mise en forme logo menu */
+/* #### Mise en forme logos "thème" (index) #### */
 #logo {
     /* largeur contenu */
-    max-width: 95px;
+    max-width: 150px;
     /* hauteur contenu */
     height: auto;
 }
 
-/* Mise en forme liens menu */
-a.police {
-    /* type police */
-    font-family: 'the_darkregular';
-    /* taille police */
-    font-size: 1.5em;
-    /* type caractère */
-    text-transform: uppercase;
-    /* espacement entre lettres */
-    letter-spacing: -1px;
-    /* espacement entre mots */
-    word-spacing: 3px;
-    /* couleur police */
-    color: red;
-}
-
-/* Mise en forme texte liens Menu */
-a:hover {
-    /* couleur police */
-    color: white;
-}
-
-/* ############# Entête HEADER "carousel" ############# */
-/* #### Mise en forme carousel #### */
-header {
-    /* déplacement marge extérieure boites */
-    margin: 6.5em 10em 3em;
-}
-
-/* #### Mise en forme boites images carousel #### */
-#img_carousel {
-    /* déplacement marge extérieure boites */
-    margin-left: 20%;
-    /* type affichage boites */
-    display: flex;
-    /* deplacement boites : en ligne vers la droite uniquement */
-    flex-flow: row nowrap;
-    /* largeur contenu */
-    max-width: 60%;
-    /* hauteur contenu */
-    height: auto;
-    /* bordures arrondi */
-    border-radius: 10px;
-}
-
-/* #### Mise en forme images #### */
-.img1 {
-    /* déplacement marge extérieure boites */
-    margin: 0;
-}
-
-.img2 {
-    /* déplacement marge extérieure boites */
-    margin: 0;
-}
-
-.img3 {
-    /* déplacement marge extérieure boites */
-    margin: 0;
-}
-
-/* #### Mise en forme flèche défilement gauche #### */
-#flecheG {
-    /* espacement horizontal boites */
-    justify-content: flex-start;
-}
-
-/* #### Mise en forme flèche défilement droite #### */
-#flecheD {
-    /* espacement horizontal boites */
-    justify-content: flex-end;
-}
-
-/* ############# Contenu SECTION "membres" ############# */
-/* #### Mise en forme section #### */
-section {
-    /* déplacement marge extérieure boites */
-    margin: 0em 0 2em;
-}
-
-/* #### Mise en forme boites section #### */
-#cartes_membres {
-    /* type affichage boites */
-    display: flex;
-    /* deplacement boites : en ligne vers la droite uniquement */
-    flex-flow: row nowrap;
-    /* espacement horizontal boites */
-    justify-content: center;
-    /* espacement vertical boites */
-    align-items: flex-end;
-}
-
-/* #### Mise en forme boites photos #### */
-#cartes_membres>div {
-    /* dimensionnement marge intérieur boites */
-    padding: 0em 0.2em;
-}
-
-/* #### Mise en forme photos #### */
-figure>img {
-    /* largeur contenu */
-    max-width: 292px;
-    /* hauteur contenu */
-    height: 331px;
-    /* style bordure */
-    border-style: solid;
-    /* epaisseur bordures */
-    border-width: 0.3em;
-    /* bordures arrondi */
-    border-radius: 5px;
-    /* couleur bordures */
-    color: white;
-}
-
-/* #### Mise en forme texte boites #### */
-figcaption {
-    /* déplacement marge extérieure boites */
-    margin: 0.5em;
-    /* alignement texte */
-    text-align: center;
-    /* taille police */
-    font-size: 1em;
-    /* epaisseur police */
-    font-weight: bolder;
-    /* couleur police */
-    color: white;
-}
-
-/* ############# Contenu MAIN "discographie" ############# */
-/* #### Mise en forme MAIN discographie #### */
-main {
-    /* déplacement marge extérieure boites */
-    margin: 0em 0 2em;
-}
-
-/* #### Mise en forme discographie #### */
-main>div.container {
-    /* type affichage boites */
-    display: flex;
-    /* deplacement boites : en ligne vers la droite et vers le bas */
-    flex-flow: row wrap;
-    /* espacement horizontal boites */
-    justify-content: center;
-    /* espacement vertical boites */
-    align-items: center;
-}
-
-/* #### Mise en forme cartes discographie #### */
-div.col>div.card {
-    /* déplacement marge extérieure boites */
-    margin: 1em 3em;
-    /* ombrage cartes */
-    box-shadow: 20px 20px 20px black;
-}
-
-/* Mise en forme photos */
-div.card>img {
-    /* dimensionnement marge intérieur boites */
-    padding: 0 0.5em;
-}
-
-/* Mise en forme titres cartes */
-div.card-body>h5 {
-    /* taille police */
-    font-size: 1.2em;
-    /* couleur police */
-    color: red;
-}
-
-/* Mise en forme texte cartes */
-div.card-body>p {
-    /* déplacement marge extérieure boites */
-    margin: 0 1em 1em 0;
-    /* alignement texte */
-    text-align: left;
-    /* taille police */
-    font-size: 1em;
-    /* epaisseur police */
-    font-weight: 500;
-    /* couleur police */
-    color: black;
-}
-
-/* Mise en forme liens cartes */
-div.card-body>a {
-    /* type police */
-    font-family: 'rocknroll_typo_crazyregular';
-    /* taille police */
-    font-size: 1.5em;
-    /* epaisseur police */
-    font-weight: bolder;
-    /* couleur police */
-    color: white;
-}
-
-/* Mise en forme texte liens cartes */
-div.card-body>a:hover {
-    /* couleur police */
-    color: black;
-}
-
-div.card-body>a.btn.btn-primary {
-    /* déplacement marge extérieure boites */
-    margin-right: 5.5em;
-    /* couleur fond : noir/rouge alterné incliné */
-    background-color: red;
-    /* style bordure */
-    border-style: none;
-}
-
-/* ############# Contenu ARTICLE "tableau_agenda" ############# */
-/* #### Mise en forme tableau_agenda #### */
-article {
-    /* déplacement marge extérieure boites */
-    margin: 0em 5em 2em;
-}
-
-/* #### Mise en forme tableau #### */
-table {
-    /* taille police */
-    font-size: 1em;
-    /* couleur police */
-    color: white;
-}
-
-/* #### Mise en forme entête tableau #### */
-thead {
-    /* epaisseur police */
-    font-weight: bolder;
-    /* couleur police */
-    color: red;
-    /* paramètres bordures */
-    border-bottom: 2px solid red;
-}
-
-/* #### Mise en forme entête tableau #### */
-#ligne1>th {
-    /* couleur fond : noir/rouge alterné incliné */
-    background-color: white;
-}
-
-/* ############# Bas page FOOTER "formulaire_contact" ############# */
-/* #### Mise en forme formulaire #### */
-#formulaire {
-    /* déplacement marge extérieure boites */
-    margin: -1em 40em 1em;
-    /* type affichage boites */
-    display: flex;
-    /* deplacement boites : en ligne vers la droite et vers le bas */
-    flex-flow: row wrap;
-    /* espacement horizontal boites */
-    justify-content: center;
-    /* espacement vertical boites */
-    align-items: center;
-}
-
-/* #### Mise en forme saisies #### */
-#nom,
-#prenom,
-#mail,
-.message {
-    /* type police */
-    font-family: 'hard_rockregular';
-    /* taille police */
-    font-size: 1.5em;
-    /* couleur police */
-    color: red;
-}
-
-/* #### Mise en forme boutons #### */
-#envoi,
-#annule {
-    /* déplacement marge extérieure boites */
-    margin: 0.6em 0;
-    /* couleur fond : noir/rouge alterné incliné */
-    background-color: red;
-    /* type police */
-    font-family: 'rocknroll_typo_crazyregular';
-    /* taille police */
-    font-size: 1.5em;
-    /* epaisseur police */
-    font-weight: bolder;
-    /* couleur police */
-    color: white;
-    /* style bordure */
-    border-style: none;
-}
-
-/* Mise en forme liens cartes */
-#envoi:hover,
-#annule:hover {
-    /* couleur police */
-    color: black;
-}
-
-/* ############# Contenus SECTION>FOOTER ############# */
-/* #### mise en forme titres #### */
-h2 {
-    /* déplacement marge extérieure boites */
-    margin: 0em 0 1em;
-    /* type affichage boites */
-    display: flex;
-    /* deplacement boites : en ligne vers la droite uniquement */
-    flex-flow: row nowrap;
-    /* espacement horizontal boites */
-    justify-content: center;
-    /* espacement vertical boites */
-    align-items: center;
-    /* type police */
-    font-family: 'the_darkregular';
-    /* taille police */
-    font-size: 1.3em;
-    /* type caractère */
-    text-transform: uppercase;
-    /* espacement entre lettres */
-    letter-spacing: -1px;
-    /* espacement entre mots */
-    word-spacing: 3px;
-    /* couleur police */
-    color: white;
-}
-
-/* mise en forme logo titres */
 #logo_2 {
     /* largeur contenu */
-    max-width: 75px;
+    max-width: 80px;
     /* hauteur contenu */
     height: auto;
-}
-
-/* ############# PARAMETRES TABLETTE ############# */
-@media screen and (max-width: 768px) {
-
-    /* ############# BODY ############# */
-    /* #### Mise en forme page #### */
-    body {
-        /* couleur fond : noir/rouge alterné incliné */
-        background-image: linear-gradient(to bottom right, black 35%, red 35% 50%, black 50% 90%, red 90%);
-    }
-
-    /* ############# Menu NAV ############# */
-    /* #### Mise en forme barre navigation #### */
-    #menu_nav {
-        /* espacement horizontal boites */
-        justify-content: flex-start;
-    }
-
-    /* ############# Entête HEADER "carousel" ############# */
-    /* #### Mise en forme boites images carousel #### */
-    #img_carousel {
-        /* déplacement marge extérieure boites */
-        margin-left: 0%;
-        /* largeur contenu */
-        max-width: 100%;
-        /* hauteur contenu */
-        height: auto;
-    }
-
-    /* ############# Contenu SECTION "membres" ############# */
-    /* #### Mise en forme boites section #### */
-    #cartes_membres {
-        /* deplacement boites : en ligne vers la droite et vers le bas */
-        flex-flow: row wrap;
-    }
-
-    /* ############# Contenu MAIN "discographie" ############# */
-    /* #### Mise en forme cartes discographie #### */
-    div.col>div.card {
-        /* déplacement marge extérieure boites */
-        margin: 1em 1.5em;
-        /* ombrage cartes */
-        box-shadow: 20px 20px 20px black;
-    }
-
-    /* ############# Contenu ARTICLE "tableau_agenda" ############# */
-    /* #### Mise en forme tableau_agenda #### */
-    article {
-        /* déplacement marge extérieure boites */
-        margin: 0em 2em 2em;
-    }
-
-    /* ############# Bas page FOOTER "formulaire_contact" ############# */
-    /* #### Mise en forme formulaire #### */
-    #formulaire {
-        /* déplacement marge extérieure boites */
-        margin: -1em 5em 1em;
-    }
-
-    /* ############# Contenus SECTION>FOOTER ############# */
-    /* #### Mise en forme titres #### */
-    .tiret_titre {
-        /* retrait afichage */
-        display: none;
-    }
-
-    .titre::before {
-        /* ajout espace blanc */
-        content: "\00A0\00A0";
-    }
-}
-
-/* ############# PARAMETRES MOBILE ############# */
-@media screen and (max-width: 425px) {
-
-    /* ############# BODY ############# */
-    /* #### Mise en forme page #### */
-    body {
-        /* couleur fond : noir/rouge alterné incliné */
-        background-image: linear-gradient(to bottom right, black 35%, red 35% 50%, black 50% 90%, red 90%);
-    }
-
-    /* ############# Menu NAV ############# */
-    /* #### Mise en forme barre navigation #### */
-    #menu_nav {
-        /* espacement horizontal boites */
-        justify-content: flex-start;
-    }
-
-    /* ############# Entête HEADER "carousel" ############# */
-    /* #### Mise en forme boites images carousel #### */
-    #img_carousel {
-        /* déplacement marge extérieure boites */
-        margin-left: 0%;
-        /* largeur contenu */
-        max-width: 100%;
-        /* hauteur contenu */
-        height: auto;
-    }
-
-    /* ############# Contenu SECTION "membres" ############# */
-    /* #### Mise en forme boites section #### */
-    #cartes_membres {
-        /* deplacement boites : en ligne vers la droite et vers le bas */
-        flex-flow: row wrap;
-    }
-
-    /* ############# Contenu MAIN "discographie" ############# */
-    /* #### Mise en forme cartes discographie #### */
-    div.col>div.card {
-        /* déplacement marge extérieure boites */
-        margin: 1em 3.5em;
-        /* ombrage cartes */
-        box-shadow: 20px 20px 20px black;
-    }
-
-    /* ############# Contenu ARTICLE "tableau_agenda" ############# */
-    /* #### Mise en forme tableau_agenda #### */
-    article {
-        /* déplacement marge extérieure boites */
-        margin: 0em 2em 2em;
-    }
-
-    /* ############# Bas page FOOTER "formulaire_contact" ############# */
-    /* Néant */
-    /* ############# Contenus SECTION>FOOTER ############# */
-    /* #### Mise en forme titres #### */
-    .tiret_titre {
-        /* retrait affichage */
-        display: none;
-    }
-
-    .titre::before {
-        /* ajout espace blanc */
-        content: "\00A0\00A0";
-    }
+    /* positionnement boite */
+    position: absolute;
+    /* position boite */
+    top: 0;
+    left: 0;
+    /* positionnement arrière plan boite */
+    z-index: 2;
 }
