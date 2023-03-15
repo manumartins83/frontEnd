@@ -1,0 +1,55 @@
+/* ############# PARAMETRES GENERAUX ############# */
+/* #### Styles police #### */
+@font-face {
+    font-family: 'hard_rockregular';
+    src: url('../fonts/HARD_ROCK/hard_rock-webfont.woff2') format('woff2'),
+        url('../fonts/HARD_ROCK/hard_rock-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rocknroll_typo_crazyregular';
+    src: url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff2') format('woff2'),
+        url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'the_darkregular';
+    src: url('../fonts/TheDark/thedark-webfont.woff2') format('woff2'),
+        url('../fonts/TheDark/hedark-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* #### Mise en forme générale #### */
+* {
+    /* dimensionnement boites : padding+bordures */
+    box-sizing: border-box;
+}
+
+/* ############# BODY (HTML pages 1-2-3) ############# */
+/* #### Mise en forme fond pages #### */
+body {
+    /* couleur fond : blanc/bleu/noir dégradé incliné */
+    background-image: linear-gradient(to bottom right, white 15%, blue 35%, rgb(0, 0, 112) 55%, black 100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

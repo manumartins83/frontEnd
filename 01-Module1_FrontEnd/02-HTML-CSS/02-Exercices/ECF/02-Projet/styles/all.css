@@ -1,0 +1,200 @@
+/* ############# PARAMETRES GENERAUX ############# */
+
+
+
+
+
+
+
+/* #### Styles police #### */
+@font-face {
+    font-family: 'hard_rockregular';
+    src: url('../fonts/HARD_ROCK/hard_rock-webfont.woff2') format('woff2'),
+        url('../fonts/HARD_ROCK/hard_rock-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rocknroll_typo_crazyregular';
+    src: url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff2') format('woff2'),
+        url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'the_darkregular';
+    src: url('../fonts/TheDark/thedark-webfont.woff2') format('woff2'),
+        url('../fonts/TheDark/hedark-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* #### Mise en forme générale #### */
+* {
+    /* dimensionnement boites : padding+bordures */
+    box-sizing: border-box;
+}
+
+/* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
+/* #### Mise en forme menu navigation #### */
+nav {
+    /* dimensionnement marge intérieure */
+    padding: 0 !important;
+    /* sens deplacement boites */
+    flex-wrap: nowrap !important;
+    /* type positionnement */
+    position: fixed;
+    /* position */
+    top: 0;
+    left: 0;
+    /* positionnement plan */
+    z-index: 2;
+}
+
+/* #### Mise en forme barre navigation #### */
+#barre_nav {
+    /* couleur fond : blanc/bleu/noir dégradé incliné */
+    background-color: transparent !important;
+
+    /* espacement vertical boites */
+    align-items: baseline;
+}
+
+/* #### Mise en forme logo "planète" #### */
+#logo {
+    /* largeur */
+    max-width: 80px;
+    /* hauteur */
+    height: auto;
+    /* luminosité */
+    filter: brightness(1.7);
+    /* rotation */
+    transform: rotate(130deg);
+}
+
+/* #### Mise en forme surbrillance logo "planète" #### */
+#logo:hover {
+    /* luminosité */
+    filter: brightness(4);
+}
+
+/* #### Mise en forme logo "France" #### */
+#logo2 {
+    /* largeur */
+    max-width: 40px;
+    /* hauteur */
+    height: auto;
+    /* type positionnement */
+    position: absolute;
+    /* position */
+    top: 1.5rem;
+    left: 1.8rem;
+    /* positionnement plan */
+    z-index: 2;
+}
+
+#bouton_nav {
+    /* type affichage */
+    display: none;
+}
+
+div>ul.lien_nav {
+    /* direction boites */
+    flex-direction: row !important;
+}
+
+/* #### Mise en forme liens navigation #### */
+li>a {
+    /* dimensionnement marge intérieure */
+    padding: 0.5em 4em !important;
+    /* type police */
+    font-family: 'the_darkregular';
+    /* taille police */
+    font-size: 1.5em;
+    /* type caractère */
+    text-transform: uppercase;
+    /* espacement entre lettres */
+    letter-spacing: -1px;
+    /* espacement entre mots */
+    word-spacing: 3px;
+    /* couleur police */
+    color: red;
+}
+
+/* #### Mise en forme texte liens navigation #### */
+li>a:hover {
+    /* couleur police */
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############# Bas-page FOOTER (HTML index + pages 1-2-3) ############# */
+
+
+
+
+
+
+
+/* ############# PARAMETRES TABLETTE ############# */
+@media screen and (max-width: 768px) {
+
+    /* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
+    /* #### Mise en forme menu navigation #### */
+    nav {
+        /* largeur */
+        max-width: 50%;
+        /* hauteur */
+        height: auto;
+        /* sens deplacement boites */
+        flex-wrap: wrap !important;
+    }
+
+    #bouton_nav {
+        /* type affichage */
+        display: unset;
+    }
+
+    div>ul.lien_nav {
+        /* direction boites */
+        flex-direction: column !important;
+        
+   
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ############# PARAMETRES MOBILE ############# */
+@media screen and (max-width: 425px) {}

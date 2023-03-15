@@ -1,0 +1,68 @@
+/* ############# PARAMETRES GENERAUX ############# */
+/* #### Styles police #### */
+@font-face {
+    font-family: 'hard_rockregular';
+    src: url('../fonts/HARD_ROCK/hard_rock-webfont.woff2') format('woff2'),
+        url('../fonts/HARD_ROCK/hard_rock-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rocknroll_typo_crazyregular';
+    src: url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff2') format('woff2'),
+        url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'the_darkregular';
+    src: url('../fonts/TheDark/thedark-webfont.woff2') format('woff2'),
+        url('../fonts/TheDark/hedark-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* #### Mise en forme générale #### */
+* {
+    /* dimensionnement boites : padding+bordures */
+    box-sizing: border-box;
+}
+
+/* ############# BODY (HTML index) ############# */
+/* #### Mise en forme fond page #### */
+body>#fond_anime {
+    /* largeur */
+    width: 100vw;
+    /* largeur */
+    height: 100vh;
+    /* taille objectif */
+    object-fit: cover;
+    /* type positionnement */
+    position: fixed;
+    /* position */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* positionnement plan */
+    z-index: -1;
+}
+
+/* ############# Entête HEADER (HTML index) ############# */
+/* #### Mise en forme titre principal "thème" #### */
+header>h1 {
+    font-family: ;
+    font-size: ;
+    text-align: center;
+}
+
+
+/* #### Mise en forme "chiffre3" titre principal "thème" #### */
+#chiffre3 {
+    /* largeur */
+    max-width: 90px;
+    /* hauteur */
+    height: auto;
+}

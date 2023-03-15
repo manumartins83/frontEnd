@@ -53,7 +53,7 @@ body {
     z-index: 2;
 }
 
-/* Mise en forme logo menu */
+/* #### Mise en forme logo menu ####  */
 #logo {
     /* largeur contenu */
     max-width: 95px;
@@ -61,7 +61,7 @@ body {
     height: auto;
 }
 
-/* Mise en forme liens menu */
+/* #### Mise en forme liens menu ####  */
 a.police {
     /* type police */
     font-family: 'the_darkregular';
@@ -77,7 +77,7 @@ a.police {
     color: red;
 }
 
-/* Mise en forme texte liens Menu */
+/* #### Mise en forme texte liens Menu ####  */
 a:hover {
     /* couleur police */
     color: white;
@@ -349,7 +349,7 @@ thead {
     border-style: none;
 }
 
-/* Mise en forme liens cartes */
+/* #### Mise en forme liens cartes #### */
 #envoi:hover,
 #annule:hover {
     /* couleur police */
