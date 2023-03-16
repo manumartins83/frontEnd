@@ -59,6 +59,7 @@ https://bootstrap-top-design.com/carousel-bootstrap-tutoriel/ (caroussel Bootstr
 https://www.pierre-giraud.com/bootstrap-apprendre-cours/card/ (cartes bootstrap)
 
 https://pixelify.net/ (telecharge police)
+https://www.dafont.com/fr (telecharge police)
 https://www.fontsquirrel.com/tools/webfont-generator (conversion police)
 https://www.whatfontis.com/ (telecharge + conversion police)
 

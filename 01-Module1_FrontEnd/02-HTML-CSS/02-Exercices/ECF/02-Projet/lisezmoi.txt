@@ -1,4 +1,12 @@
 
+index
+Arrière plan
+https://codepen.io/oscar-jite/pen/OJZVzOo
+
+Nav
+https://codepen.io/oscar-jite/pen/OJZVzOo
+https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
+
 
 
 

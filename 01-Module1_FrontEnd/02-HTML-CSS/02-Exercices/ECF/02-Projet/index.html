@@ -17,7 +17,6 @@
     <link rel="icon" href="images/icone_france.jpg">
     <!-- retrait mise en forme HTML -->
     <link rel="stylesheet" href="css/normalize.css">
-
     <!-- style police Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,46 +32,62 @@
 <!-- STRUCTURE BODY -->
 
 <body>
-    <!-- Fond écran -->
-    <video id="fond_anime" autoplay loop muted>
+    <!-- Fond écran animé -->
+    <video autoplay loop muted>
         <source src="videos/fond_anime.mp4" type="video/mp4">
     </video>
+    <!-- Fond écran coloré -->
+    <div class="fondColor"></div>
+
     <!-- Menu NAV (HTML index + pages 1-2-3) -->
-    <nav class="navbar navbar-expand-xl navbar-light bg-light">
-        <div id="barre_nav" class="container-fluid">
-            <!-- logo + lien "Sommaire" -->
-            <a class="navbar-brand" href="#top" title="Sommaire"><img id="logo" src="images/logo_planete_terre.png"
-                    alt="Logo_planète_Terre"><img id="logo2" src="images/logo_france.png" alt="Logo_France"></a>
+    <nav class="navbar navbar-expand-xl">
+        <div class="container-fluid">
+            <!-- logos + lien "Sommaire" -->
+            <a class="logosNav" href="#top" title="Sommaire">
+                <span>Sommaire</span>
+                <img class="logoNav" src="images/logo_planete_terre.png" alt="Logo_planète_Terre">
+                <img class="logoNav2" src="images/logo_france.png" alt="Logo_France">
+            </a>
+
             <!-- bouton menu NAV version TABLETTE + MOBILE-->
-            <button id="bouton_nav" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler boutonNav" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- liste liens -->
-            <div class="collapse navbar-collapse show" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-xl-0 lien_nav">
-                    <li class="nav-item lien_nav">
-                        <!-- lien page1 HTML "Manche" -->
-                        <a class="nav-link" aria-current="page" href="html/page1.html" target="_self">Mer Manche</a>
+
+
+            <div class="collapse navbar-collapse show" id="navbarWithDropdown">
+                <ul class="navbar-nav">
+                    <!-- lien page1 HTML "Manche" -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="html/page1.html" target="_self">Mer Manche</a>
                     </li>
-                    <li class="nav-item lien_nav">
-                        <!-- lien page2 HTML "Atlantique" -->
+                    <!-- lien page2 HTML "Atlantique" -->
+                    <li class="nav-item">
                         <a class="nav-link" href="html/page2.html" target="_self">Océan Atlantique</a>
                     </li>
-                    <li class="nav-item lien_nav">
-                        <!-- lien page3 HTML "Méditerrannée" -->
+                    <!-- lien page3 HTML "Méditerrannée" -->
+                    <li class="nav-item">
                         <a class="nav-link" href="html/page3.html" target="_self">Mer Méditerrannée</a>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Entête HEADER (HTML index) -->
-    <header>
-        <!-- titre principal "thème" -->
-        <h1>Les&nbsp;<span><img id="chiffre3" src="images/chiffre_3.png" alt="Chiffre_3"></span>&nbsp;frontières
-            maritimes métropolitaines françaises</h1>
-    </header>
 
 
 
@@ -86,39 +101,12 @@
 
 
 
-    <!-- Contenu MAIN -->
-    <main>
-        <img id="logo" src="images/logo_planete_terre.png"
-        alt="Logo_planète_Terre"><img id="logo2" src="images/logo_france.png" alt="Logo_France">
-
-        <!-- titre section -->
-        <h2><a href="#">Manche</a></h2>
-        <!-- titre section -->
-        <h2><a href="#">Méditerrannée</a></h2>
-        <!-- titre section -->
-        <h2><a href="#">Atlantique</a></h2>
-
-    </main>
 
 
 
 
-    <!-- Contenu SECTION -->
-    <section>
-        <!-- Contenu ARTICLE -->
-        <article>
-            <!-- titre_1 "point commun" -->
-            <h3>
-                <p>l'exploitation maritime (traffic, pêche, énergétique)</p>
-            </h3>
-        </article>
-        <!-- Contenu ASIDE -->
-        <aside> <!-- titre_2 "point commun" -->
-            <h3>
-                <p>La dissuasion stratégique maritime (interdiction, représailles)</p>
-            </h3>
-        </aside>
-    </section>
+
+
 
 
 

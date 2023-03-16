@@ -1,28 +1,6 @@
 /* ############# PARAMETRES GENERAUX ############# */
 /* #### Styles police #### */
-@font-face {
-    font-family: 'hard_rockregular';
-    src: url('../fonts/HARD_ROCK/hard_rock-webfont.woff2') format('woff2'),
-        url('../fonts/HARD_ROCK/hard_rock-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'rocknroll_typo_crazyregular';
-    src: url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff2') format('woff2'),
-        url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'the_darkregular';
-    src: url('../fonts/TheDark/thedark-webfont.woff2') format('woff2'),
-        url('../fonts/TheDark/hedark-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* #### Mise en forme générale #### */
 * {
@@ -31,30 +9,47 @@
 }
 
 /* ############# BODY (HTML index) ############# */
-/* #### Mise en forme fond page #### */
-body>#fond_anime {
+/* #### Mise en forme fond animé page #### */
+video {
     /* largeur */
     width: 100vw;
-    /* largeur */
+    /* hauteur */
     height: 100vh;
     /* taille objectif */
     object-fit: cover;
     /* type positionnement */
     position: fixed;
     /* position */
-    left: 0;
-    right: 0;
     top: 0;
+    right: 0;
     bottom: 0;
-    /* positionnement plan */
-    z-index: -1;
+    left: 0;
+}
+
+/* #### Mise en forme fond couleur page #### */
+.fondColor {
+    /* couleur fond dégradé */
+    background-image: linear-gradient(to bottom, rgb(255, 255, 0,0.6) 0.1%, rgb(255, 255, 255) 6%, rgb(0, 0, 255, 0.4) 35%, rgb(0, 0, 112, 0.5) 50%, rgb(0, 0, 0) 100%);
+    /* largeur */
+    width: 100vw;
+    /* hauteur */
+    height: 100vh;
+    /* taille objectif */
+    object-fit: cover;
+    /* type positionnement */
+    position: fixed;
+    /* position */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 /* ############# Entête HEADER (HTML index) ############# */
 /* #### Mise en forme titre principal "thème" #### */
 header>h1 {
-    font-family: ;
-    font-size: ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
     text-align: center;
 }
 
