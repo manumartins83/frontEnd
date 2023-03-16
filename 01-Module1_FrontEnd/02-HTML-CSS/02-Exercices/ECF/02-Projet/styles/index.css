@@ -8,43 +8,6 @@
     box-sizing: border-box;
 }
 
-/* ############# BODY (HTML index) ############# */
-/* #### Mise en forme fond animé page #### */
-video {
-    /* largeur */
-    width: 100vw;
-    /* hauteur */
-    height: 100vh;
-    /* taille objectif */
-    object-fit: cover;
-    /* type positionnement */
-    position: fixed;
-    /* position */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-/* #### Mise en forme fond couleur page #### */
-.fondColor {
-    /* couleur fond dégradé */
-    background-image: linear-gradient(to bottom, rgb(255, 255, 0,0.6) 0.1%, rgb(255, 255, 255) 6%, rgb(0, 0, 255, 0.4) 35%, rgb(0, 0, 112, 0.5) 50%, rgb(0, 0, 0) 100%);
-    /* largeur */
-    width: 100vw;
-    /* hauteur */
-    height: 100vh;
-    /* taille objectif */
-    object-fit: cover;
-    /* type positionnement */
-    position: fixed;
-    /* position */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
 /* ############# Entête HEADER (HTML index) ############# */
 /* #### Mise en forme titre principal "thème" #### */
 header>h1 {
