@@ -1,17 +1,16 @@
 
-index
-Arrière plan
+Arrière plan BODY
 https://codepen.io/oscar-jite/pen/OJZVzOo
 
-Nav
+Menu NAV
 https://codepen.io/oscar-jite/pen/OJZVzOo
 https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
 
+transforme texte logo "sommaire"
+https://csswarp.eleqtriq.com/code
 
-
-
-
-
+SECTION
+https://getbootstrap.com/docs/5.3/layout/grid/
 
 
 

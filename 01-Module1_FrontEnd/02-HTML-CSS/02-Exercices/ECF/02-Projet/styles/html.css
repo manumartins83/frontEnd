@@ -1,55 +1,72 @@
 /* ############# PARAMETRES GENERAUX ############# */
-/* #### Styles police #### */
+/* #### types police #### */
+/* type pirate */
 @font-face {
-    font-family: 'hard_rockregular';
-    src: url('../fonts/HARD_ROCK/hard_rock-webfont.woff2') format('woff2'),
-        url('../fonts/HARD_ROCK/hard_rock-webfont.woff') format('woff');
+    font-family: 'jack_pirate_personal_use_onRg';
+    src: url(../fonts/jack_pirate/jackpirate_personal_use_only-webfont.woff2) format('woff2'),
+        url(../fonts/jack_pirate/jackpirate_personal_use_only-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+/* type pirate new */
 @font-face {
-    font-family: 'rocknroll_typo_crazyregular';
-    src: url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff2') format('woff2'),
-        url('../fonts/rocknroll_typo_crazy/rocknroll_typo_crazy-webfont.woff') format('woff');
+    font-family: 'jack_pirate_alt_personal_usRg';
+    src: url(../fonts/jack_pirate_Alt/jackpiratealt_personal_use_only-webfont.woff2)format('woff2'),
+        url(../fonts/jack_pirate_Alt/jackpiratealt_personal_use_only-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+/* type marin */
 @font-face {
-    font-family: 'the_darkregular';
-    src: url('../fonts/TheDark/thedark-webfont.woff2') format('woff2'),
-        url('../fonts/TheDark/hedark-webfont.woff') format('woff');
+    font-family: 'drunkensailorregular';
+    src: url(../fonts/DrunkenSailor/drunkensailor-webfont.woff2) format('woff2'),
+        url(../fonts/DrunkenSailor/drunkensailor-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* type regular */
+@font-face {
+    font-family: 'laurensregular';
+    src: url(../fonts/Laurens/laurens_demo-webfont.woff2) format('woff2'),
+        url(../fonts/Laurens/laurens_demo-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* type calligraphie */
+@font-face {
+    font-family: 'lombardia_script_personal_uRg';
+    src: url(../fonts/lombardia_script/lombardiascript_personal_use_only-webfont.woff2) format('woff2'),
+        url(../fonts/lombardia_script/lombardiascript_personal_use_only-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* type western */
+@font-face {
+    font-family: 'western_samurairegular';
+    src: url(../fonts/Western_Samurai/western_samurai-webfont.woff2) format('woff2'),
+        url(../fonts/Western_Samurai/western_samurai-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 /* #### Mise en forme générale #### */
 * {
-    /* dimensionnement boites : padding+bordures */
+    /* dimensionnement boite : padding+bordures */
     box-sizing: border-box;
+
+
+
+    /* espacement entre lettres */
+    letter-spacing: 1px;
+    /* espacement entre mots */
+    word-spacing: 1px;
 }
 
-/* ############# BODY (HTML pages 1-2-3) ############# */
-/* #### Mise en forme fond pages #### */
-body {
-    /* couleur fond : blanc/bleu/noir dégradé incliné */
-    background-image: linear-gradient(to bottom right, white 15%, blue 35%, rgb(0, 0, 112) 55%, black 100%);
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 

@@ -1,26 +1,185 @@
 /* ############# PARAMETRES GENERAUX ############# */
-/* #### Styles police #### */
+/* #### types police #### */
+/* type pirate */
+@font-face {
+    font-family: 'jack_pirate_personal_use_onRg';
+    src: url(../fonts/jack_pirate/jackpirate_personal_use_only-webfont.woff2) format('woff2'),
+        url(../fonts/jack_pirate/jackpirate_personal_use_only-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+/* type pirate new */
+@font-face {
+    font-family: 'jack_pirate_alt_personal_usRg';
+    src: url(../fonts/jack_pirate_Alt/jackpiratealt_personal_use_only-webfont.woff2)format('woff2'),
+        url(../fonts/jack_pirate_Alt/jackpiratealt_personal_use_only-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* type marin */
+@font-face {
+    font-family: 'drunkensailorregular';
+    src: url(../fonts/DrunkenSailor/drunkensailor-webfont.woff2) format('woff2'),
+        url(../fonts/DrunkenSailor/drunkensailor-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* type regular */
+@font-face {
+    font-family: 'laurensregular';
+    src: url(../fonts/Laurens/laurens_demo-webfont.woff2) format('woff2'),
+        url(../fonts/Laurens/laurens_demo-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* type calligraphie */
+@font-face {
+    font-family: 'lombardia_script_personal_uRg';
+    src: url(../fonts/lombardia_script/lombardiascript_personal_use_only-webfont.woff2) format('woff2'),
+        url(../fonts/lombardia_script/lombardiascript_personal_use_only-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* type western */
+@font-face {
+    font-family: 'western_samurairegular';
+    src: url(../fonts/Western_Samurai/western_samurai-webfont.woff2) format('woff2'),
+        url(../fonts/Western_Samurai/western_samurai-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* #### Mise en forme générale #### */
 * {
-    /* dimensionnement boites : padding+bordures */
+    /* dimensionnement boite : padding+bordures */
     box-sizing: border-box;
 }
 
 /* ############# Entête HEADER (HTML index) ############# */
-/* #### Mise en forme titre principal "thème" #### */
-header>h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3em;
-    text-align: center;
-}
-
-
-/* #### Mise en forme "chiffre3" titre principal "thème" #### */
-#chiffre3 {
+/* #### Mise en forme image titre principal "thème" #### */
+.chiffre3 {
     /* largeur */
-    max-width: 90px;
+    width: 180px;
     /* hauteur */
     height: auto;
 }
+
+/* ############# Contenu SECTION (HTML index) ############# */
+/* #### Mise en forme titres "point commun" #### */
+
+
+
+
+
+
+
+
+
+/* #### Mise en forme parchemins cartes #### */
+.parchemin {
+    /* largeur */
+    width: 500px;
+    /* hauteur */
+    height: auto;
+    /* type positionnement boite *
+    position: absolute;
+
+    /* positionnement plan */
+    z-index: -1;
+    /* transformation */
+    transform: rotate(90deg);
+}
+
+.cartePC{
+margin: 0 5em;
+}
+
+
+
+/* #### Mise en forme cartes #### */
+
+
+
+
+
+
+
+/* #### Mise en forme image cartes #### */
+
+
+
+
+
+/* #### Mise en forme sous-titres #### */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #### Mise en forme paragraphes #### */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############# PARAMETRES PC PORTABLE ############# */
+@media screen and (max-width: 1024px) {
+
+    /* ############# Entête HEADER (HTML index) ############# */
+    /* #### Mise en forme image titre principal "thème" #### */
+    .chiffre3 {
+        /* largeur */
+        max-width: 100%;
+        /* hauteur */
+        height: auto;
+    }
+
+    /* ############# Contenu SECTION (HTML index) ############# */
+    /* #### Mise en forme parchemins "point commun" #### */
+    .parchemin {
+        /* largeur */
+        max-width: 100%;
+        /* hauteur */
+        height: auto;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/* ############# PARAMETRES TABLETTE ############# */
+@media screen and (max-width: 768px) {}
+
+
+
+
+/* ############# PARAMETRES MOBILE ############# */
+@media screen and (max-width: 425px) {}

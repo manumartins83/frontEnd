@@ -17,7 +17,7 @@
     <link rel="icon" href="images/icone_france.jpg">
     <!-- retrait mise en forme HTML -->
     <link rel="stylesheet" href="css/normalize.css">
-    <!-- style police Google fonts -->
+    <!-- Type police Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -32,48 +32,55 @@
 <!-- STRUCTURE BODY -->
 
 <body>
-    <!-- Fond écran animé -->
+    <!-- Fond écran animé (HTML index + pages 1-2-3) -->
     <video autoplay loop muted>
         <source src="videos/fond_anime.mp4" type="video/mp4">
     </video>
-    <!-- Fond écran coloré -->
+    <!-- Fond écran coloré (HTML index + pages 1-2-3) -->
     <div class="fondColor"></div>
 
     <!-- Menu NAV (HTML index + pages 1-2-3) -->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar navbar-expand-xl menuFixe">
         <div class="container-fluid">
-            <!-- logos + lien "Sommaire" -->
+            <!--  lien "Sommaire" + logos -->
             <a class="logosNav" href="#top" title="Sommaire">
-                <span>Sommaire</span>
-                <img class="logoNav" src="images/logo_planete_terre.png" alt="Logo_planète_Terre">
-                <img class="logoNav2" src="images/logo_france.png" alt="Logo_France">
+                <div class="warp">
+                    <span class="warp__0">S</span>
+                    <span class="warp__1">o</span>
+                    <span class="warp__2">m</span>
+                    <span class="warp__3">m</span>
+                    <span class="warp__4">a</span>
+                    <span class="warp__5">i</span>
+                    <span class="warp__6">r</span>
+                    <span class="warp__7">e</span>
+                    <img class="logoNav" src="images/logo_planete_terre.png" alt="Logo_planète_Terre">
+                    <img class="logoNav2" src="images/logo_france.png" alt="Logo_France">
+                </div>
             </a>
-
             <!-- bouton menu NAV version TABLETTE + MOBILE-->
             <button class="navbar-toggler boutonNav" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-
             <div class="collapse navbar-collapse show" id="navbarWithDropdown">
                 <ul class="navbar-nav">
                     <!-- lien page1 HTML "Manche" -->
                     <li class="nav-item">
-                        <a class="nav-link" href="html/page1.html" target="_self">Mer Manche</a>
+                        <a class="nav-link police" href="html/page1.html" target="_self">Mer Manche</a>
                     </li>
                     <!-- lien page2 HTML "Atlantique" -->
                     <li class="nav-item">
-                        <a class="nav-link" href="html/page2.html" target="_self">Océan Atlantique</a>
+                        <a class="nav-link police" href="html/page2.html" target="_self">Océan Atlantique</a>
                     </li>
                     <!-- lien page3 HTML "Méditerrannée" -->
                     <li class="nav-item">
-                        <a class="nav-link" href="html/page3.html" target="_self">Mer Méditerrannée</a>
+                        <a class="nav-link police" href="html/page3.html" target="_self">Mer Méditerrannée</a>
                     </li>
 
+                    <!-- liens menu interne HTML "Manche" -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle police" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Menu
                         </a>
@@ -88,12 +95,105 @@
             </div>
         </div>
     </nav>
+    <!-- Entête HEADER (HTML index) -->
+    <header>
+        <!-- titre principal "thème" -->
+        <h1>Les&nbsp;<span><img class="chiffre3" src="images/chiffre_3.png" alt="Chiffre_3"></span>&nbsp;frontières
+            maritimes métropolitaines françaises</h1>
+    </header>
 
-
-
-
-
-
+    <!-- Contenu SECTION (HTML index) -->
+    <section>
+        <div class="row">
+            <div class="col-6">
+                <!-- titre_1 "point commun" -->
+                <h2>L'exploitation maritime</h2>
+                <!-- carte parchemin -->
+                <div class="row">
+                    <div class="col12">
+                        <img class="parchemin" src="images/parchemin.png" alt="Parchemin">
+                        <!-- contenu carte -->
+                        <div class="row cartePC">
+                            <div class="col-5 col-sm-4">
+                                <!-- image "EPR" carte -->
+                                <img src="images/EPR.jpg" class="img-fluid w-100" alt="EPR_Flamanville">
+                            </div>
+                            <!-- sous-titres + paragraphes -->
+                            <div class="col-7 col-sm-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Le traffic et la pêche :</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                                        doloribus,
+                                        illo at, obcaecati labore beatae corrupti voluptatem numquam nesciunt maiores
+                                        accusantium temporibus dignissimos quam libero modi. Aperiam sint, labore sit
+                                        expedita
+                                        culpa cum in dicta asperiores maxime laboriosam perferendis qui ex amet
+                                        doloremque
+                                        nobis
+                                        natus deserunt earum rerum deleniti quidem.</p>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Les énergies et constructions :</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+                                        nisi
+                                        veniam ipsum voluptatum, atque exercitationem perspiciatis, eius eligendi
+                                        aliquam
+                                        mollitia doloribus amet optio consequuntur voluptatem maxime a animi perferendis
+                                        explicabo ipsam, delectus quae. Id odio ab et, voluptate, nostrum voluptates
+                                        animi
+                                        ullam
+                                        accusantium atque culpa delectus blanditiis? Quidem, earum impedit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <!-- titre_2 "point commun" -->
+                <h2>La dissuasion stratégique maritime</h2>
+                <!-- carte parchemin -->
+                <div class="row">
+                    <div class="col12">
+                        <img class="parchemin" src="images/parchemin.png" alt="Parchemin">
+                        <!-- contenu carte -->
+                        <div class="row cartePC">
+                            <!-- image "SNA Suffren" carte -->
+                            <div class="col-5 col-sm-4">
+                                <img src="images/suffren.jpg" class="img-fluid w-100" alt="SNA_Suffren">
+                            </div>
+                            <!-- sous-titres + paragraphes -->
+                            <div class="col-7 col-sm-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">D'interdiction :</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam
+                                        cupiditate provident quo aspernatur quisquam similique praesentium, consequuntur
+                                        iure
+                                        exercitationem distinctio enim veritatis, nostrum quos voluptatem, aliquam
+                                        deleniti id
+                                        dolore! Aliquid corrupti non veritatis facilis labore? Ad repellat nisi
+                                        accusamus.
+                                        Ducimus iure atque sit explicabo aspernatur ad porro expedita nam quas?</p>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">De représailles :</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Molestias nemo
+                                        laboriosam perspiciatis libero, commodi magnam sint tempore dicta, eaque rem
+                                        iusto nihil
+                                        quidem iste corrupti, porro culpa velit obcaecati. Incidunt ut consequuntur
+                                        reiciendis
+                                        ipsam natus possimus quae totam, eos exercitationem, ea, obcaecati quaerat
+                                        maxime
+                                        aliquam. Doloribus animi omnis eligendi sequi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -120,7 +220,23 @@
 
     <!-- Bas-page FOOTER (HTML index + pages 1-2-3) -->
     <footer>
-
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgTop">
+                <div class="wave waveTop"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+                </div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+                <div class="wave waveMiddle"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')">
+                </div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+                <div class="wave waveBottom"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')">
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- Framework JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
