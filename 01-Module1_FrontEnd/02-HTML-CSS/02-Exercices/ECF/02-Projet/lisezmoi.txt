@@ -1,23 +1,62 @@
-
-Arrière plan BODY
+BODY :
+- mise en forme arrières plan -
 https://codepen.io/oscar-jite/pen/OJZVzOo
 
-Menu NAV
+Menu NAV :
+- mise en forme -
 https://codepen.io/oscar-jite/pen/OJZVzOo
+- structure -
 https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
-
-transforme texte logo "sommaire"
+- transformation texte "sommaire" sur logos -
 https://csswarp.eleqtriq.com/code
 
-SECTION
+Contenu SECTION (index) :
+- structure -
 https://getbootstrap.com/docs/5.3/layout/grid/
+https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
 
 
 
-Sources :
+
+Bas page FOOTER :
+- mise en forme arrière plan animé -
+https://codepen.io/plavookac/pen/QMwObb
+
+
+
+SOURCES :
+- Dissuasion -
+https://www.google.com/search?q=type+de+dissuasion&rlz=1C1GCEU_frFR1045FR1045&oq=type+de+dissuasion&aqs=chrome..69i57j33i160l2.5952j1j7&sourceid=chrome&ie=UTF-8
+https://fr.wikipedia.org/wiki/Force_de_dissuasion_nucl%C3%A9aire_fran%C3%A7aise#:~:text=Les%20forces%20de%20dissuasion%20nucl%C3%A9aire,op%C3%A9rationnel%20de%20300%20t%C3%AAtes%20nucl%C3%A9aires.
+https://www.lamarinerecrute.fr/qui-sommes-nous/missions-et-organisation
+
+
+
+
+
+
+
+
+
+
+https://www.google.com/search?q=perim%C3%A8tre+france&rlz=1C1GCEU_frFR1045FR1045&oq=perim%C3%A8tre+france&aqs=chrome..69i57j0i22i30l7.3520j0j7&sourceid=chrome&ie=UTF-8
 
 https://www.vie-publique.fr/questions-reponses/274664-mers-et-oceans-les-espaces-maritimes-en-six-questions
-https://fmes-france.org/la-france-met-sa-dissuasion-au-service-de-leurope/
-https://www.google.com/search?q=perim%C3%A8tre+france&rlz=1C1GCEU_frFR1045FR1045&oq=perim%C3%A8tre+france&aqs=chrome..69i57j0i22i30l7.3520j0j7&sourceid=chrome&ie=UTF-8
+
+
 https://www.vie-publique.fr/parole-dexpert/281092-la-france-une-puissance-maritime#quelle-est-l%E2%80%99importance-des-espaces-maritimes-fran%C3%A7ais-
-https://www.google.com/search?q=type+de+dissuasion&rlz=1C1GCEU_frFR1045FR1045&oq=type+de+dissuasion&aqs=chrome..69i57j33i160l2.5952j1j7&sourceid=chrome&ie=UTF-8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

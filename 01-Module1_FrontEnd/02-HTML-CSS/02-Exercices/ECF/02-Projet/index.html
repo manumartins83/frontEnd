@@ -58,11 +58,11 @@
                 </div>
             </a>
             <!-- bouton menu NAV version TABLETTE + MOBILE-->
-            <button class="navbar-toggler boutonNav" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown"
+                aria-controls="navbarWithDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- liens menu NAV -->
             <div class="collapse navbar-collapse show" id="navbarWithDropdown">
                 <ul class="navbar-nav">
                     <!-- lien page1 HTML "Manche" -->
@@ -78,6 +78,7 @@
                         <a class="nav-link police" href="html/page3.html" target="_self">Mer Méditerrannée</a>
                     </li>
 
+
                     <!-- liens menu interne HTML "Manche" -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle police" href="#" id="navbarDropdownMenuLink" role="button"
@@ -91,13 +92,14 @@
                         </ul>
                     </li>
 
+
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Entête HEADER (HTML index) -->
+    <!-- Entête HEADER (HTML index + pages 1-2-3) -->
     <header>
-        <!-- titre principal "thème" -->
+        <!-- titre principal -->
         <h1>Les&nbsp;<span><img class="chiffre3" src="images/chiffre_3.png" alt="Chiffre_3"></span>&nbsp;frontières
             maritimes métropolitaines françaises</h1>
     </header>
@@ -106,88 +108,70 @@
     <section>
         <div class="row">
             <div class="col-6">
-                <!-- titre_1 "point commun" -->
-                <h2>L'exploitation maritime</h2>
-                <!-- carte parchemin -->
-                <div class="row">
-                    <div class="col12">
-                        <img class="parchemin" src="images/parchemin.png" alt="Parchemin">
+                <!-- titre1 "points commun" -->
+                <h2 class="titreCommun">Une exploitation maritime</h2>
+                <div class="card">
+                    <!-- carte parchemin -->
+                    <img class="card-img parchemin" src="images/parchemin.png" alt="Parchemin">
+                    <div class="card-img-overlay">
+                        <!-- image "EPR" carte -->
+                        <img src="images/EPR.jpg" class="card-img-top imgCarte" alt="EPR_Flamanville">
                         <!-- contenu carte -->
-                        <div class="row cartePC">
-                            <div class="col-5 col-sm-4">
-                                <!-- image "EPR" carte -->
-                                <img src="images/EPR.jpg" class="img-fluid w-100" alt="EPR_Flamanville">
-                            </div>
+                        <div class="card-body">
                             <!-- sous-titres + paragraphes -->
-                            <div class="col-7 col-sm-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Le traffic et la pêche :</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                                        doloribus,
-                                        illo at, obcaecati labore beatae corrupti voluptatem numquam nesciunt maiores
-                                        accusantium temporibus dignissimos quam libero modi. Aperiam sint, labore sit
-                                        expedita
-                                        culpa cum in dicta asperiores maxime laboriosam perferendis qui ex amet
-                                        doloremque
-                                        nobis
-                                        natus deserunt earum rerum deleniti quidem.</p>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Les énergies et constructions :</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        nisi
-                                        veniam ipsum voluptatum, atque exercitationem perspiciatis, eius eligendi
-                                        aliquam
-                                        mollitia doloribus amet optio consequuntur voluptatem maxime a animi perferendis
-                                        explicabo ipsam, delectus quae. Id odio ab et, voluptate, nostrum voluptates
-                                        animi
-                                        ullam
-                                        accusantium atque culpa delectus blanditiis? Quidem, earum impedit.</p>
-                                </div>
-                            </div>
+                            <h5 class="card-title sousTitre">Le traffic et la pêche :</h5>
+                            <p class="card-text textPointCom">Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                                doloribus,
+                                illo at, obcaecati labore beatae corrupti voluptatem numquam nesciunt maiores
+                                accusantium temporibus dignissimos quam libero modi. Aperiam sint, labore sit
+                                expedita
+                                culpa cum in dicta asperiores maxime laboriosam perferendis qui ex amet
+                                doloremque
+                                nobis
+                                natus deserunt earum rerum deleniti quidem.</p>
+                            <h5 class="card-title sousTitre">Les énergies et constructions :</h5>
+                            <p class="card-text textPointCom">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Sunt
+                                nisi
+                                veniam ipsum voluptatum, atque exercitationem perspiciatis, eius eligendi
+                                aliquam
+                                mollitia doloribus amet optio consequuntur voluptatem maxime a animi perferendis
+                                explicabo ipsam, delectus quae. Id odio ab et, voluptate, nostrum voluptates
+                                animi
+                                ullam
+                                accusantium atque culpa delectus blanditiis? Quidem, earum impedit.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-6">
-                <!-- titre_2 "point commun" -->
-                <h2>La dissuasion stratégique maritime</h2>
-                <!-- carte parchemin -->
-                <div class="row">
-                    <div class="col12">
-                        <img class="parchemin" src="images/parchemin.png" alt="Parchemin">
-                        <!-- contenu carte -->
-                        <div class="row cartePC">
-                            <!-- image "SNA Suffren" carte -->
-                            <div class="col-5 col-sm-4">
-                                <img src="images/suffren.jpg" class="img-fluid w-100" alt="SNA_Suffren">
-                            </div>
+                <!-- titre2 "points commun" -->
+                <h2 class="titreCommun titre2">Une dissuasion stratégique</h2>
+                <div class="card">
+                    <!-- image carte parchemin -->
+                    <img class="card-img parchemin parchemin2" src="images/parchemin.png" alt="Parchemin">
+                    <!-- contenu carte -->
+                    <div class="card-img-overlay">
+                        <!-- image "SNA Suffren" carte -->
+                        <img src="images/suffren.jpg" class="card-img-top imgCarte" alt="SNA_Suffren">
+                        <div class="card-body">
                             <!-- sous-titres + paragraphes -->
-                            <div class="col-7 col-sm-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">D'interdiction :</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam
-                                        cupiditate provident quo aspernatur quisquam similique praesentium, consequuntur
-                                        iure
-                                        exercitationem distinctio enim veritatis, nostrum quos voluptatem, aliquam
-                                        deleniti id
-                                        dolore! Aliquid corrupti non veritatis facilis labore? Ad repellat nisi
-                                        accusamus.
-                                        Ducimus iure atque sit explicabo aspernatur ad porro expedita nam quas?</p>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">De représailles :</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Molestias nemo
-                                        laboriosam perspiciatis libero, commodi magnam sint tempore dicta, eaque rem
-                                        iusto nihil
-                                        quidem iste corrupti, porro culpa velit obcaecati. Incidunt ut consequuntur
-                                        reiciendis
-                                        ipsam natus possimus quae totam, eos exercitationem, ea, obcaecati quaerat
-                                        maxime
-                                        aliquam. Doloribus animi omnis eligendi sequi.</p>
-                                </div>
-                            </div>
+                            <h5 class="card-title sousTitre">Définition :</h5>
+                            <p class="card-text textPointCom">La dissuasion consiste à menacer un adversaire, d'avoir
+                                recours à la force, afin de le décourager à entreprendre une action indésirable, soit en
+                                le menaçant de représailles <em>(dissuasion par représailles)</em>, soit en le
+                                persuadant que ses objectifs sont voués à l'échec <em>(dissuasion par
+                                    interdiction)</em>.</p>
+                            <h5 class="card-title sousTitre">Dissuasion par "interdiction" :</h5>
+                            <p class="card-text textPointCom">Elle est contrôlée et asservie par les <em><strong>Forces
+                                        Aériennes stratégiques (FAS)</strong></em> et par les <em>Sous-marins Nucléaires
+                                    d'Attaque (SNA)</em> de la <strong><em>Force Océanique Stratégique
+                                        (FOST)</strong></em>.</p>
+                            <h5 class="card-title sousTitre">Dissuasion par "représailles" :</h5>
+                            <p class="card-text textPointCom">Elle est uniquement contrôlée et asservie par les
+                                <em>Sous-marins Nucléaires Lanceurs d'Engins (SNLE)</em> de la <strong><em>Force
+                                        Océanique Stratégique (FOST)</strong></em>.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -218,20 +202,25 @@
 
 
 
+
+
     <!-- Bas-page FOOTER (HTML index + pages 1-2-3) -->
     <footer>
         <div class="waveWrapper waveAnimation">
             <div class="waveWrapperInner bgTop">
+                <!-- image "vague haute" -->
                 <div class="wave waveTop"
                     style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
                 </div>
             </div>
             <div class="waveWrapperInner bgMiddle">
+                 <!-- image "vague milieu" -->
                 <div class="wave waveMiddle"
                     style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')">
                 </div>
             </div>
             <div class="waveWrapperInner bgBottom">
+                 <!-- image "vague basse" -->
                 <div class="wave waveBottom"
                     style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')">
                 </div>

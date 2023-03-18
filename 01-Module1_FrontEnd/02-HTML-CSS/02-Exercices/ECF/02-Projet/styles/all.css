@@ -63,12 +63,6 @@
 /* ############# BODY (HTML index + pages 1-2-3) ############# */
 /* #### Mise en forme fond animé page #### */
 video {
-    /* largeur */
-    width: 100vw;
-    /* hauteur */
-    height: 100vh;
-    /* taille objectif */
-    object-fit: cover;
     /* type positionnement boite */
     position: fixed;
     /* position */
@@ -76,20 +70,20 @@ video {
     right: 0;
     bottom: 0;
     left: 0;
+    /* largeur */
+    width: 100%;
+    /* hauteur */
+    height: 100%;
+    /* taille objectif */
+    object-fit: cover;
     /* positionnement plan */
     z-index: -2;
 }
 
 /* #### Mise en forme fond couleur page #### */
 .fondColor {
-    /* couleur fond dégradé */
+    /* couleur fond */
     background-image: linear-gradient(to bottom, rgb(255, 255, 0, 0.6) 0.1%, rgb(255, 255, 255) 6%, rgb(0, 0, 255, 0.4) 35%, rgb(0, 0, 112, 0.5) 50%, rgb(0, 0, 0) 100%);
-    /* largeur */
-    width: 100vw;
-    /* hauteur */
-    height: 100vh;
-    /* taille objectif */
-    object-fit: cover;
     /* type positionnement boite */
     position: fixed;
     /* position */
@@ -97,6 +91,12 @@ video {
     right: 0;
     bottom: 0;
     left: 0;
+    /* largeur */
+    width: 100%;
+    /* hauteur */
+    height: 100%;
+    /* taille objectif */
+    object-fit: cover;
     /* positionnement plan */
     z-index: -1;
 }
@@ -106,37 +106,43 @@ video {
 nav.menuFixe {
     /* opacité fond */
     backdrop-filter: blur(15px);
-    /* largeur */
-    width: 100%;
-    /* hauteur */
-    height: auto;
     /* type positionnement boite */
     position: fixed;
     /* position */
     top: 0;
     left: 0;
+    /* largeur */
+    width: 100%;
+    /* hauteur */
+    height: auto;
     /* positionnement plan */
-    z-index: 2;
+    z-index: 1;
     /* paramètrage bordures */
     border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 /* #### Mise en forme texte "Sommaire" logos #### */
 .warp {
-    /* type affichage boite */
+    /* type affichage boite *
     display: block;
-    /* type positionnement boite */
+    /* type positionnement boite *
     position: relative;
+
+  /* type positionnement boite *
+    float: left;
+
     /* largeur */
-    width: 180px;
+    width: 200px;
     /* hauteur */
-    height: 100px;
-    /* dimensionnement marge extérieure */
-    margin-left: -1.5em;
+    height: auto;
+    /* dimensionnement marge extérieure *
+    margin-left: -1.5em; */
+
+
     /* type police */
     font-family: 'western_samurairegular';
     /* taille police */
-    font-size: 1.5em;
+    font-size: 1.5vw;
     /* type caractère */
     text-transform: uppercase;
     /* style police */
@@ -145,15 +151,23 @@ nav.menuFixe {
     text-decoration: none;
     /* couleur police */
     color: white;
-
 }
 
 /* #### Mise en forme lettres texte logos #### */
 [class*='warp__'] {
-    /* type affichage boite */
+    /* type affichage boite *
     display: block;
+    /* type positionnement boite *
+    position: absolute; 
+
     /* type positionnement boite */
-    position: absolute;
+    position: fixed;
+
+    top: 9%;
+    left: 0.5%;
+    /* type positionnement boite *
+    float: left;
+
     /* positionnement plan */
     z-index: 3;
 }
@@ -161,102 +175,111 @@ nav.menuFixe {
 /* #### Mise en forme lettre "S" texte logos #### */
 .warp__0 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(50.8159px, 8.798099999999998px) rotate(1.302453rad);
+    transform-origin: bottom left;
+    transform: translate(50px, 5px) rotate(70deg);
 }
 
 /* #### Mise en forme lettre "O" texte logos #### */
 .warp__1 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(52.3454px, 28.5959px) rotate(1.143672rad);
+    transform-origin: bottom left;
+    transform: translate(55px, 30px) rotate(45deg);
 }
 
 /* #### Mise en forme lettre "M" texte logos #### */
 .warp__2 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(66.0025px, 52.366200000000006px) rotate(0.724911rad);
+    transform-origin: bottom left;
+    transform: translate(70px, 45px) rotate(30deg);
 }
 
 /* #### Mise en forme lettre "M" texte logos #### */
 .warp__3 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(95.7465px, 64.0116px) rotate(0.033594rad);
+    transform-origin: bottom right;
+    transform: translate(100px, 60px);
 }
 
 /* #### Mise en forme lettre "A" texte logos #### */
 .warp__4 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(127.10230000000001px, 57.2521px) rotate(-0.580707rad);
+    transform-origin: bottom right;
+    transform: translate(130px, 50px) rotate(-30deg);
 }
 
 /* #### Mise en forme lettre "I" texte logos #### */
 .warp__5 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(144.4266px, 47.85039999999999px) rotate(-0.882546rad);
+    transform-origin: bottom right;
+    transform: translate(150px, 40px) rotate(-45deg);
 }
 
 /* #### Mise en forme lettre "R" texte logos #### */
 .warp__6 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(145.0388px, 36.0977px) rotate(-1.09542rad);
+    transform-origin: bottom right;
+    transform: translate(155px, 25px) rotate(-60deg);
 }
 
 /* #### Mise en forme lettre "E" texte logos #### */
 .warp__7 {
     /* transformation */
-    transform-origin: 50% 32px;
-    transform: translate(152.6967px, 16.130200000000002px) rotate(-1.294659rad);
+    transform-origin: bottom right;
+    transform: translate(165px, 5px) rotate(-85deg);
 }
 
 /* #### Mise en forme logo "planète" #### */
 .logoNav {
+    /* type positionnement boite *
+    float: left;
+    /* position *
+    margin-top: 5%;
+    margin-left: 32%;
+
     /* largeur */
     width: 100px;
     /* hauteur */
     height: auto;
-    /* type positionnement boite */
-    position: fixed;
-    /* position */
-    top: 0.5rem;
-    left: 2rem;
     /* positionnement plan */
     z-index: 1;
     /* luminosité */
     filter: brightness(1.7);
     /* transformation */
     transform: rotate(130deg);
+
+    position: fixed;
+    top: 0.5em;
+    left: 4.5%;
 }
 
 /* #### Mise en forme logo "France" #### */
 .logoNav2 {
+    /* type positionnement boite *
+
+    float: left;
+    /* position *
+    margin-top: -40%;
+    margin-left: 32%;
+
+
+
+
     /* largeur */
     width: 40px;
     /* hauteur */
     height: auto;
-    /* type positionnement boite */
-    position: fixed;
-    /* position */
-    top: 2.2rem;
-    left: 3.7rem;
     /* positionnement plan */
     z-index: 2;
+
+    position: fixed;
+
+
 }
 
 /* #### Mise en forme lien logos + texte #### */
 .logosNav:hover {
     /* luminosité */
     filter: brightness(4);
-
-
-
-
-
 }
 
 /* #### Mise en forme texte lien "Sommaire" #### */
@@ -278,7 +301,7 @@ nav a.police {
     /* type police */
     font-family: 'western_samurairegular';
     /* taille police */
-    font-size: 2.5em;
+    font-size: 2.4vw;
     /* type caractère */
     text-transform: uppercase;
     /* style police */
@@ -303,13 +326,11 @@ nav a.police:hover {
 /* #### Mise en forme titre principal #### */
 header>h1 {
     /* dimensionnement marge extérieure */
-    margin-bottom: 0.5em;
-    /* dimensionnement marge intérieure */
-    padding: 1em 1em 0em 1em;
+    margin: 2em 0.5em 0.5em;
     /* type police */
     font-family: 'drunkensailorregular';
     /* taille police */
-    font-size: 10em;
+    font-size: 5vw;
     /* épaisseur texte */
     font-weight: bolder;
     /* alignement texte */
@@ -333,92 +354,114 @@ header>h1 {
 
 
 /* ############# Bas-page FOOTER (HTML index + pages 1-2-3) ############# */
+/* #### types transformations #### */
 @keyframes move_wave {
     0% {
+        /* transformation */
         transform: translateX(0) translateZ(0) scaleY(1)
     }
 
     50% {
+        /* transformation */
         transform: translateX(-25%) translateZ(0) scaleY(0.55)
     }
 
     100% {
+        /* transformation */
         transform: translateX(-50%) translateZ(0) scaleY(1)
     }
 }
 
-.waveWrapper {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto;
-}
-
+/* #### Mise en forme fond animé page #### */
 .waveWrapperInner {
-    position: absolute;
+    /* couleur fond */
+    background-color: rgb(0, 0, 0, 0.6);
+    /* largeur */
     width: 100%;
+    /* hauteur */
+    height: auto;
+    /* Dépassement texte */
     overflow: hidden;
-    height: 100%;
-    bottom: -1px;
-    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
 }
 
+/* #### Mise en forme fond "vague haut" #### */
 .bgTop {
-    z-index: 15;
+    /* positionnement plan */
+    z-index: 3;
+    /* clarté */
     opacity: 0.5;
 }
 
+/* #### Mise en forme fond "vague milieu" #### */
 .bgMiddle {
-    z-index: 10;
+    /* positionnement plan */
+    z-index: 2;
+    /* clarté */
     opacity: 0.75;
 }
 
+/* #### Mise en forme fond "vague basse" #### */
 .bgBottom {
-    z-index: 5;
+    /* positionnement plan */
+    z-index: 1;
 }
 
+/* #### Mise en forme fond vagues #### */
 .wave {
+    /* type positionnement boite */
     position: absolute;
+    /* position */
     left: 0;
+    /* largeur */
     width: 200%;
-    height: 100%;
+    /* hauteur */
+    height: 200%;
+    /* répétition fond */
     background-repeat: repeat no-repeat;
+    /* position fond */
     background-position: 0 bottom;
-    transform-origin: center bottom;
+    /* transformation */
+    transform-origin: bottom;
 }
 
+/* #### Mise en forme fond "vague haut" page #### */
 .waveTop {
+    /* paramètres fond */
     background-size: 50% 100px;
 }
 
+/* #### Mise en forme fond animé "vague haute" page #### */
 .waveAnimation .waveTop {
+    /* paramètres animation */
     animation: move-wave 3s;
     -webkit-animation: move-wave 3s;
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
 
+/* #### Mise en forme fond "vague milieu" page #### */
 .waveMiddle {
+    /* paramètres fond */
     background-size: 50% 120px;
 }
 
+/* #### Mise en forme fond animé "vague milieu" page #### */
 .waveAnimation .waveMiddle {
+    /* paramètres animation */
     animation: move_wave 10s linear infinite;
 }
 
+/* #### Mise en forme fond "vague basse" page #### */
 .waveBottom {
+    /* paramètres fond */
     background-size: 50% 100px;
 }
 
+/* #### Mise en forme fond animé "vague basse" page #### */
 .waveAnimation .waveBottom {
+    /* paramètres animation */
     animation: move_wave 15s linear infinite;
 }
-
-
-
 
 
 
@@ -441,12 +484,47 @@ header>h1 {
 /* ############# PARAMETRES PC PORTABLE ############# */
 @media screen and (max-width: 1024px) {
 
-    /* ############# Entête HEADER (HTML index + pages 1-2-3) ############# */
-    /* #### Mise en forme titre principal "thème" #### */
-    header>h1 {
-        /* taille police */
-        font-size-adjust: 10em;
+    /* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
+    /* #### Mise en forme texte "Sommaire" logos #### */
+    [class*='warp__'] {
+        /* type affichage boite */
+        display: none;
     }
+
+    /* #### Mise en forme logo "planète" #### */
+    .logoNav {
+
+
+        /* largeur */
+        max-width: 7%;
+        /* hauteur */
+        height: auto;
+
+        /* position *
+        top: 0.6rem;
+        left: 2.3rem;*/
+    }
+
+    /* #### Mise en forme logo "France" #### */
+    .logoNav2 {
+
+
+
+        /* largeur */
+        max-width: 3.5%;
+        /* hauteur */
+        height: auto;
+
+        /* position *
+        top: 2.3rem;
+        left: 4rem;*/
+    }
+
+
+
+
+
+
 
 
 
@@ -463,5 +541,48 @@ header>h1 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ############# PARAMETRES MOBILE ############# */
-@media screen and (max-width: 425px) {}
+@media screen and (max-width: 425px) {
+
+    /* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
+    /* #### Mise en forme texte menu navigation #### */
+    button.navbar-toggler {
+        /* dimensionnement marge intérieure */
+        padding: 0;
+        /* largeur */
+        max-width: 35px;
+        /* hauteur */
+        height: 25px;
+    }
+
+    span.navbar-toggler-icon {
+        /* dimensionnement marge intérieure */
+        padding: 0;
+        /* largeur */
+        max-width: 20px;
+        /* hauteur */
+        height: 20px;
+    }
+
+    /* ############# Entête HEADER (HTML index + pages 1-2-3) ############# */
+    /* #### Mise en forme titre principal #### */
+    header>h1 {
+        /* dimensionnement marge extérieure */
+        margin-top: 3em;
+    }
+
+
+}
