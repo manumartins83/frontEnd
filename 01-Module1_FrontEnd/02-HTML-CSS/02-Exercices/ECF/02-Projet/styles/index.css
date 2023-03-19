@@ -29,9 +29,9 @@
 
 /* type regular */
 @font-face {
-    font-family: 'laurensregular';
-    src: url(../fonts/Laurens/laurens_demo-webfont.woff2) format('woff2'),
-        url(../fonts/Laurens/laurens_demo-webfont.woff) format('woff');
+    font-family: 'barfiola_free_for_personal_Rg';
+    src: url(../fonts/Barfiola/barfiola-webfont.woff2) format('woff2'),
+        url(../fonts/Barfiola/barfiola-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -63,15 +63,22 @@
 /* ############# Entête HEADER (HTML index) ############# */
 /* #### Mise en forme image titre principal "thème" #### */
 .chiffre3 {
+    /* type positionnement boite */
+    position: relative;
     /* largeur */
     width: 100px;
     /* hauteur */
     height: auto;
+    /* positionnement plan */
+    z-index: 1;
 }
 
 /* ############# Contenu SECTION (HTML index) ############# */
 /* #### Mise en forme cartes "points commun" #### */
 section {
+ /* type positionnement boite */
+ position: relative;
+
     /* dimensionnement marge extérieure */
     margin-bottom: 1em;
     /* type affichage boite */
@@ -82,6 +89,10 @@ section {
     justify-content: center;
     /* alignement boite */
     align-items: center;
+
+
+         /* positionnement plan */
+         z-index: 1;
 }
 
 /* #### Mise en forme cartes "points commun" #### */
@@ -106,6 +117,11 @@ h2.titreCommun {
     color: rgb(255, 215, 0, 0.7);
 }
 
+
+
+
+
+
 /* #### Mise en forme parchemins cartes "points commun" #### */
 .parchemin {
     /* largeur */
@@ -120,20 +136,29 @@ h2.titreCommun {
     transform: rotate(180deg);
 }
 
-
-
-
-
-
-
-
-
-
 /* #### Mise en forme extérieure cartes "points commun" #### */
 section div.card {
     /* couleur fond */
     background: none !important;
+    /* style bordures */
+    border-style: none;
 }
+
+
+#carte1 {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+
+.titre1:hover #carte1 {
+
+    visibility: visible;
+    opacity: 1;
+
+}
+
 
 /* #### Mise en forme intérieure cartes "points commun" #### */
 section div.card-img-overlay {
@@ -148,18 +173,10 @@ section div.card-img-overlay {
 /* #### Mise en forme texte cartes "points commun" #### */
 section div.card-body {
     /* dimensionnement marge extérieure */
-    margin: 0em 5em !important;
+    margin: 0 5.5em !important;
     /* dimensionnement marge intérieure */
-    padding: 0.5em 1em!important;
+    padding: 0em 0em !important;
 }
-
-
-
-
-
-
-
-
 
 /* #### Mise en forme images cartes "points commun" #### */
 .imgCarte {
@@ -176,7 +193,7 @@ section div.card-body {
 /* #### Mise en forme sous-titres "points commun" #### */
 h5.sousTitre {
     /* dimensionnement marge extérieure */
-    margin-bottom: 0.1em!important;
+    margin-bottom: 0.1em !important;
     /* type police */
     font-family: 'lombardia_script_personal_uRg';
     /* taille police */
@@ -192,11 +209,12 @@ h5.sousTitre {
 /* #### Mise en forme paragraphes "points commun" #### */
 p.textPointCom {
     /* dimensionnement marge extérieure */
-    margin-bottom: 0.3em!important;
+    margin-bottom: 0.3em !important;
     /* type police */
-    font-family: 'laurensregular';
+    font-family: 'barfiola_free_for_personal_Rg';
     /* taille police */
     font-size: 0.8vw;
+    /* alignement texte */
     text-align: justify;
     /* couleur police */
     color: rgb(165, 42, 42, 0.5);
@@ -212,6 +230,29 @@ p.textPointCom {
 
 
 
+
+
+
+
+
+
+/* ############# PARAMETRES PC 4K ############# */
+@media screen and (min-width: 1441px) {
+
+    /* ############# Contenu SECTION (HTML index) ############# */
+    /* #### Mise en forme sous-titres "points commun" #### */
+    h5.sousTitre {
+        /* taille police */
+        font-size: 1.75em;
+    }
+
+    /* #### Mise en forme paragraphes "points commun" #### */
+    p.textPointCom {
+        /* taille police */
+        font-size: 0.75em;
+    }
+}
+
 /* ############# PARAMETRES PC PORTABLE ############# */
 @media screen and (max-width: 1024px) {
 
@@ -225,30 +266,21 @@ p.textPointCom {
     }
 
     /* ############# Contenu SECTION (HTML index) ############# */
-    /* #### Mise en forme images cartes "points commun" #### */
 
-
-    section div.card-img-overlay {
-        /* type affichage boite */
-        display: flex;
-        /* deplacement boite */
-        flex-flow: column nowrap;
-        /* alignement boite */
-        align-items: center;
+    /* #### Mise en forme texte cartes "points commun" #### */
+    section div.card-body {
+        /* dimensionnement marge extérieure */
+        margin: 0 3.5em !important;
     }
-
-
-
 
     /* #### Mise en forme images cartes "points commun" #### */
     .imgCarte {
         /* dimensionnement marge extérieure */
-        margin-top: auto;
+        margin-top: 5.2em;
         /* largeur */
-        max-width: 70%;
+        max-width: auto;
         /* hauteur */
-        max-height: auto;
-
+        max-height: 30%;
     }
 
 
@@ -261,31 +293,17 @@ p.textPointCom {
 
 }
 
-
-
-
-
-
-
 /* ############# PARAMETRES TABLETTE ############# */
 @media screen and (max-width: 768px) {
-
-
-
 
     /* ############# Contenu SECTION (HTML index) ############# */
     /* #### Mise en forme cartes "points commun" #### */
     section div.row {
         /* deplacement boite */
         flex-flow: column nowrap;
-
-      
-
         /* alignement boite */
         align-items: center;
     }
-
-
 
     /* #### Mise en forme titres "points commun" #### */
     .titre2 {
@@ -293,10 +311,25 @@ p.textPointCom {
         margin: 1em 0 0.5em !important;
     }
 
+    /* #### Mise en forme texte cartes "points commun" #### */
+    section div.card-body {
+        /* dimensionnement marge extérieure */
+        margin: 0 1.8em !important;
+    }
+
+    /* #### Mise en forme images cartes "points commun" #### */
+    .imgCarte {
+        /* dimensionnement marge extérieure */
+        margin-top: 3.1em;
+        /* largeur */
+        max-width: auto;
+        /* hauteur */
+        max-height: 22%;
+    }
+
+
+
 }
-
-
-
 
 /* ############# PARAMETRES MOBILE ############# */
 @media screen and (max-width: 425px) {}

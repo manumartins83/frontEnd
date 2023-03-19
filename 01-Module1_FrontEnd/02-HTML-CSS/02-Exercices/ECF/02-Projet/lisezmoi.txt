@@ -18,9 +18,23 @@ https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
 
 
 
+
+
+
+
+
 Bas page FOOTER :
+- structure -
+https://getbootstrap.com/docs/5.3/layout/grid/
 - mise en forme arrière plan animé -
 https://codepen.io/plavookac/pen/QMwObb
+
+
+
+
+
+
+
 
 
 

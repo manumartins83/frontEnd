@@ -29,9 +29,9 @@
 
 /* type regular */
 @font-face {
-    font-family: 'laurensregular';
-    src: url(../fonts/Laurens/laurens_demo-webfont.woff2) format('woff2'),
-        url(../fonts/Laurens/laurens_demo-webfont.woff) format('woff');
+    font-family: 'barfiola_free_for_personal_Rg';
+    src: url(../fonts/Barfiola/barfiola-webfont.woff2) format('woff2'),
+        url(../fonts/Barfiola/barfiola-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -161,9 +161,9 @@ nav.menuFixe {
     position: absolute; 
 
     /* type positionnement boite */
-    position: fixed;
+    position: absolute;
 
-    top: 9%;
+    /*top: 9%;
     left: 0.5%;
     /* type positionnement boite *
     float: left;
@@ -228,9 +228,22 @@ nav.menuFixe {
     transform: translate(165px, 5px) rotate(-85deg);
 }
 
+
+
+
+
+
+
+
+
 /* #### Mise en forme logo "planète" #### */
 .logoNav {
     /* type positionnement boite *
+
+ position: fixed;
+    top: 0.5em;
+    left: 4.5%;
+
     float: left;
     /* position *
     margin-top: 5%;
@@ -247,14 +260,14 @@ nav.menuFixe {
     /* transformation */
     transform: rotate(130deg);
 
-    position: fixed;
-    top: 0.5em;
-    left: 4.5%;
+
 }
 
 /* #### Mise en forme logo "France" #### */
 .logoNav2 {
     /* type positionnement boite *
+
+  position: fixed;
 
     float: left;
     /* position *
@@ -271,10 +284,12 @@ nav.menuFixe {
     /* positionnement plan */
     z-index: 2;
 
-    position: fixed;
-
-
 }
+
+
+
+
+
 
 /* #### Mise en forme lien logos + texte #### */
 .logosNav:hover {
@@ -339,21 +354,92 @@ header>h1 {
     color: rgb(255, 255, 255, 0.8);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ############# Bas-page FOOTER (HTML index + pages 1-2-3) ############# */
+/* #### Mise en forme bas-page #### */
+footer>div.text-center {
+    /* opacité fond */
+    backdrop-filter: blur(2px);
+    /* dimensionnement marge extérieure */
+    margin-top: 7em;
+    /* type positionnement boite */
+    position: absolute;
+    /* position */
+    left: 0;
+    right: 0;
+    bottom: -1;
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: column nowrap;
+    /* ecartement boite */
+    justify-content: center;
+    /* alignement boite */
+    align-items: center;
+    /* positionnement plan */
+    z-index: 1;
+    /* paramètrage bordures */
+    border-top: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+/* #### Mise en forme titre bas-page #### */
+footer h4 {
+    /* dimensionnement marge extérieure */
+    margin: 0.5em 0 0;
+    /* type police */
+    font-family: 'lombardia_script_personal_uRg';
+    /* taille police */
+    font-size: 1.8vw;
+    /* épaisseur texte */
+    font-weight: bolder;
+    /* alignement texte */
+    text-align: center;
+    /* couleur police */
+    color: rgb(255, 215, 0, 0.7);
+}
+
+/* #### Mise en forme photo "moi" #### */
+.photoMoi {
+    /* dimensionnement marge extérieure */
+    margin: 2em 0em;
+    /* largeur */
+    width: 15%;
+    /* hauteur */
+    height: auto;
+    /* arrondi bordures */
+    border-radius: 60%;
+}
+
+/* #### Mise en forme contact bas-page #### */
+footer a,
+footer p {
+    /* dimensionnement marge extérieure */
+    margin: 0.5em 0 0;
+    /* type police */
+    font-family: 'barfiola_free_for_personal_Rg';
+    /* taille police */
+    font-size: 0.8vw;
+    /* soulignement texte */
+    text-decoration: none;
+    /* alignement texte */
+    text-align: center;
+    /* couleur police */
+    color: rgb(255, 255, 255, 0.75);
+}
+
+p span {
+    /* couleur police */
+    color: rgb(255, 0, 0, 0.75);
+}
+
+p span:hover {
+    /* couleur police */
+    color: rgb(0, 0, 255);
+}
+
+
+
+
+
 /* #### types transformations #### */
 @keyframes move_wave {
     0% {
@@ -379,7 +465,7 @@ header>h1 {
     /* largeur */
     width: 100%;
     /* hauteur */
-    height: auto;
+    height: 100%;
     /* Dépassement texte */
     overflow: hidden;
 }
@@ -409,9 +495,9 @@ header>h1 {
 /* #### Mise en forme fond vagues #### */
 .wave {
     /* type positionnement boite */
-    position: absolute;
+    position: fixed;
     /* position */
-    left: 0;
+    bottom: 0;
     /* largeur */
     width: 200%;
     /* hauteur */
@@ -421,7 +507,7 @@ header>h1 {
     /* position fond */
     background-position: 0 bottom;
     /* transformation */
-    transform-origin: bottom;
+    transform-origin: center bottom;
 }
 
 /* #### Mise en forme fond "vague haut" page #### */
@@ -448,7 +534,7 @@ header>h1 {
 /* #### Mise en forme fond animé "vague milieu" page #### */
 .waveAnimation .waveMiddle {
     /* paramètres animation */
-    animation: move_wave 10s linear infinite;
+    animation: move_wave 15s linear infinite;
 }
 
 /* #### Mise en forme fond "vague basse" page #### */
@@ -460,7 +546,7 @@ header>h1 {
 /* #### Mise en forme fond animé "vague basse" page #### */
 .waveAnimation .waveBottom {
     /* paramètres animation */
-    animation: move_wave 15s linear infinite;
+    animation: move_wave 20s linear infinite;
 }
 
 
@@ -478,11 +564,19 @@ header>h1 {
 
 
 
+/* ############# PARAMETRES PC 4K ############# */
+@media screen and (min-width: 1440px) {
 
+    /* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
+    /* #### Mise en forme texte texte "Sommaire" menu navigation #### */
+    ul>li.sommaire {
+        /* type affichage boite */
+        display: none;
+    }
+}
 
-
-/* ############# PARAMETRES PC PORTABLE ############# */
-@media screen and (max-width: 1024px) {
+/* ############# PARAMETRES MOBILE + PC PORTABLE ############# */
+@media screen and (min-width: 200px) and (max-width: 1439px) {
 
     /* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
     /* #### Mise en forme texte "Sommaire" logos #### */
@@ -501,8 +595,8 @@ header>h1 {
         height: auto;
 
         /* position *
-        top: 0.6rem;
-        left: 2.3rem;*/
+            top: 0.6rem;
+            left: 2.3rem;*/
     }
 
     /* #### Mise en forme logo "France" #### */
@@ -516,23 +610,20 @@ header>h1 {
         height: auto;
 
         /* position *
-        top: 2.3rem;
-        left: 4rem;*/
+            top: 2.3rem;
+            left: 4rem;*/
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+/* ############# PARAMETRES PC PORTABLE ############# */
+@media screen and (max-width: 1024px) {}
 
 
 /* ############# PARAMETRES TABLETTE ############# */
@@ -558,7 +649,7 @@ header>h1 {
 @media screen and (max-width: 425px) {
 
     /* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
-    /* #### Mise en forme texte menu navigation #### */
+    /* #### Mise en forme bouton menu navigation #### */
     button.navbar-toggler {
         /* dimensionnement marge intérieure */
         padding: 0;
@@ -568,6 +659,7 @@ header>h1 {
         height: 25px;
     }
 
+    /* #### Mise en forme icone bouton menu navigation #### */
     span.navbar-toggler-icon {
         /* dimensionnement marge intérieure */
         padding: 0;
