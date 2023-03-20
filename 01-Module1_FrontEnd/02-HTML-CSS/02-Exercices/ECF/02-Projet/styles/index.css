@@ -60,27 +60,27 @@
     box-sizing: border-box;
 }
 
+/* ############# Menu NAV (HTML index) ############# */
+/* #### Mise en forme lien "Menu" barre navigation #### */
+ul>li.menu {
+    /* type affichage boite */
+    display: none;
+}
+
 /* ############# Entête HEADER (HTML index) ############# */
 /* #### Mise en forme image titre principal "thème" #### */
 .chiffre3 {
-    /* type positionnement boite */
-    position: relative;
     /* largeur */
     width: 100px;
     /* hauteur */
     height: auto;
-    /* positionnement plan */
-    z-index: 1;
 }
 
 /* ############# Contenu SECTION (HTML index) ############# */
 /* #### Mise en forme cartes "points commun" #### */
 section {
- /* type positionnement boite */
- position: relative;
-
     /* dimensionnement marge extérieure */
-    margin-bottom: 1em;
+    margin-bottom: 5em;
     /* type affichage boite */
     display: flex;
     /* deplacement boite */
@@ -89,26 +89,22 @@ section {
     justify-content: center;
     /* alignement boite */
     align-items: center;
-
-
-         /* positionnement plan */
-         z-index: 1;
 }
 
 /* #### Mise en forme cartes "points commun" #### */
-section div.col-6 {
+section div.col-12 {
     /* dimensionnement marge intérieure */
     padding: 0em 2em !important;
 }
 
-/* #### Mise en forme titres "points commun" #### */
-h2.titreCommun {
+/* #### Mise en forme titres "commun" #### */
+h2.titreCommunSommaire {
     /* dimensionnement marge extérieure */
-    margin: 0.5em 0 0.5em !important;
+    margin: 1em 0 0.5em !important;
     /* type police */
     font-family: 'lombardia_script_personal_uRg';
     /* taille police */
-    font-size: 3.3vw;
+    font-size: 5vw;
     /* épaisseur texte */
     font-weight: bolder;
     /* alignement texte */
@@ -117,21 +113,12 @@ h2.titreCommun {
     color: rgb(255, 215, 0, 0.7);
 }
 
-
-
-
-
-
 /* #### Mise en forme parchemins cartes "points commun" #### */
 .parchemin {
     /* largeur */
     width: 100%;
     /* hauteur */
     height: auto;
-}
-
-/* #### Mise en forme parchemin carte "Dissuasion" #### */
-.parchemin2 {
     /* transformation */
     transform: rotate(180deg);
 }
@@ -144,24 +131,10 @@ section div.card {
     border-style: none;
 }
 
-
-#carte1 {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.3s linear, opacity 0.3s linear;
-}
-
-
-.titre1:hover #carte1 {
-
-    visibility: visible;
-    opacity: 1;
-
-}
-
-
 /* #### Mise en forme intérieure cartes "points commun" #### */
 section div.card-img-overlay {
+    /* dimensionnement marge intérieure */
+    padding: 9em 5.5em !important;
     /* type affichage boite */
     display: flex;
     /* deplacement boite */
@@ -172,20 +145,16 @@ section div.card-img-overlay {
 
 /* #### Mise en forme texte cartes "points commun" #### */
 section div.card-body {
-    /* dimensionnement marge extérieure */
-    margin: 0 5.5em !important;
     /* dimensionnement marge intérieure */
-    padding: 0em 0em !important;
+    padding: 0.5em 1.5em !important;
 }
 
 /* #### Mise en forme images cartes "points commun" #### */
 .imgCarte {
-    /* dimensionnement marge extérieure */
-    margin-top: 8.3em;
     /* largeur */
-    width: auto;
+    max-width: 60%;
     /* hauteur */
-    height: 200px;
+    height: auto;
     /* arrondi bordures */
     border-radius: 5%;
 }
@@ -193,11 +162,11 @@ section div.card-body {
 /* #### Mise en forme sous-titres "points commun" #### */
 h5.sousTitre {
     /* dimensionnement marge extérieure */
-    margin-bottom: 0.1em !important;
+    margin-bottom: 0.3em !important;
     /* type police */
     font-family: 'lombardia_script_personal_uRg';
     /* taille police */
-    font-size: 1.7vw;
+    font-size: 1.8vw;
     /* épaisseur texte */
     font-weight: bolder;
     /* soulignement texte */
@@ -209,7 +178,7 @@ h5.sousTitre {
 /* #### Mise en forme paragraphes "points commun" #### */
 p.textPointCom {
     /* dimensionnement marge extérieure */
-    margin-bottom: 0.3em !important;
+    margin-bottom: 0.2em !important;
     /* type police */
     font-family: 'barfiola_free_for_personal_Rg';
     /* taille police */
@@ -230,6 +199,35 @@ p.textPointCom {
 
 
 
+/* ############# Contenu MAIN (HTML index) ############# */
+/* #### Mise en forme carte "France parchemin" #### */
+main {
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: column nowrap;
+    /* ecartement boite */
+    justify-content: center;
+    /* alignement boite */
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -237,21 +235,28 @@ p.textPointCom {
 
 
 /* ############# PARAMETRES PC 4K ############# */
-@media screen and (min-width: 1441px) {
+@media screen and (max-width: 2560px) {
 
     /* ############# Contenu SECTION (HTML index) ############# */
-    /* #### Mise en forme sous-titres "points commun" #### */
-    h5.sousTitre {
-        /* taille police */
-        font-size: 1.75em;
-    }
 
-    /* #### Mise en forme paragraphes "points commun" #### */
-    p.textPointCom {
-        /* taille police */
-        font-size: 0.75em;
-    }
+
+
+
+
+
+
+ 
 }
+
+
+
+
+
+
+
+
+
+
 
 /* ############# PARAMETRES PC PORTABLE ############# */
 @media screen and (max-width: 1024px) {
@@ -265,71 +270,12 @@ p.textPointCom {
         height: auto;
     }
 
-    /* ############# Contenu SECTION (HTML index) ############# */
 
-    /* #### Mise en forme texte cartes "points commun" #### */
-    section div.card-body {
-        /* dimensionnement marge extérieure */
-        margin: 0 3.5em !important;
+
+    /* ############# PARAMETRES TABLETTE ############# */
+    @media screen and (max-width: 768px) {}
+
+    /* ############# PARAMETRES MOBILE ############# */
+    @media screen and (max-width: 425px) {
+        /* ############# Contenu SECTION (HTML index) ############# */
     }
-
-    /* #### Mise en forme images cartes "points commun" #### */
-    .imgCarte {
-        /* dimensionnement marge extérieure */
-        margin-top: 5.2em;
-        /* largeur */
-        max-width: auto;
-        /* hauteur */
-        max-height: 30%;
-    }
-
-
-
-
-
-
-
-
-
-}
-
-/* ############# PARAMETRES TABLETTE ############# */
-@media screen and (max-width: 768px) {
-
-    /* ############# Contenu SECTION (HTML index) ############# */
-    /* #### Mise en forme cartes "points commun" #### */
-    section div.row {
-        /* deplacement boite */
-        flex-flow: column nowrap;
-        /* alignement boite */
-        align-items: center;
-    }
-
-    /* #### Mise en forme titres "points commun" #### */
-    .titre2 {
-        /* dimensionnement marge extérieure */
-        margin: 1em 0 0.5em !important;
-    }
-
-    /* #### Mise en forme texte cartes "points commun" #### */
-    section div.card-body {
-        /* dimensionnement marge extérieure */
-        margin: 0 1.8em !important;
-    }
-
-    /* #### Mise en forme images cartes "points commun" #### */
-    .imgCarte {
-        /* dimensionnement marge extérieure */
-        margin-top: 3.1em;
-        /* largeur */
-        max-width: auto;
-        /* hauteur */
-        max-height: 22%;
-    }
-
-
-
-}
-
-/* ############# PARAMETRES MOBILE ############# */
-@media screen and (max-width: 425px) {}

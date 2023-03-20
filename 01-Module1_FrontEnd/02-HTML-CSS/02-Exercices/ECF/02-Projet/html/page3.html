@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- language français -->
+<html lang="fr">
+
+<!-- INSTRUCTIONS HEAD -->
+
+<head>
+    <!-- lecture navigateur caractères universel -->
+    <meta charset="UTF-8">
+    <!-- compatibilité navigateur Edge -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive : compatible multi support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- dénomination onglet page -->
+    <title>La Mer Méditerranée</title>
+    <!-- Icone onglet page -->
+    <link rel="icon" href="../images/icone_france.jpg">
+    <!-- retrait mise en forme HTML -->
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <!-- Type police Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- mise en forme CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- mise en forme personnelle CSS -->
+    <link rel="stylesheet" href="../styles/all.css">
+    <link rel="stylesheet" href="../styles/html.css">
+</head>
+
+<!-- STRUCTURE BODY -->
+
+<body>
+    <!-- Fond écran animé (HTML index + pages 1-2-3) -->
+    <video autoplay loop muted>
+        <source src="../videos/fond_anime.mp4" type="video/mp4">
+    </video>
+    <!-- Fond écran coloré (HTML index + pages 1-2-3) -->
+    <div class="fondColor"></div>
+
+    <!-- Menu NAV (HTML page1) -->
+    <nav class="navbar navbar-expand-xl menuFixe">
+        <div class="container-fluid">
+            <!--  lien "Sommaire" + logos -->
+            <a class="logosNav" href="../index.html" target="_self" title="Sommaire">
+                <div class="warp">
+                    <span class="warp__0">S</span>
+                    <span class="warp__1">o</span>
+                    <span class="warp__2">m</span>
+                    <span class="warp__3">m</span>
+                    <span class="warp__4">a</span>
+                    <span class="warp__5">i</span>
+                    <span class="warp__6">r</span>
+                    <span class="warp__7">e</span>
+                    <img class="logoNav" src="../images/logo_planete_terre.png" alt="Logo_planète_Terre">
+                    <img class="logoNav2" src="../images/logo_france.png" alt="Logo_France">
+                </div>
+            </a>
+            <!-- bouton menu NAV version TABLETTE + MOBILE-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown"
+                aria-controls="navbarWithDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- liens menu NAV -->
+            <div class="collapse navbar-collapse show" id="navbarWithDropdown">
+                <ul class="navbar-nav">
+                    <!-- lien "Sommaire" -->
+                    <li class="nav-item sommaire">
+                        <a class="nav-link police" href="../index.html" target="_self">Sommaire</a>
+                    </li>
+                    <!-- lien page1 HTML "Manche" -->
+                    <li class="nav-item">
+                        <a class="nav-link police" href="../html/page1.html" target="_blank">Mer Manche</a>
+                    </li>
+                    <!-- lien page2 HTML "Atlantique" -->
+                    <li class="nav-item">
+                        <a class="nav-link police" href="../html/page2.html" target="_blank">Océan Atlantique</a>
+                    </li>
+                    <!-- lien page3 HTML "Méditerrannée" -->
+                    <li class="nav-item">
+                        <a class="nav-link police" href="../html/page3.html" target="_self">Mer Méditerrannée</a>
+                    </li>
+                    <!-- liens menu interne HTML "Manche" -->
+                    <li class="nav-item dropdown menu">
+                        <a class="nav-link dropdown-toggle police" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu dropMenu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item policeMenu" href="#caracteristiqueSNA">Caractéristiques</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#SNA">L'Améthyste</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#charlesGaulle">Charles-de-Gaulle</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#table3">Equipements</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Entête HEADER (HTML page3) -->
+    <header>
+        <!-- titre principal -->
+        <h1 id="caracteristiqueSNA">La Mer Méditerranée</h1>
+    </header>
+    <!-- Contenu MAIN (HTML page3) -->
+    <main>
+        <div row>
+            <div col-12 class="centerImg">
+                <!-- titre article -->
+                <h2 class="titreCommunPages">Les caractéristiques</h2>
+                <figure>
+                    <img class="imgPages" src="../images/infosSNA.png" alt="Caractéristiques_SNA">
+                    <figcaption>2022 - Caractéristiques SNA</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div row id="SNA">
+            <div col-12 class="centerImg">
+                <!-- titre article -->
+                <h2 class="titreCommunPages">Un tir de torpilles</h2>
+                <figure class="imgSNA">
+                    <img class="imgPages tirSNA" src="../images/SNA.jpg" alt="SNA">
+                    <figcaption>2022 - SNA Améthyste en dissuasion</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div row id="charlesGaulle">
+            <div col-12 class="centerImg">
+                <!-- titre article -->
+                <h2 class="titreCommunPages">Un tir de torpilles</h2>
+                <figure>
+                    <img class="imgPages" src="../images/charlesDeGaulle.jpg" alt="Charles_de_Gaulle">
+                    <figcaption>2021 - Le porte avion Charles-de-Gaulle et ses rafales</figcaption>
+                </figure>
+            </div>
+        </div>
+    </main>
+    <!-- Contenu ARTICLE (HTML pages 1-2-3) -->
+    <article id="table3">
+        <!-- titre tableau -->
+        <h2 class="titreCommunPages">Comparaison des équipements</h2>
+        <!-- tableau comparaison -->
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr class="ligne1">
+                    <th scope="col">Equipements</th>
+                    <th scope="col">Nb Manche</th>
+                    <th scope="col">Nb Atlantique</th>
+                    <th scope="col">Nb Méditerrannée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">SNA</th>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th scope="row">SNLE</th>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row">Raffales</th>
+                    <td colspan="3">192 (dont 48 Marine Nationale) répartis sur toute la France</td>
+                </tr>
+            </tfoot>
+        </table>
+    </article>
+    <!-- Bas-page FOOTER (HTML index + pages 1-2-3) -->
+    <footer>
+        <div class="text-center">
+            <div class="row">
+                <div class="col-12">
+                    <!-- titre bas-page -->
+                    <h4>∼ Site réalisé par Emmanuel Martins ∼</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- photo "moi" -->
+                    <img src="../images/photo_moi.png" class="photoMoi" alt="Photo_moi">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Contact -->
+                    <p><a href="mailto:e.martins@developpe.net?subject=commande">
+                            <u>@mail :</u> <span>e.martins@developpe.net</span></a></p>
+                    <p><u>Tél :</u> 07.08.09.10.11</p><br><br><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="waveAnimation">
+            <div class="waveWrapperInner bgTop">
+                <!-- image "vague haute" -->
+                <div class="wave waveTop"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+                </div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+                <!-- image "vague milieu" -->
+                <div class="wave waveMiddle"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')">
+                </div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+                <!-- image "vague basse" -->
+                <div class="wave waveBottom"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Framework JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

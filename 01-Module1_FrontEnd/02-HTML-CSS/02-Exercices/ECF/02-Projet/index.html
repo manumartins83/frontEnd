@@ -81,81 +81,36 @@
                     <li class="nav-item">
                         <a class="nav-link police" href="html/page3.html" target="_self">Mer Méditerrannée</a>
                     </li>
-
-
                     <!-- liens menu interne HTML "Manche" -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown menu">
                         <a class="nav-link dropdown-toggle police" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu dropMenu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item policeMenu" href="#">Action</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#">Another action</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#">Tableau</a></li>
                         </ul>
                     </li>
-
-
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Entête HEADER (HTML index + pages 1-2-3) -->
+    <!-- Entête HEADER (HTML index) -->
     <header>
         <!-- titre principal -->
-        <h1>Les&nbsp;<a href="#" title="Les frontières maritimes de la France"><img class="chiffre3"
-                    src="images/chiffre_3.png" alt="Chiffre_3"></a>&nbsp;frontières
+        <h1>Les&nbsp;<img class="chiffre3" src="images/chiffre_3.png" alt="Chiffre_3">&nbsp;frontières
             maritimes métropolitaines françaises</h1>
     </header>
 
     <!-- Contenu SECTION (HTML index) -->
     <section>
         <div class="row">
-            <div class="col-6">
-                <!-- titre1 "points commun" -->
-                <h2 class="titreCommun titre1"><a href="#carte1" title="Une exploitation maritime">Une
-                        exploitation maritime</h2></a>
-                <div id="carte1" class="card">
-                    <!-- carte parchemin -->
-                    <img class="card-img parchemin" src="images/parchemin.png" alt="Parchemin">
-                    <div class="card-img-overlay">
-                        <!-- image "EPR" carte -->
-                        <img src="images/EPR.jpg" class="card-img-top imgCarte" alt="EPR_Flamanville">
-                        <!-- contenu carte -->
-                        <div class="card-body">
-                            <!-- sous-titres + paragraphes -->
-                            <h5 class="card-title sousTitre">Le traffic et la pêche :</h5>
-                            <p class="card-text textPointCom">Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                                doloribus,
-                                illo at, obcaecati labore beatae corrupti voluptatem numquam nesciunt maiores
-                                accusantium temporibus dignissimos quam libero modi. Aperiam sint, labore sit
-                                expedita
-                                culpa cum in dicta asperiores maxime laboriosam perferendis qui ex amet
-                                doloremque
-                                nobis
-                                natus deserunt earum rerum deleniti quidem.</p>
-                            <h5 class="card-title sousTitre">Les énergies et constructions :</h5>
-                            <p class="card-text textPointCom">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Sunt
-                                nisi
-                                veniam ipsum voluptatum, atque exercitationem perspiciatis, eius eligendi
-                                aliquam
-                                mollitia doloribus amet optio consequuntur voluptatem maxime a animi perferendis
-                                explicabo ipsam, delectus quae. Id odio ab et, voluptate, nostrum voluptates
-                                animi
-                                ullam
-                                accusantium atque culpa delectus blanditiis? Quidem, earum impedit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <!-- titre2 "points commun" -->
-                <h2 class="titreCommun titre2">Une dissuasion stratégique</h2>
-                <div class="card carte2">
+            <div class="col-12">
+                <!-- titre "points commun" -->
+                <h2 class="titreCommunSommaire">Une dissuasion stratégique</h2>
+                <div class="card">
                     <!-- image carte parchemin -->
-                    <img class="card-img parchemin parchemin2" src="images/parchemin.png" alt="Parchemin">
+                    <img class="card-img parchemin" src="images/parchemin.png" alt="Parchemin">
                     <!-- contenu carte -->
                     <div class="card-img-overlay">
                         <!-- image "SNA Suffren" carte -->
@@ -185,31 +140,88 @@
         </div>
     </section>
 
+    <!-- Contenu MAIN (HTML index) -->
+    <main>
+        <div row>
+            <div col-12>
+                <!-- image carte "parchemin France" -->
+                <img src="images/parchemin_france.png" class="card-img-top imgCarteFrance" alt="Carte_France_parchemin">
+                <div class="container text-center">
+                    <div class="row row-cols-3">
 
+                        <div class="col">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-5 col-sm-4">
+                                        <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
+                                            alt="card-horizontal-image">
+                                    </div>
+                                    <div class="col-7 col-sm-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Atlantique</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- titre carte -->
+                        <div class="col">
+                            <h2>Atlantique</h2>
+                        </div>
 
+                        <!-- titre carte -->
+                        <div class="col">
+                            <h2>Manche</h2>
+                        </div>
 
+                        <div class="col">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-5 col-sm-4">
+                                        <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
+                                            alt="card-horizontal-image">
+                                    </div>
+                                    <div class="col-7 col-sm-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Manche</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        <div class="col">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-5 col-sm-4">
+                                        <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
+                                            alt="card-horizontal-image">
+                                    </div>
+                                    <div class="col-7 col-sm-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Méditerrannée</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- titre carte -->
+                        <div class="col">
+                            <h2>Méditerrannée</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <!-- Bas-page FOOTER (HTML index + pages 1-2-3) -->
     <footer>
         <div class="text-center">

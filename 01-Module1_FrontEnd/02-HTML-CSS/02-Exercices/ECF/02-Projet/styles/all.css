@@ -123,22 +123,12 @@ nav.menuFixe {
 
 /* #### Mise en forme texte "Sommaire" logos #### */
 .warp {
-    /* type affichage boite *
-    display: block;
-    /* type positionnement boite *
+    /* type positionnement boite */
     position: relative;
-
-  /* type positionnement boite *
-    float: left;
-
     /* largeur */
     width: 200px;
     /* hauteur */
     height: auto;
-    /* dimensionnement marge extérieure *
-    margin-left: -1.5em; */
-
-
     /* type police */
     font-family: 'western_samurairegular';
     /* taille police */
@@ -155,19 +145,8 @@ nav.menuFixe {
 
 /* #### Mise en forme lettres texte logos #### */
 [class*='warp__'] {
-    /* type affichage boite *
-    display: block;
-    /* type positionnement boite *
-    position: absolute; 
-
     /* type positionnement boite */
     position: absolute;
-
-    /*top: 9%;
-    left: 0.5%;
-    /* type positionnement boite *
-    float: left;
-
     /* positionnement plan */
     z-index: 3;
 }
@@ -228,27 +207,13 @@ nav.menuFixe {
     transform: translate(165px, 5px) rotate(-85deg);
 }
 
-
-
-
-
-
-
-
-
 /* #### Mise en forme logo "planète" #### */
 .logoNav {
-    /* type positionnement boite *
-
- position: fixed;
-    top: 0.5em;
-    left: 4.5%;
-
-    float: left;
-    /* position *
-    margin-top: 5%;
-    margin-left: 32%;
-
+    /* type positionnement boite */
+    position: relative;
+    /* position */
+    top: 0;
+    margin-left: 60px;
     /* largeur */
     width: 100px;
     /* hauteur */
@@ -259,37 +224,22 @@ nav.menuFixe {
     filter: brightness(1.7);
     /* transformation */
     transform: rotate(130deg);
-
-
 }
 
 /* #### Mise en forme logo "France" #### */
 .logoNav2 {
-    /* type positionnement boite *
-
-  position: fixed;
-
-    float: left;
-    /* position *
-    margin-top: -40%;
-    margin-left: 32%;
-
-
-
-
+    /* type positionnement boite */
+    position: absolute;
+    /* position */
+    top: 25px;
+    margin-left: -70px;
     /* largeur */
     width: 40px;
     /* hauteur */
     height: auto;
     /* positionnement plan */
     z-index: 2;
-
 }
-
-
-
-
-
 
 /* #### Mise en forme lien logos + texte #### */
 .logosNav:hover {
@@ -337,6 +287,30 @@ nav a.police:hover {
     color: blue;
 }
 
+/* #### Mise en forme menu déroulant #### */
+nav .dropMenu {
+    /* couleur fond */
+    background-color: rgb(37, 36, 36, 0.75);
+}
+
+/* #### Mise en forme liens menu #### */
+nav a.policeMenu {
+    /* dimensionnement marge intérieure */
+    padding: 0.2em !important;
+    /* type police */
+    font-family: 'jack_pirate_personal_use_onRg';
+    /* taille police */
+    font-size: 2vw;
+    /* couleur police */
+    color: white;
+}
+
+/* #### Mise en forme texte liens menu #### */
+nav a.policeMenu:hover {
+    /* couleur police */
+    color: blue;
+}
+
 /* ############# Entête HEADER (HTML index + pages 1-2-3) ############# */
 /* #### Mise en forme titre principal #### */
 header>h1 {
@@ -360,7 +334,7 @@ footer>div.text-center {
     /* opacité fond */
     backdrop-filter: blur(2px);
     /* dimensionnement marge extérieure */
-    margin-top: 7em;
+    margin-top: 5em;
     /* type positionnement boite */
     position: absolute;
     /* position */
@@ -436,11 +410,7 @@ p span:hover {
     color: rgb(0, 0, 255);
 }
 
-
-
-
-
-/* #### types transformations #### */
+/* #### types transformations bas-page FOOTER #### */
 @keyframes move_wave {
     0% {
         /* transformation */
@@ -549,26 +519,11 @@ p span:hover {
     animation: move_wave 20s linear infinite;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ############# PARAMETRES PC 4K ############# */
 @media screen and (min-width: 1440px) {
 
     /* ############# Menu NAV (HTML index + pages 1-2-3) ############# */
-    /* #### Mise en forme texte texte "Sommaire" menu navigation #### */
+    /* #### Mise en forme texte "Sommaire" menu navigation #### */
     ul>li.sommaire {
         /* type affichage boite */
         display: none;
@@ -584,66 +539,33 @@ p span:hover {
         /* type affichage boite */
         display: none;
     }
+}
+
+/* ############# PARAMETRES PC PORTABLE ############# */
+@media screen and (max-width: 1024px) {
 
     /* #### Mise en forme logo "planète" #### */
     .logoNav {
-
-
+        /* position */
+        top: 0;
+        margin-left: 20px;
         /* largeur */
-        max-width: 7%;
+        width: 50px;
         /* hauteur */
         height: auto;
-
-        /* position *
-            top: 0.6rem;
-            left: 2.3rem;*/
     }
 
     /* #### Mise en forme logo "France" #### */
     .logoNav2 {
-
-
-
+        /* position */
+        top: 15px;
+        margin-left: -35px;
         /* largeur */
-        max-width: 3.5%;
+        width: 20px;
         /* hauteur */
         height: auto;
-
-        /* position *
-            top: 2.3rem;
-            left: 4rem;*/
     }
 }
-
-
-
-
-
-
-
-
-/* ############# PARAMETRES PC PORTABLE ############# */
-@media screen and (max-width: 1024px) {}
-
-
-/* ############# PARAMETRES TABLETTE ############# */
-@media screen and (max-width: 768px) {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ############# PARAMETRES MOBILE ############# */
 @media screen and (max-width: 425px) {
@@ -675,6 +597,4 @@ p span:hover {
         /* dimensionnement marge extérieure */
         margin-top: 3em;
     }
-
-
 }

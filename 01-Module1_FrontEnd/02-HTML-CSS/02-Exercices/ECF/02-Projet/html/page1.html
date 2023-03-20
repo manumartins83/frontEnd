@@ -14,11 +14,10 @@
     <!-- dénomination onglet page -->
     <title>La Mer Manche</title>
     <!-- Icone onglet page -->
-    <link rel="icon" href="images/icone_france.jpg">
+    <link rel="icon" href="../images/icone_france.jpg">
     <!-- retrait mise en forme HTML -->
-    <link rel="stylesheet" href="css/normalize.css">
-
-    <!-- style police Google fonts -->
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <!-- Type police Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -26,69 +25,184 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- mise en forme personnelle CSS -->
-    <link rel="stylesheet" href="styles/all.css">
-    <link rel="stylesheet" href="styles/html.css">
+    <link rel="stylesheet" href="../styles/all.css">
+    <link rel="stylesheet" href="../styles/html.css">
 </head>
 
 <!-- STRUCTURE BODY -->
 
 <body>
-    <!-- Menu NAV (HTML index + pages 1-2-3) -->
-    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+    <!-- Fond écran animé (HTML index + pages 1-2-3) -->
+    <video autoplay loop muted>
+        <source src="../videos/fond_anime.mp4" type="video/mp4">
+    </video>
+    <!-- Fond écran coloré (HTML index + pages 1-2-3) -->
+    <div class="fondColor"></div>
+
+    <!-- Menu NAV (HTML page1) -->
+    <nav class="navbar navbar-expand-xl menuFixe">
         <div class="container-fluid">
-            <!-- logos + liens sommaire -->
-            <a class="navbar-brand" href="../index.html" target="_self" title="Sommaire"><img id="logo"
-                    src="images/logo_planete_terre.png" alt="Logo_planète_Terre"><img id="logo2"
-                    src="images/logo_france.png" alt="Logo_France"></a>
+            <!--  lien "Sommaire" + logos -->
+            <a class="logosNav" href="../index.html" target="_self" title="Sommaire">
+                <div class="warp">
+                    <span class="warp__0">S</span>
+                    <span class="warp__1">o</span>
+                    <span class="warp__2">m</span>
+                    <span class="warp__3">m</span>
+                    <span class="warp__4">a</span>
+                    <span class="warp__5">i</span>
+                    <span class="warp__6">r</span>
+                    <span class="warp__7">e</span>
+                    <img class="logoNav" src="../images/logo_planete_terre.png" alt="Logo_planète_Terre">
+                    <img class="logoNav2" src="../images/logo_france.png" alt="Logo_France">
+                </div>
+            </a>
             <!-- bouton menu NAV version TABLETTE + MOBILE-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown"
+                aria-controls="navbarWithDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- liste liens -->
-            <div class="collapse navbar-collapse show" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-                    <li class="nav-item">
-                        <!-- lien page1 HTML "Manche" -->
-                        <a class="nav-link" aria-current="page" href="html/page1.html" target="_self">Mer Manche</a>
+            <!-- liens menu NAV -->
+            <div class="collapse navbar-collapse show" id="navbarWithDropdown">
+                <ul class="navbar-nav">
+                    <!-- lien "Sommaire" -->
+                    <li class="nav-item sommaire">
+                        <a class="nav-link police" href="../index.html" target="_self">Sommaire</a>
                     </li>
+                    <!-- lien page1 HTML "Manche" -->
                     <li class="nav-item">
-                        <!-- lien page2 HTML "Atlantique" -->
-                        <a class="nav-link" href="html/page2.html" target="_self">Océan Atlantique</a>
+                        <a class="nav-link police" href="../html/page1.html" target="_self">Mer Manche</a>
                     </li>
+                    <!-- lien page2 HTML "Atlantique" -->
                     <li class="nav-item">
-                        <!-- lien page3 HTML "Méditerrannée" -->
-                        <a class="nav-link" href="html/page3.html" target="_self">Mer Méditerrannée</a>
+                        <a class="nav-link police" href="../html/page2.html" target="_blank">Océan Atlantique</a>
+                    </li>
+                    <!-- lien page3 HTML "Méditerrannée" -->
+                    <li class="nav-item">
+                        <a class="nav-link police" href="../html/page3.html" target="_blank">Mer Méditerrannée</a>
+                    </li>
+                    <!-- liens menu interne HTML "Manche" -->
+                    <li class="nav-item dropdown menu">
+                        <a class="nav-link dropdown-toggle police" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu dropMenu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item policeMenu" href="#construction">Construction</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#service">Mise en service</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#table1">Equipements</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Entête HEADER (HTML page1) -->
+    <header>
+        <!-- titre principal -->
+        <h1 id="construction">La Mer Manche</h1>
+    </header>
+    <!-- Contenu MAIN (HTML page1) -->
+    <main>
+        <div row>
+            <div col-12 class="centerImg">
+                <!-- titre article -->
+                <h2 class="titreCommunPages">La construction des sous-marins</h2>
+                <figure>
+                    <img class="imgPages" src="../images/suffren_construction.png" alt="Construction_sous-marins">
+                    <figcaption>2020 - Fin de construction du SNA Suffren à Cherbourg</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div row id="service">
+            <div col-12 class="centerImg">
+                <!-- titre article -->
+                <h2 class="titreCommunPages">La mise en service des sous-marins</h2>
+                <figure>
+                    <img class="imgPages" src="../images/suffren_depart.png" alt="Mise_en_service_sous-marins">
+                    <figcaption>2020 - Départ à la mer du SNA Suffren</figcaption>
+                </figure>
+            </div>
+        </div>
+    </main>
+    <!-- Contenu ARTICLE (HTML pages 1-2-3) -->
+    <article id="table1">
+        <!-- titre tableau -->
+        <h2 class="titreCommunPages">Comparaison des équipements</h2>
+        <!-- tableau comparaison -->
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr class="ligne1">
+                    <th scope="col">Equipements</th>
+                    <th scope="col">Nb Manche</th>
+                    <th scope="col">Nb Atlantique</th>
+                    <th scope="col">Nb Méditerrannée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">SNA</th>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th scope="row">SNLE</th>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row">Raffales</th>
+                    <td colspan="3">192 (dont 48 Marine Nationale) répartis sur toute la France</td>
+                </tr>
+            </tfoot>
+        </table>
+    </article>
     <!-- Bas-page FOOTER (HTML index + pages 1-2-3) -->
     <footer>
-
+        <div class="text-center">
+            <div class="row">
+                <div class="col-12">
+                    <!-- titre bas-page -->
+                    <h4>∼ Site réalisé par Emmanuel Martins ∼</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- photo "moi" -->
+                    <img src="../images/photo_moi.png" class="photoMoi" alt="Photo_moi">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Contact -->
+                    <p><a href="mailto:e.martins@developpe.net?subject=commande">
+                            <u>@mail :</u> <span>e.martins@developpe.net</span></a></p>
+                    <p><u>Tél :</u> 07.08.09.10.11</p><br><br><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="waveAnimation">
+            <div class="waveWrapperInner bgTop">
+                <!-- image "vague haute" -->
+                <div class="wave waveTop"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+                </div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+                <!-- image "vague milieu" -->
+                <div class="wave waveMiddle"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')">
+                </div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+                <!-- image "vague basse" -->
+                <div class="wave waveBottom"
+                    style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')">
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- Framework JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

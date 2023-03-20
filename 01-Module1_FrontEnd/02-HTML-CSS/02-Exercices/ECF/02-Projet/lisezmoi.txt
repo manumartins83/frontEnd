@@ -10,18 +10,20 @@ https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
 - transformation texte "sommaire" sur logos -
 https://csswarp.eleqtriq.com/code
 
-Contenu SECTION (index) :
+Contenu SECTION (index + pages1-2-3) :
 - structure -
 https://getbootstrap.com/docs/5.3/layout/grid/
 https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
 
+Contenu MAIN (index + pages 1-2-3) :
+- structure -
+https://getbootstrap.com/docs/5.3/layout/grid/
+https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
 
-
-
-
-
-
-
+Contenu ARTICLE (pages 1-2-3)
+- structure -
+https://getbootstrap.com/docs/5.3/layout/grid/
+https://bootstrap-cheatsheet.themeselection.com/ (mémo cheatsheet Bootstrap)
 
 Bas page FOOTER :
 - structure -
@@ -29,20 +31,20 @@ https://getbootstrap.com/docs/5.3/layout/grid/
 - mise en forme arrière plan animé -
 https://codepen.io/plavookac/pen/QMwObb
 
-
-
-
-
-
-
-
-
+Choix sélecteurs :
+id : pour les liens src interne 
+class : pour tous les changements nécessaire à la mise en forme des éléments des pages HTML (index + pages 1-2-3) 
+attribut : uniquement pour la transformation courbée de chaque lettre composant le mot "SOMMAIRE" sur les logos "planète + France" de la barre de navigation
+balise > : pour identifier les enfants direct d'un contenu parent
+"espace" : pour identifier les descendants d'un contenu parent
+:hover : pour passage souris sur liens
 
 SOURCES :
 - Dissuasion -
 https://www.google.com/search?q=type+de+dissuasion&rlz=1C1GCEU_frFR1045FR1045&oq=type+de+dissuasion&aqs=chrome..69i57j33i160l2.5952j1j7&sourceid=chrome&ie=UTF-8
 https://fr.wikipedia.org/wiki/Force_de_dissuasion_nucl%C3%A9aire_fran%C3%A7aise#:~:text=Les%20forces%20de%20dissuasion%20nucl%C3%A9aire,op%C3%A9rationnel%20de%20300%20t%C3%AAtes%20nucl%C3%A9aires.
 https://www.lamarinerecrute.fr/qui-sommes-nous/missions-et-organisation
+photos personnel
 
 
 

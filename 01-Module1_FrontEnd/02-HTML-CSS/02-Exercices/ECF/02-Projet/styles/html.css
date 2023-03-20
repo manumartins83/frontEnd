@@ -29,9 +29,9 @@
 
 /* type regular */
 @font-face {
-    font-family: 'laurensregular';
-    src: url(../fonts/Laurens/laurens_demo-webfont.woff2) format('woff2'),
-        url(../fonts/Laurens/laurens_demo-webfont.woff) format('woff');
+    font-family: 'barfiola_free_for_personal_Rg';
+    src: url(../fonts/Barfiola/barfiola-webfont.woff2) format('woff2'),
+        url(../fonts/Barfiola/barfiola-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -58,15 +58,156 @@
 * {
     /* dimensionnement boite : padding+bordures */
     box-sizing: border-box;
-
-
-
-    /* espacement entre lettres */
-    letter-spacing: 1px;
-    /* espacement entre mots */
-    word-spacing: 1px;
 }
 
+/* ############# Contenu MAIN (HTML pages 1-2-3) ############# */
+/* #### Mise en forme titres "commun" #### */
+h2.titreCommunPages {
+    /* dimensionnement marge extérieure */
+    margin: 1em 0 0.5em !important;
+    /* type police */
+    font-family: 'lombardia_script_personal_uRg';
+    /* taille police */
+    font-size: 5vw;
+    /* épaisseur texte */
+    font-weight: bolder;
+    /* alignement texte */
+    text-align: center;
+    /* couleur police */
+    color: rgb(255, 215, 0, 0.7);
+}
 
-    
+/* #### Mise en forme contenu articles #### */
+main {
+    /* dimensionnement marge extérieure */
+    margin-bottom: 2.5em;
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: column nowrap;
+    /* ecartement boite */
+    justify-content: center;
+    /* alignement boite */
+    align-items: center;
+}
 
+/* #### Mise en forme contenu photos #### */
+.centerImg {
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: column nowrap;
+    /* ecartement boite */
+    justify-content: center;
+    /* alignement boite */
+    align-items: center;
+}
+
+/* #### Mise en forme photos #### */
+.imgPages {
+    /* largeur */
+    width: 100%;
+    /* hauteur */
+    height: auto;
+}
+
+/* #### Mise en forme contenu photos #### */
+figure.imgSNA {
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: column nowrap;
+    /* alignement boite */
+    align-items: center;
+}
+
+/* #### Mise en forme photos "SNA" #### */
+.tirSNA {
+    /* largeur */
+    width: 70% !important;
+    /* hauteur */
+    height: auto;
+}
+
+/* #### Mise en forme légende photos #### */
+figcaption {
+    /* dimensionnement marge intérieure */
+    padding-top: 1em;
+    /* type police */
+    font-family: 'barfiola_free_for_personal_Rg';
+    /* taille police */
+    font-size: 0.8vw;
+    /* alignement texte */
+    text-align: center;
+    /* couleur police */
+    color: rgb(255, 255, 255, 0.8);
+}
+
+/* ############# Contenu ARTICLE (HTML pages 1-2-3) ############# */
+/* #### Mise en forme tableau_agenda #### */
+article {
+    /* déplacement marge extérieure boites */
+    margin: 0em 15em 0em;
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: column nowrap;
+    /* ecartement boite */
+    justify-content: center;
+    /* alignement boite */
+    align-items: center;
+}
+
+/* #### Mise en forme tableau #### */
+table {
+    /* taille police */
+    font-size: 1em;
+    /* alignement texte */
+    text-align: center;
+    /* couleur police */
+    color: rgb(255, 255, 255, 0.8);
+}
+
+/* #### Mise en forme entête tableau #### */
+thead {
+    /* epaisseur police */
+    font-weight: bolder;
+    /* couleur police */
+    color: blue;
+    /* paramètres bordures */
+    border-bottom: 2px solid blue;
+}
+
+/* #### Mise en forme entête tableau #### */
+.ligne1>th {
+    /* couleur fond */
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+/* ############# PARAMETRES PC PORTABLE ############# */
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+
+    /* #### Mise en forme contenu articles #### */
+    main {
+        /* dimensionnement marge extérieure */
+        margin-bottom: 1em;
+    }
+
+    /* #### Mise en forme contenu photos #### */
+    figure {
+        /* type affichage boite */
+        display: flex;
+        /* deplacement boite */
+        flex-flow: column nowrap;
+        /* alignement boite */
+        align-items: center;
+    }
+
+    /* #### Mise en forme photos #### */
+    .imgPages {
+        /* largeur */
+        max-width: 60%;
+        /* hauteur */
+        height: auto;
+    }
+}

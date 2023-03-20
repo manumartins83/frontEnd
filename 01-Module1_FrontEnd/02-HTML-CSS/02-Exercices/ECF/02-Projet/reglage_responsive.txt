@@ -1,0 +1,67 @@
+  
+
+4K
+
+
+
+   /* #### Mise en forme sous-titres "points commun" #### */
+    h5.sousTitre {
+        /* taille police */
+        font-size: 1.75em;
+    }
+
+    /* #### Mise en forme paragraphes "points commun" #### */
+    p.textPointCom {
+        /* taille police */
+        font-size: 0.75em;
+    }
+
+
+
+
+pc portable
+
+/* #### Mise en forme cartes "points commun" #### */
+    section div.row {
+        /* deplacement boite */
+        flex-flow: column nowrap;
+        /* alignement boite */
+        align-items: center;
+    }
+
+    /* #### Mise en forme texte cartes "points commun" #### */
+    section div.card-body {
+        /* dimensionnement marge extérieure */
+        margin: 0 1.8em !important;
+    }
+
+    /* #### Mise en forme images cartes "points commun" #### */
+    .imgCarte {
+        /* dimensionnement marge extérieure */
+        margin-top: 3.1em;
+        /* largeur */
+        max-width: auto;
+        /* hauteur */
+        max-height: 22%;
+    }
+
+
+
+
+tablette
+
+    /* #### Mise en forme texte cartes "points commun" #### */
+    section div.card-body {
+        /* dimensionnement marge extérieure */
+        margin: 0 3.5em !important;
+    }
+
+    /* #### Mise en forme images cartes "points commun" #### */
+    .imgCarte {
+        /* dimensionnement marge extérieure */
+        margin-top: 5.2em;
+        /* largeur */
+        max-width: auto;
+        /* hauteur */
+        max-height: 30%;
+    }
