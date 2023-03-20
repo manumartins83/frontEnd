@@ -39,7 +39,7 @@
     <!-- Fond écran coloré (HTML index + pages 1-2-3) -->
     <div class="fondColor"></div>
 
-    <!-- Menu NAV (HTML index + pages 1-2-3) -->
+    <!-- Menu NAV (HTML index) -->
     <nav class="navbar navbar-expand-xl menuFixe">
         <div class="container-fluid">
             <!--  lien "Sommaire" + logos -->
@@ -86,9 +86,9 @@
                         <a class="nav-link dropdown-toggle police" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                         <ul class="dropdown-menu dropMenu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item policeMenu" href="#">Action</a></li>
-                            <li><a class="dropdown-item policeMenu" href="#">Another action</a></li>
-                            <li><a class="dropdown-item policeMenu" href="#">Tableau</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#">never</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#">never</a></li>
+                            <li><a class="dropdown-item policeMenu" href="#">never</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -98,10 +98,10 @@
     <!-- Entête HEADER (HTML index) -->
     <header>
         <!-- titre principal -->
-        <h1>Les&nbsp;<img class="chiffre3" src="images/chiffre_3.png" alt="Chiffre_3">&nbsp;frontières
-            maritimes métropolitaines françaises</h1>
+        <h1>Les&nbsp;<a href="#frontieres" title="Les frontières maritimes"><img class="chiffre3"
+                    src="images/chiffre_3.png" alt="Chiffre_3"></a>&nbsp;frontières maritimes métropolitaines françaises
+        </h1>
     </header>
-
     <!-- Contenu SECTION (HTML index) -->
     <section>
         <div class="row">
@@ -139,89 +139,83 @@
             </div>
         </div>
     </section>
-
     <!-- Contenu MAIN (HTML index) -->
-    <main>
-        <div row>
-            <div col-12>
-                <!-- image carte "parchemin France" -->
-                <img src="images/parchemin_france.png" class="card-img-top imgCarteFrance" alt="Carte_France_parchemin">
-                <div class="container text-center">
-                    <div class="row row-cols-3">
+    <main id="frontieres">
+        <!-- titre "points commun" -->
+        <h2 class="titreCommunSommaire">Les frontières maritimes</h2>
 
-                        <div class="col">
-                            <div class="card">
-                                <div class="row g-0">
-                                    <div class="col-5 col-sm-4">
-                                        <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
-                                            alt="card-horizontal-image">
-                                    </div>
-                                    <div class="col-7 col-sm-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Atlantique</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content.</p>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="row">
+            <div class="col-4">
+                <!-- contenu carte -->
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-5 col-sm-4">
+                            <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
+                                alt="card-horizontal-image">
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <div class="card-body">
+                                <h5 class="card-title">l'Atlantique :</h5>
+                                <p class="card-text">This is a wider card with supporting text below as
+                                    a
+                                    natural lead-in to additional content.</p>
                             </div>
                         </div>
-
-                        <!-- titre carte -->
-                        <div class="col">
-                            <h2>Atlantique</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <!-- contenu carte -->
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-5 col-sm-4">
+                            <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
+                                alt="card-horizontal-image">
                         </div>
-
-                        <!-- titre carte -->
-                        <div class="col">
-                            <h2>Manche</h2>
-                        </div>
-
-                        <div class="col">
-                            <div class="card">
-                                <div class="row g-0">
-                                    <div class="col-5 col-sm-4">
-                                        <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
-                                            alt="card-horizontal-image">
-                                    </div>
-                                    <div class="col-7 col-sm-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Manche</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-7 col-sm-8">
+                            <div class="card-body">
+                                <h5 class="card-title">La Manche :</h5>
+                                <p class="card-text"> Elle est située dans le Nord de la France et
+                                    s'étend
+                                    sur environ 75000 km<sup>2</sup><br>Longueur : 530 km<br>Largeur :
+                                    176 km extrémité Ouest et 41 km extrémité Est<br>Profondeur max :
+                                    profonde de 180m<br>Profondeur moyenne : 54m</p>
                             </div>
                         </div>
-
-                        <div class="col">
-                            <div class="card">
-                                <div class="row g-0">
-                                    <div class="col-5 col-sm-4">
-                                        <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
-                                            alt="card-horizontal-image">
-                                    </div>
-                                    <div class="col-7 col-sm-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Méditerrannée</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <!-- contenu carte -->
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-5 col-sm-4">
+                            <img src="assets/images/bs-images/img-3x4.png" class="img-fluid w-100"
+                                alt="card-horizontal-image">
                         </div>
-                        
-                        <!-- titre carte -->
-                        <div class="col">
-                            <h2>Méditerrannée</h2>
+                        <div class="col-7 col-sm-8">
+                            <div class="card-body">
+                                <h5 class="card-title">La Méditerrannée :</h5>
+                                <p class="card-text">This is a wider card with supporting text below as
+                                    a
+                                    natural lead-in to additional content.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- image carte "parchemin France" -->
+        <img src="images/parchemin_france.png" class="card-img-top imgCarteFrance" alt="Carte_France_parchemin"
+            usemap="#carteMaritime">
+        <map name="carteMaritime">
+            <area shape="rect" coords="0,1212,1020,350" href="html/page2.html" target="_blank" alt="Océan_Atlantique" />
+            <area shape="rect" coords="0,0,1520,352" href="html/page1.html" target="_blank" alt="Mer_Manche" />
+            <area shape="rect" coords="500,352,1520,1512" href="html/page3.html" target="_blank"
+                alt="Mer_Méditérrannée" />
+        </map>
     </main>
+
     <!-- Bas-page FOOTER (HTML index + pages 1-2-3) -->
     <footer>
         <div class="text-center">

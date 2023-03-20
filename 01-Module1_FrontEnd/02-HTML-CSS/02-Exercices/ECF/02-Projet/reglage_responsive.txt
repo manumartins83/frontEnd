@@ -1,5 +1,23 @@
   
 
+.main div.card {
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow:  nowrap;
+    /* ecartement boite */
+    justify-content:center;
+    /* alignement boite */
+    align-items: center;
+}
+
+
+
+
+
+
+
+
 4K
 
 

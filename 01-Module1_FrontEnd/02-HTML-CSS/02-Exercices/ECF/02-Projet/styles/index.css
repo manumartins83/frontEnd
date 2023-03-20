@@ -70,10 +70,14 @@ ul>li.menu {
 /* ############# Entête HEADER (HTML index) ############# */
 /* #### Mise en forme image titre principal "thème" #### */
 .chiffre3 {
+    /* type positionnement boite */
+    position: relative;
     /* largeur */
     width: 100px;
     /* hauteur */
     height: auto;
+    /* positionnement plan */
+    z-index: 1;
 }
 
 /* ############# Contenu SECTION (HTML index) ############# */
@@ -111,6 +115,8 @@ h2.titreCommunSommaire {
     text-align: center;
     /* couleur police */
     color: rgb(255, 215, 0, 0.7);
+    /* ombrage */
+    text-shadow: 20px -15px rgb(0, 0, 0, 0.3);
 }
 
 /* #### Mise en forme parchemins cartes "points commun" #### */
@@ -189,29 +195,36 @@ p.textPointCom {
     color: rgb(165, 42, 42, 0.5);
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ############# Contenu MAIN (HTML index) ############# */
-/* #### Mise en forme carte "France parchemin" #### */
-main {
-    /* type affichage boite */
-    display: flex;
-    /* deplacement boite */
-    flex-flow: column nowrap;
-    /* ecartement boite */
-    justify-content: center;
-    /* alignement boite */
-    align-items: center;
-}
 
+
+
+
+
+
+
+
+
+/* #### Mise en forme carte "France parchemin" #### */
+
+
+
+
+
+
+
+
+
+
+
+
+/* #### Mise en forme carte France "frontières" #### */
+.imgCarteFrance {
+    /* type positionnement boite */
+    position: relative;
+    /* positionnement plan */
+    z-index: 1;
+}
 
 
 
@@ -245,7 +258,7 @@ main {
 
 
 
- 
+
 }
 
 
@@ -269,13 +282,13 @@ main {
         /* hauteur */
         height: auto;
     }
+}
 
 
+/* ############# PARAMETRES TABLETTE ############# */
+@media screen and (max-width: 768px) {}
 
-    /* ############# PARAMETRES TABLETTE ############# */
-    @media screen and (max-width: 768px) {}
-
-    /* ############# PARAMETRES MOBILE ############# */
-    @media screen and (max-width: 425px) {
-        /* ############# Contenu SECTION (HTML index) ############# */
-    }
+/* ############# PARAMETRES MOBILE ############# */
+@media screen and (max-width: 425px) {
+    /* ############# Contenu SECTION (HTML index) ############# */
+}

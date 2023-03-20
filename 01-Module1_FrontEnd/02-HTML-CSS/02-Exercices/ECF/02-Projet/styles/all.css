@@ -326,6 +326,8 @@ header>h1 {
     text-align: center;
     /* couleur police */
     color: rgb(255, 255, 255, 0.8);
+    /* ombrage */
+    text-shadow: 20px -15px rgb(0, 0, 0, 0.3);
 }
 
 /* ############# Bas-page FOOTER (HTML index + pages 1-2-3) ############# */
