@@ -172,7 +172,7 @@ h5.sousTitre {
     /* type police */
     font-family: 'lombardia_script_personal_uRg';
     /* taille police */
-    font-size: 1.8vw;
+    font-size: 1.8em;
     /* épaisseur texte */
     font-weight: bolder;
     /* soulignement texte */
@@ -188,7 +188,7 @@ p.textPointCom {
     /* type police */
     font-family: 'barfiola_free_for_personal_Rg';
     /* taille police */
-    font-size: 0.8vw;
+    font-size: 0.7em;
     /* alignement texte */
     text-align: justify;
     /* couleur police */
@@ -196,80 +196,129 @@ p.textPointCom {
 }
 
 /* ############# Contenu MAIN (HTML index) ############# */
+/* #### Mise en forme contenu "frontières" #### */
+main {
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: row wrap;
+    /* ecartement boite */
+    justify-content: center;
+    /* alignement boite */
+    align-items: center;
+}
 
+/* #### Mise en forme titres "commun" #### */
+main>h2.titreCommunSommaire {
+    /* dimensionnement marge extérieure */
+    margin: 1em 0 1em !important;
+}
 
+/* #### Mise en forme mini cartes "frontières" #### */
+main>div.row {
+    /* dimensionnement marge extérieure */
+    padding: 1em 4em;
+}
 
+main div.col-5.col-sm-4 {
+    /* type affichage boite */
+    display: flex;
+    /* deplacement boite */
+    flex-flow: row nowrap;
+}
 
+main .imgMer {
+    /* paramètres bordures */
+    border-right: 0.5px solid white;
+    /* arrondi bordures */
+    border-radius: 2%;
+}
 
+main div.card {
+    /* couleur fond */
+    background-color: rgb(34, 143, 143, 0.75);
+    /* paramètres bordures */
+    border: 1.5px solid white;
+    /* ombrage */
+    box-shadow: 10px 10px 10px rgb(255, 255, 255, 0.75);
+}
 
+/* #### Mise en forme sous-titres "points commun" #### */
+main h5 {
+    /* type police */
+    font-family: 'lombardia_script_personal_uRg';
+    /* taille police */
+    font-size: 1.8vw;
+    /* soulignement texte */
+    text-decoration: underline;
+    /* couleur police */
+    color: rgb(0, 0, 0);
+}
 
-
+/* #### Mise en forme paragraphes "points commun" #### */
+main p {
+    /* type police */
+    font-family: 'barfiola_free_for_personal_Rg';
+    /* taille police */
+    font-size: 0.9vw;
+    /* alignement texte */
+    text-align: start;
+    /* couleur police */
+    color: rgb(255, 255, 255, 0.70)
+}
 
 /* #### Mise en forme carte "France parchemin" #### */
-
-
-
-
-
-
-
-
-
-
-
-
-/* #### Mise en forme carte France "frontières" #### */
-.imgCarteFrance {
+main .imgCarteFrance {
+    /* dimensionnement marge extérieure */
+    margin: 2em 0 0em !important;
     /* type positionnement boite */
     position: relative;
     /* positionnement plan */
     z-index: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ############# PARAMETRES PC 4K ############# */
-@media screen and (max-width: 2560px) {
+@media screen and (min-width: 1850px) and (max-width: 2560px) {
 
     /* ############# Contenu SECTION (HTML index) ############# */
+    /* #### Mise en forme texte cartes "points commun" #### */
+    section div.card-body {
+        /* dimensionnement marge intérieure */
+        padding: 0.5em 4em !important;
+    }
 
+    /* #### Mise en forme intérieure cartes "points commun" #### */
+    section div.card-img-overlay {
+        /* dimensionnement marge intérieure */
+        padding: 13em 5.5em !important;
+    }
 
+    /* #### Mise en forme images cartes "points commun" #### */
+    .imgCarte {
+        /* largeur */
+        max-width: 60%;
+        /* hauteur */
+        height: auto;
+        /* arrondi bordures */
+        border-radius: 5%;
+    }
 
+    /* #### Mise en forme sous-titres "points commun" #### */
+    h5.sousTitre {
+        /* dimensionnement marge extérieure */
+        margin-bottom: 0.3em !important;
+        /* taille police */
+        font-size: 1.8em;
+    }
 
-
-
-
-
+    /* #### Mise en forme paragraphes "points commun" #### */
+    p.textPointCom {
+        /* dimensionnement marge extérieure */
+        margin-bottom: 0.2em !important;
+        /* taille police */
+        font-size: 0.6em;
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* ############# PARAMETRES PC PORTABLE ############# */
 @media screen and (max-width: 1024px) {
@@ -282,13 +331,74 @@ p.textPointCom {
         /* hauteur */
         height: auto;
     }
+
+    /* ############# Contenu MAIN (HTML index) ############# */
+    /* #### Mise en forme titres "commun" #### */
+    main>h2.titreCommunSommaire {
+        /* dimensionnement marge extérieure */
+        margin: 1em 0 0em !important;
+    }
+
+    main>div.row {
+        /* deplacement boite */
+        flex-flow: column nowrap;
+        /* ecartement boite */
+        justify-content: center;
+        /* alignement boite */
+        align-items: center;
+    }
+
+    /* #### Mise en forme mini cartes "frontières" #### */
+    main>div.row {
+        /* dimensionnement marge extérieure */
+        padding: 0;
+    }
+
+    main div.col-4 {
+        /* dimensionnement marge extérieure */
+        margin: 2em 0em 0em;
+    }
 }
 
-
-/* ############# PARAMETRES TABLETTE ############# */
-@media screen and (max-width: 768px) {}
-
-/* ############# PARAMETRES MOBILE ############# */
+/* ############# PARAMETRES MOBILE + PC PORTABLE ############# */
 @media screen and (max-width: 425px) {
+
     /* ############# Contenu SECTION (HTML index) ############# */
+    /* #### Mise en forme texte cartes "points commun" #### */
+    section div.card-body {
+        /* dimensionnement marge intérieure */
+        padding: 0 !important;
+    }
+
+    /* #### Mise en forme intérieure cartes "points commun" #### */
+    section div.card-img-overlay {
+        /* dimensionnement marge intérieure */
+        padding: 5.5em 4em 0em !important;
+    }
+
+    /* #### Mise en forme images cartes "points commun" #### */
+    .imgCarte {
+        /* largeur */
+        max-width: 70%;
+        /* hauteur */
+        height: auto;
+        /* arrondi bordures */
+        border-radius: 5%;
+    }
+
+    /* #### Mise en forme sous-titres "points commun" #### */
+    h5.sousTitre {
+        /* dimensionnement marge extérieure */
+        margin-bottom: 0.3em !important;
+        /* taille police */
+        font-size: 0.9em;
+    }
+
+    /* #### Mise en forme paragraphes "points commun" #### */
+    p.textPointCom {
+        /* dimensionnement marge extérieure */
+        margin-bottom: 0.2em !important;
+        /* taille police */
+        font-size: 0.4em;
+    }
 }

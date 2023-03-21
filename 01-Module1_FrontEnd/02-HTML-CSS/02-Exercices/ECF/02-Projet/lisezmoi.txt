@@ -32,6 +32,7 @@ https://getbootstrap.com/docs/5.3/layout/grid/
 https://codepen.io/plavookac/pen/QMwObb
 
 
+
 Choix sélecteurs :
 id : pour les liens src interne 
 class : pour tous les changements nécessaire à la mise en forme des éléments des pages HTML (index + pages 1-2-3) 
@@ -40,10 +41,55 @@ balise > : pour identifier les enfants direct du contenu parent
 "espace" : pour identifier les descendants du contenu parent
 :hover : pour passage souris sur liens
 
+id:
+- page index -
+"frontieres" : lien cible vers carte "frontières FRANCE parchemin"
+- page 1 -
+"construction" : lien cible article phto
+"service" : lien cible article photo
+"table1" : lien cible tableau
+- page 2 -
+"caracteristiqueSNLE" :lien cible image
+"SNLE" : lien cible image
+"table2" : lien cible tableau
+- page 3 -
+"caracteristiqueSNA" : lien cible image
+"SNA" : lien cible photo
+"charlesGaulle" : lien cible photo
+"table3" : lien cible tableau
 
-
-
-
+class pour MEF (Mise En Forme):
+- page index -
+"fondColor" : background couleur page
+"menuFixe" : barre navigation fixe
+"logosNav" : logos + texte sommaire
+"logoNav" : logo Planète
+"logoNav2" : logo FRANCE
+"menu" : menu pages 1-2-3
+"sommaire": apparition responsive texte sommaire
+"police" : texte liens menu navigation
+"titreCommunSommaire" : titre secondaire page
+"parchemin" : parchemin introduction points communs
+"imgCarte" : image carte parchemin points communs
+"sousTitre" : sous titre carte parchemin points communs
+"textPointCom" : texte paragraphe carte parchemin points communs
+"imgMer" : images des cartes des mers de la france
+"imgCarteFrance" : parchemin frontières FRANCE
+"photoMoi" : photo de moi pour FOOTER
+- page 1-2-3 -
+"fondColor" : background couleur page
+"menuFixe" : barre navigation fixe
+"logosNav" : logos + texte sommaire
+"logoNav" : logo Planète
+"logoNav2" : logo FRANCE
+"menu" : menu pages 1-2-3
+"sommaire": apparition responsive texte sommaire
+"police" : texte liens menu navigation
+"centerImg" : centrage images et articles dans page
+"titreCommunPages" : titre secondaire page
+"imgPages" : mise en forme images
+"ligne1" : ligne 1 tableau
+"photoMoi" : photo de moi pour FOOTER
 
 
 
@@ -58,6 +104,3 @@ https://www.lamarinerecrute.fr/qui-sommes-nous/missions-et-organisation
 https://fr.wikipedia.org/wiki/Manche_(mer)
 https://fr.wikipedia.org/wiki/Mer_M%C3%A9diterran%C3%A9e
 https://fr.wikipedia.org/wiki/Oc%C3%A9an_Atlantique
-
-
-
