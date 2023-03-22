@@ -12,7 +12,7 @@ if (compteur > 1) {
 
 var age = 35;
 
-document.write(age); 
+document.write(age);
 
 /* Ici, myVar n'est pas disponible
 * car déclarée dans la fonction

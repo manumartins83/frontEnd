@@ -1,2 +1,8 @@
 - Programmation JavaScript/Mots réservés -
 https://fr.wikibooks.org/wiki/Programmation_JavaScript/Mots_r%C3%A9serv%C3%A9s#R%C3%A9f%C3%A9rences
+
+- CheatSheet JavaScript -
+https://htmlcheatsheet.com/js/
+
+- Exercices JavaScript -
+https://odyssey.sdlm.be/
