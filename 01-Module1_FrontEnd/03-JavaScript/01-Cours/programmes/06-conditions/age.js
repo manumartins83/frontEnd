@@ -1,10 +1,19 @@
-var annee = prompt("Entrez votre année de naissance :\n(au format XXXX)");
+//- définir âge utilisateur selon année de naissance -
 
-var age = (2023 - annee);
 
+//- variables -
+var annee = prompt("Entrez votre année de naissance :\n(au format XXXX)"); //saisie année de naissance popup
+var age = (2023 - annee); //calcul âge utilisateur
+
+
+//- programme -
+//si année naissance >= 18 ans alors majeur
 if (annee > 0 && (annee - 18) > 0) {
-    alert("Vous avez " + age + " et êtes majeur");
+    console.log("Vous avez " + age + " et êtes majeur"); //affiche dev
+    alert("Vous avez " + age + " et êtes majeur"); //affiche popup
 }
+//sinon mineur
 else {
-    alert("Vous avez " + age + " et êtes mineur");
+    console.log("Vous avez " + age + " et êtes mineur"); //affiche dev
+    alert("Vous avez " + age + " et êtes mineur"); //affiche popup
 }
