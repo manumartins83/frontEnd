@@ -1,32 +1,28 @@
-//- variables -
-//nombre
-var N; //saisi nombre N
-//comptage (itération)
-var i = 0; //nombre entier(s) saisi(s)
-//résultat
-var resultat = ""; //nombre(s) saisi(s)
+//- afficher le mini et maxi du/des entier(s) saisi(s) -
 
-var mini;
+
+//- variables -
+var N; //entier(s) (N) à saisir
+var i = 0;  //comptage (itération) du/des entier(s) saisi(s)
+var mini, maxi; //valeur(s) mini et maxi du/des entier(s) (N) saisi(s)
+var tableau = new Array(); //création tableau saisie
 
 
 //- programme -
-//tant que saisie d'un nombre N différent de vide
+//tant que saisie d'un entier (N) différent de vide alors
 while (N != "") {
-    N = prompt("Saississez un nombre :"); //saisie
-    //si N différent de vide
+    N = prompt("Saississez un nombre :" +
+        "\n(Laissez la case vide puis confirmez pour arrêter la saisie)"); //saisie d'un entier différent de vide
+    //si entier (N) différent de vide alors
     if (N != "") {
-        resultat += parseInt(N); //association nombre(s) saisi(s)
-     
-        i++; //comptage itération
+        tableau.push(parseInt(N)); //incrémentation du/des entier(s) (N) saisi(s) dans tableau
+        mini = Math.min(...tableau); //récupère la valeur mini
+        maxi = Math.max(...tableau); //récupère la valeur maxi
+        i++; //comptage (itération) boucle
     }
 }
-
-mini=math.min(resultat);
-
-//affichage du nombre mini et maxi du/des nombre(s) saisi(s) N
-console.log("Le nombre minimun des saisis est :\n" + getMin(mini));
-//  +
-//     "\nLe nombre maximun des saisis est :\n" + (resultat)); //affiche dev
-alert("Le nombre minimun des saisis est :\n" + (mini));
-//  +
-//     "\nLe nombre maximun des saisis est :\n" + (resultat)); //affiche
+//affichage du mini et maxi du/des entier(s) (N) saisi(s)
+console.log("Le minimum du/des entier(s) saisi(s) est :\n" + mini +
+    "\nLe maximum du/des entier(s) saisi(s) est :\n" + maxi); //affiche dev
+alert("Le minimum du/des entier(s) saisi(s) est :\n" + mini +
+    "\nLe maximum du/des entier(s) saisi(s) est :\n" + maxi); //affiche popup

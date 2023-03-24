@@ -1,27 +1,27 @@
+//- calculer la somme et la moyenne du/des entier(s) saisi(s) -
+
+
 //- variables -
-//nombre
-var N; //saisi nombre N
-//comptage (itération)
-var i = 1; //nombre entier(s) saisi(s)
-//résultat somme
-var somme = 0; //somme entier(s) N
-//résultat moyenne
-var moyenne = 0; //moyenne entier(s) N
+var N; //entier(s) (N) à saisir
+var i = 1;  //comptage (itération) du/des entier(s) saisi(s)
+var somme = 0; //somme du/des entier(s) (N) saisi(s)
+var moyenne = 0; //calcul moyenne du/des entier(s) (N) saisi(s)
 
 
 //- programme -
-//tant que saisie d'un nombre N différent de 0
+//tant que saisie d'un entier (N) différent de 0 alors
 while (N != 0) {
-    N = prompt("Saississez un nombre :" + "\n(Entrez 0 puis confirmez pour arrêter la saisie)"); //saisie
-    //si N différent de 0
+    N = prompt("Saississez un nombre :" +
+        "\n(Entrez 0 puis confirmez pour arrêter la saisie)"); //saisie d'un entier différent de 0
+    //si entier (N) différent de 0 alors
     if (N != 0) {
-        somme += parseInt(N); //association et calcul somme nombre(s) N saisi(s)
-        moyenne = parseInt(somme / i); //calcul moyenne nombre(s) N saisi(s)
-        i++; //comptage itération
+        somme += parseInt(N); //association et calcul somme du/des entier(s) (N) saisi(s)
+        moyenne = parseFloat(somme / i); //calcul moyenne du/des entier(s) (N) saisi(s)
+        i++; //comptage (itération) boucle
     }
 }
-//affichage de la somme et moyenne du/des nombre(s) N
+//affichage de la somme et moyenne du/des entier(s) (N) saisi(s)
 console.log("La somme du/des nombre(s) saisi(s) est de :\n" + somme +
     "\nLa moyenne du/des nombre(s) saisi(s) est de :\n" + moyenne); //affiche dev
 alert("La somme du/des nombre(s) saisi(s) est de :\n" + somme +
-    "\nLa moyenne du/des nombre(s) saisi(s) est de :\n" + moyenne); //affiche
+    "\nLa moyenne du/des nombre(s) saisi(s) est de :\n" + moyenne); //affiche popup

@@ -6,3 +6,9 @@ if (confirm("Etês-vous un homme ?")==true) */
 if (confirm("Etês-vous un homme ?")) {
     alert("Bonjour Monsieur " + nom + prenom + "\nBienvenue sur notre site web !");
 }
+
+
+
+var age = 35;
+
+document.write(age);
