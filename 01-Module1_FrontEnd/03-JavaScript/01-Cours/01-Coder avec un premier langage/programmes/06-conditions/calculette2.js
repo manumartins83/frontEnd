@@ -50,10 +50,10 @@ var message; //retour calcul
 
 //- programme -
 //calcul normal
-message = calcul(nb, nb2, operateur); //retour calcul entier 1 et 2
+message = calcul(nb, nb2, operateur); //retour (fonction) calcul entier 1 et 2
 console.log(message); //affiche dev
 alert(message); //affiche popup
 //calcul inverse
-message = calcul(nb2, nb, operateur); //retour calcul entier 2 et 1
+message = calcul(nb2, nb, operateur); //retour (fonction) calcul entier 2 et 1
 console.log(message); //affiche dev
 alert(message); //affiche popup

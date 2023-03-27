@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: DOM-exemples</title>
+</head>
+
+
+<body>
+    <form name="frmChoix">
+        <input type="radio" name="btnRadChoix" value="semaine" checked="checked" /> Semaine
+        <br />
+        <input type="radio" name="btnRadChoix" value="week end" /> Week-end
+        <br />
+        <input type="button" name="btn" value="Choix" onclick="testerRadio();" />
+        <br /><br>
+        <input id="txtBox1" type="text" name="txtChoix" value="" />
+    </form>
+
+
+    <br><br>
+    <form action="" id="form1" name="form1">
+        <input type="text" name="nom" value="Mozart" /> <input type="text" name="prenom" value="Ella" />
+        <input type="submit" id="idSubForm1" class="example" name="subForm1" value="Connection" />
+    </form>
+
+
+
+    <script src="testerRadios.js"></script>
+
+
+    <script>
+        console.log("La 2nde zone de texte a pour nom :");
+        console.log(document.forms['form1'].elements[1].name);
+        console.log("La 1ère zone de texte a pour valeur :'");
+        console.log(document.forms[1].elements['nom'].value);
+        console.log("Le bouton Submit a pour identifiant unique : ");
+        console.log(document.getElementById('idSubForm1').id);
+        console.log("Le bouton Submit a pour valeur :");
+        console.log(document.getElementsByName('subForm1')[0].value);
+        console.log("La récupération du body : ");
+        console.log(document.querySelector('body'));
+        console.log("La récupération du 2ème élément du formulaire : ");
+        console.log(document.querySelector('.example'));
+    </script>
+
+
+    <script type="text/JavaScript" language="JavaScript"> var
+    version = navigator.appVersion; console.log("Le code name de votre browser est :"+ navigator.appCodeName);
+    console.log("Le nom ou la marque du browser est :" + navigator.appName);
+    console.log("Les informations sur la version sont :" + version);
+    console.log("Le browser a comme user-agent :"+ navigator.userAgent);
+    console.log("");
+    
+        if (version.indexOf('Win') > -1) {
+    console.log("<br />Vous etes sous l'environnement Windows");
+    console.log("<br />");
+    }
+        if (navigator.userAgent.indexOf('Firefox') > -1) {
+    console.log("Vous utilisez un navigateur FireFox");
+    } else 
+        if (version.indexOf('Chrome') > -1) {
+    console.log("Vous utilisez un navigateur Chrome");
+        } else 
+            if (version.indexOf('MSIE') > -1) {
+    console.log("Vous utilisez un navigateur Microsoft Internet Explorer");
+         } else {
+    console.log("Vous utilisez un navigateur inconnu");
+    }
+    </script>
+
+</body>
+
+</html>
