@@ -6,3 +6,6 @@ https://htmlcheatsheet.com/js/
 
 - Exercices JavaScript -
 https://odyssey.sdlm.be/
+
+- Cours/Exercices JavaScript -
+http://www.gchagnon.fr/cours/dhtml/exercices.html
