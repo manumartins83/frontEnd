@@ -1,0 +1,16 @@
+/* ############# BODY (HTML index + pages 1-2-3) ############# */
+/* #### Mise en forme texte "element" #### */
+.red {
+    /* couleur police */
+    color: red;
+    /* style liste */
+    list-style: inside;
+}
+
+/* #### Mise en forme texte "coucou" #### */
+.blue {
+    /* couleur police */
+    color: blue;
+    /* style liste */
+    list-style: inside;
+}

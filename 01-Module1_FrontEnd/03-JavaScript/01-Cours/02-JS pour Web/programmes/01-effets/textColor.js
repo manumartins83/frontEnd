@@ -1,17 +1,10 @@
 //-changement couleur partie texte selon passage, clic, double clic souris-
 
 
-//-variables-
-var textColor = document.getElementsByTagName('span'); //élément <span>
 //-fonctions-
 //passage souris
 function passageSouris() {
-
-    for (var i; i < textColor.length; i++) {
-        textColor[i].style.color = 'red'; //couleur rouge
-    }
-
-
+    textColor.style.color = 'red'; //couleur rouge
 }
 //clic souris
 function clic() {
@@ -27,17 +20,16 @@ function initial() {
 }
 
 
-
+//-variables-
+var textColor = document.getElementById('colorText'); //élément <span>
 
 
 //-programme-
 //appel fonction "passage souris"
-for (var i; i < textColor.length; i++) {
-    textColor[i].onmouseover = function () { passageSouris() };
-}
+    textColor.onmouseover = function () { passageSouris() };
 //appel fonction "clic souris"
-textColor.onclick = function () { clic() };
+    textColor.onclick = function () { clic() };
 //appel fonction "double clic souris"
-textColor.ondblclick = function () { doubleClic() };
+    textColor.ondblclick = function () { doubleClic() };
 //appel fonction "aucune action souris"
-textColor.onmouseout = function () { initial() };
+    textColor.onmouseout = function () { initial() };
