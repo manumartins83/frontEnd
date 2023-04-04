@@ -1,2 +1,0 @@
-// Skin specific Javascript code
-if (window.scDynUiMgr) scDynUiMgr.collBlk.fMode=1;
