@@ -27,7 +27,7 @@ function verifier(nombre) {
 
     }
     else  {
-        instruction.textContent = "#" + coups + " ( " + nombre + " ) Félicitation vous avez trouvé le juste prix !";
+        instruction.textContent = "#" + coups + " ( " + nombre + " ) Félicitation vous avez trouvé le nombre magique !";
         instruction.className = "instruction fini";
     }
     //ajout element devant les autres

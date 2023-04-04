@@ -1,18 +1,45 @@
 <!DOCTYPE html>
-<html lang="fr">
-
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
-    <title>Nombre magique</title>
-</head>
-
-<body>
-    <div id="label1">Entrez votre proposition</div>
-    <input id="textBox1" value="">
-    <input type="button" id="button1" value="Verifier" onclick="verif();">
-
-
-    <script src="script.js"></script>
-</body>
-
+    <meta name="viewport" content="width=device-width">
+    <title>Le nombre magique</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+  
+        <div class="row justify-content-center mt-5">
+          <header>
+            Le Nombre magique
+          </header>
+        </div>
+        
+        <!-- Formulaire -->
+        <div class="row justify-content-center mt-5 mb-4">   
+          <div class="col-lg-8">   
+            <div class="bg-light p-5 shadow">
+              
+              <form id="formulaire">
+                <div class="row">
+                  <div class="col">
+                    <input id="prix" class="form-control" placeholder="Devinez le nombre ! (entre 0 et 1 000)" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Deviner</button>
+                </div>
+                <small class="text-danger">Vous devez rentrer un nombre.</small>
+              </form>
+              
+            </div>  
+          </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="row justify-content-center">
+          <div id="instructions" class="col-lg-8"></div>
+        </div>
+      </div>
+<script src="script.js"></script>
+  </body>
 </html>
