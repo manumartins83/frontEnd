@@ -1,0 +1,42 @@
+{
+    "Nom": "Chez Mario et Luigi",
+    "Slogan": "Pizzaïlo de père en fils",
+    "Pizzas": [
+        {
+            "Nom": "La Margherita",
+            "Image": "https://st.depositphotos.com/1003814/5052/i/950/depositphotos_50523105-stock-photo-pizza-with-tomatoes.jpg",
+            "Prix": "12€",
+            "Ingredients": [
+                "mozza",
+                "tomate",
+                "basilic",
+                "parmesan"
+            ]
+        },
+        {
+            "Nom": "La Pepperoni",
+            "Image": "https://st2.depositphotos.com/1692343/5636/i/950/depositphotos_56360353-stock-photo-hot-homemade-pepperoni-pizza.jpg",
+            "Prix": "13.50€",
+            "Ingredients": [
+                "chorizo",
+                "tomate",
+                "basilic",
+                "mozza",
+                "poivrons"
+            ]
+        },
+        {
+            "Nom": "La Napolitaine",
+            "Image": "https://www.saporinostri.it/wp-content/uploads/2020/10/le-origini-della-pizza-napoletana-e1601990439881.jpg",
+            "Prix": "15€",
+            "Ingredients": [
+                "anchois",
+                "tomate",
+                "basilic",
+                "mozza",
+                "jambon",
+                "roquette"
+            ]
+        }
+    ]
+}
