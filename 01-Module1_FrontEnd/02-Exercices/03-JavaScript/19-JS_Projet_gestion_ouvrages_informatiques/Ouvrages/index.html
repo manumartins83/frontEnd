@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- language français -->
+<html lang="fr">
+
+<!-- INSTRUCTIONS -->
+
+<head>
+    <!-- lecture navigateur caractères universel -->
+    <meta charset="UTF-8">
+    <!-- compatibilité navigateur Edge -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive : compatible multi support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- dénomination onglet page -->
+    <title>Gestion d'ouvrages</title>
+    <!-- style CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- STRUCTURE -->
+
+<body>
+
+    <!-- Menu liste déroulant par auteurs -->
+    <div class="menu">
+        <select id="authorsList"></select>
+    </div>
+
+    <!-- Menu liste déroulant par cathégories -->
+    <div class="menu">
+        <select id="categoriesList"></select>
+    </div>
+
+    <!-- Affichage cartes ouvrages -->
+    <div id="booksList" class="container-fluid"></div>
+
+    <!-- script JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <!-- script JS-  -->
+    <script src="script.js"></script>
+</body>
+
+</html>

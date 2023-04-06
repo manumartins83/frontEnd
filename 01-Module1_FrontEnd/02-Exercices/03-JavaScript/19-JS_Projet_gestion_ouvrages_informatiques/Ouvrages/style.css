@@ -1,0 +1,59 @@
+#authorsList,
+#categoriesList {
+  /* type affichage block */
+  display: flex;
+  /* type direction block */
+  flex-flow: column nowrap;
+  /* deplacement block horizontal */
+  justify-content: center;
+
+  align-items: center;
+
+    /* marge extérieure */
+    margin: 10px;
+    /* largeur */
+    width: 100%;
+    height: auto;
+}
+
+
+#booksList {
+    /* type affichage block */
+    display: flex;
+    /* type direction block */
+    flex-flow: row wrap;
+    /* deplacement block horizontal */
+    justify-content: space-around;
+
+    align-items: start;
+}
+
+img {
+
+    /* largeur */
+    width: 250px;
+    height: 300px;
+
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+}
+
+.card h1 {
+    /* taille police */
+    font-size: 14px;
+}
+
+.card h2 {
+    /* taille police */
+    font-size: 12px;
+}
+
+.card h4 {
+    /* taille police */
+    font-size: 10px;
+
+    text-align: justify;
+}
