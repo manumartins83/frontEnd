@@ -1,23 +1,25 @@
 // -variables-
-var booksList = new Array(); //'variable globale' liste ouvrages
-var authorsList = new Array(); //'variable globale' liste auteurs
-var categoriesList = new Array(); //'variable globale' liste cathégories
+var booksList = new Array(); //'variable globale' tableau liste ouvrages
+var authorsList = new Array(); //'variable globale' tableau liste auteurs
+var categoriesList = new Array(); //'variable globale' tableau liste cathégories
+//'variable globale' format date publication ouvrage
 var formatDate = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
-}; //'variable globale' format date publication ouvrage
+};
 
 
 // -programme-
-window.addEventListener("load", jsonOnLoad()); //chargement et affichage auto API JSON via fonction "jsonOnLoad"
+//chargement et affichage auto API JSON via fonction "jsonOnLoad"
+window.addEventListener("load", jsonOnLoad());
 
-document.getElementById('authorsList').addEventListener("click", () => {
-    document
-        .getElementById('authorsList')
-        .addEventListener("change", chargeByAuthor());
-}); //chargement et affichage auto API JSON via fonction "jsonOnLoad"
+//Affichage ouvrage par auteur via fonction "chargeByAuthor"
+document.getElementById('authorsList').addEventListener("change", function () { chargeByAuthor() });
+
+//Affichage ouvrage par cathégorie via fonction "chargeByCategorie"
+document.getElementById('categoriesList').addEventListener("change", function () { chargeByCategorie() });
 
 // -fonctions-
 //appel chargement fichier JSON
@@ -58,7 +60,7 @@ function createList(_data) {
         }
     }
 
-    //tri alphabétique listes
+    //tri alphabétiquement listes
     booksList.sort(); //ouvrages
     authorsList.sort(); //auteurs
     categoriesList.sort(); //cathégories
@@ -127,7 +129,7 @@ function showBooks(_booksList) {
             //si description courte alors
             else {
                 description = _booksList[x].shortDescription; //laisse description courte par défaut
-                descriptionShort = _booksList[x].shortDescription.substring(0, 20) + "(...)"; //réduction description + affiche "(...)"
+                descriptionShort = _booksList[x].shortDescription; //réduction description + affiche "(...)"
             }
         }
 
@@ -150,34 +152,79 @@ function showBooks(_booksList) {
         //si description vide alors
         if (description != "") {
             bookCard.innerHTML +=
-                '<h4><span class="infoBulle" title="' + _booksList[x].shortDescription + '">' + description + '</span></h4>'; //ajout contenu HTML
+                '<h4><span class="infoBulle" title="' + description + '">' + descriptionShort + '</span></h4>'; //ajout contenu HTML
         }
 
         //Ajout contenu Card dans HTML
         document.getElementById('booksList').appendChild(bookCard); //ajout contenu cartes ouvrages dans fichier HTML
+    
+        //Retrait affichage indicateur chargement (loading) CSS
+        document.getElementById("loading").style.display = "none";
     }
 }
 
-//
+//Affichage ouvrage par auteur
 function chargeByAuthor() {
-    var elementAuthor = document.getElementById('authorsList'); //
-    var choiceAuthors = elementAuthor.listAuthors[elementAuthor.selectedIndex].innertext; //
+    var elementCategorie = document.getElementById('categoriesList'); //'variable locale' sélection liste cathégories
+    var elementAuthor = document.getElementById('authorsList'); //'variable locale' sélection liste auteurs
+    var choiceAuthors = elementAuthor.options[elementAuthor.selectedIndex].innerText; //'variable locale' sélection contenu liste
+    var booksListByAuthors = new Array(); //'variable locale' tableau liste ouvrages par auteurs
 
-    var booksListByAuthors = new Array(); //
-    //si  alors
+    //sélectionne contenu vide
+    elementCategorie.options[elementCategorie.selectedIndex].innerText = "";
+
+    //si contenu liste auteurs vide alors
     if (choiceAuthors == "") {
-        showBooks(booksList); //
+        showBooks(booksList); //sélectionne ouvrages via fonction "showBooks"
     }
-    //sinon si  alors
+    //sinon si contenu liste auteurs pas vide alors
     else {
-        //
+        //pour ouvrages allant de 0 à yy alors
         for (var y = 0; y < booksList.length; y++) {
-            var bookByAuthor = booksList[y]; //
+            var bookByAuthor = booksList[y]; //'variable locale' tableau liste ouvrages par auteur
+            //si présence ouvrages auteur alors
             if (bookByAuthor.authors.indexOf(choiceAuthors) != -1) {
-                booksListByAuthors.push(bookByAuthor); //
+                booksListByAuthors.push(bookByAuthor); //incrémente ouvrages par auteur dans tableau
             }
         }
     }
-    booksListByAuthors.sort(); //
-    showBooks(booksListByAuthors); //
+
+    //tri alphabétiquement ouvrages de la liste
+    booksListByAuthors.sort();
+
+    //sélectionne ouvrages triés via fonction "showBooks"
+    showBooks(booksListByAuthors);
+}
+
+//Affichage ouvrage par cathégorie
+function chargeByCategorie() {
+    var elementAuthor = document.getElementById('authorsList'); //'variable locale' sélection liste auteurs
+    var elementCategorie = document.getElementById('categoriesList'); //'variable locale' sélection liste cathégories
+    var choiceCategories = elementCategorie.options[elementCategorie.selectedIndex].innerText; //'variable locale' sélection contenu liste
+    var booksListByCategories = new Array(); //'variable locale' tableau liste ouvrages par cathégories
+
+    //sélectionne contenu vide
+    elementAuthor.options[elementAuthor.selectedIndex].innerText = "";
+
+    //si contenu liste cathégories vide alors
+    if (choiceCategories == "") {
+        showBooks(booksList); //sélectionne ouvrages via fonction "showBooks"
+    }
+    //sinon si contenu liste cathégories pas vide alors
+    else {
+        //pour ouvrages allant de 0 à zz alors
+        for (var z = 0; z < booksList.length; z++) {
+            var bookByCategorie = booksList[z]; //'variable locale' tableau liste ouvrages par cathégorie
+            //si présence ouvrages cathégorie alors
+            if (bookByCategorie.categories.indexOf(choiceCategories) != -1) {
+                booksListByCategories.push(bookByCategorie);  //incrémente ouvrages par cathégorie dans tableau
+            }
+        }
+    }
+
+    //tri alphabétiquement ouvrages de la liste
+    booksListByCategories.sort();
+
+    //sélectionne ouvrages triés via fonction "showBooks"
+    showBooks(booksListByCategories);
 }
