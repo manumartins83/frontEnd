@@ -35,7 +35,7 @@ function jsonOnLoad() {
 }
 
 //création listes ouvrages, auteurs et cathégories à partir des données fichier JSON
-function createList(_data) {
+function createList (_data) {
     //pour liste ouvrages existants allant de 0 à xx alors
     for (var x = 0; x < _data.length; x++) {
         var book = _data[x]; //'variable locale' ouvrage de la liste

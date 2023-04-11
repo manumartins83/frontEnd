@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    cursor: url(https://cdn.discordapp.com/attachments/1082384658114822294/1095254167586611230/Sw8.GIF), pointer;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    color: white;
+}
+
+h1 {
+    margin: 30px 0;
+    padding: 10px;
+    font-size: 2em;
+    text-align: center;
+    color: yellow;
+    background-color: black;
+    width: 80%;
+}
+
+nav {
+    width: 80%;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.container-fluid {
+    flex-direction: column;
+}
+
+nav a {
+    color: rgb(255, 255, 255, 0.8) !important;
+}
+
+nav a:hover {
+    color: white !important;
+}
+
+li {
+    padding: 0 100px 0;
+}
+
+
+
+div.search {
+   display: flex;
+   
+
+}
+
+
+
+p {
+    margin: 5px;
+    color: black;
+    text-align: center;
+}
