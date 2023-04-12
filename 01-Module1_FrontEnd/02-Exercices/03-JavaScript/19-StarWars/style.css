@@ -45,18 +45,29 @@ li {
     padding: 0 100px 0;
 }
 
-
-
-div.search {
-   display: flex;
-   
-
+.search {
+    position: absolute;
+    top: 200px;
+    left: 40px;
 }
 
+#peoplesList,
+#planetsList,
+#moviesList {
+    position: absolute;
+    top: 250px;
+    left: 65px;
+}
 
-
+/* div.card a */
 p {
     margin: 5px;
     color: black;
     text-align: center;
+}
+
+#peoplesList div.card,
+#planetsList div.card, 
+#moviesList div.card{
+    margin: 5px;
 }

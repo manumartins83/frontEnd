@@ -16,33 +16,30 @@ window.addEventListener("load", function () {
     //pour plus tard: ici on vérifiera si il y'a des parametres dans notre url
     //si sélection 
     switch (pageLoaded) {
-
+        // si page "people" alors
         case "people":
             //si pas de paramètre on affichera ça
-
             getStarWars(swUrl, "people", false); //chargement personnages via fonction "getStarWars"
 
-
             //sinon on fera un truc de ce genre
-
             //         getStarWars(swUrl + "/people/" +  parametre, "people", true); //chargement personnages via fonction "getStarWars"
             break;
-
+        // si page "movie" alors
         case "movie":
             getStarWars(swUrl, "films", false); //chargement films via fonction "getStarWars"
             break;
-
+        // si page "planet" alors
         case "planet":
             getStarWars(swUrl, "planets", false); //chargement planètes via fonction "getStarWars"
             break;
-
+        //sinon fin sélection
         default:
             break;
     }
 });
 
-
-
+//chargement et affichage API JSON via fonction "resultListPeople"
+// document.getElementById('peoplesList').addEventListener("click", resultListPeople());
 
 
 // -fonctions-
@@ -71,6 +68,7 @@ async function getStarWars(_url, _type, _urldonne) {
                 }
                 console.log(result); //affiche dev "résultats" données fichier JSON
                 listInfos(result, _type); //appel fonction "listInfos" 
+                resultListPeople(result, _origine);//appel fonction "resultListPeople" 
             });
         //sinon type et donnée url existante alors
     } catch (error) {
@@ -86,24 +84,31 @@ function listInfos(_data, _type) {
         switch (_type) {
             // si type donnée API "people" alors
             case "people":
-                var elementPeople = document.createElement('div');
-                elementPeople.setAttribute('class', 'card');
-                elementPeople.innerHTML = "<p>" + _data[x].name + "</p>";
-                document.getElementById("peoplesList").appendChild(elementPeople);
+                var elementPeople = document.createElement('div'); //'variable locale' création <div>
+                elementPeople.setAttribute('class', 'card'); //création "class"
+                elementPeople.innerHTML = '<p>' + _data[x].name + '</p>'; //écriture élément
+                document.getElementById("peoplesList").appendChild(elementPeople); //affichage élément
+
+
+                // var elementListPeople = document.createElement('div'); //'variable locale' création <div>
+                // elementListPeople.setAttribute('class', 'card'); //création "class"
+                // elementListPeople.innerHTML = '<p>' + _data[x].results + '</p>'; //écriture élément
+                // document.getElementById("peoplesListResult").appendChild(elementListPeople); //affichage élément
+
                 break;
             //si type donnée API "Planets" alors
             case "planets":
-                var elementPlanet = document.createElement('div');
-                elementPlanet.setAttribute('class', 'card');
-                elementPlanet.innerHTML = "<p>" + _data[x].name + "</p>";
-                document.getElementById("planetsList").appendChild(elementPlanet);
+                var elementPlanet = document.createElement('div'); //'variable locale' création <div>
+                elementPlanet.setAttribute('class', 'card'); //création "class"
+                elementPlanet.innerHTML = '<p>' + _data[x].name + '</p>'; //écriture élément
+                document.getElementById("planetsList").appendChild(elementPlanet); //affichage élément
                 break;
             //si type donnée API "films" alors
             case "films":
-                var elementMovie = document.createElement('div');
-                elementMovie.setAttribute('class', 'card');
-                elementMovie.innerHTML = "<p>" + _data[x].title + "</p>";
-                document.getElementById("moviesList").appendChild(elementMovie);
+                var elementMovie = document.createElement('div'); //'variable locale' création <div>
+                elementMovie.setAttribute('class', 'card'); //création "class"
+                elementMovie.innerHTML = '<p>' + _data[x].title + '</p>'; //écriture élément
+                document.getElementById("moviesList").appendChild(elementMovie); //affichage élément
                 break;
             //sinon fin sélection
             default:
@@ -112,3 +117,10 @@ function listInfos(_data, _type) {
     }
 }
 
+//création liste résultats personnages à partir des données fichier JSON
+// function resultListPeople(_data) {
+
+
+
+
+// }
