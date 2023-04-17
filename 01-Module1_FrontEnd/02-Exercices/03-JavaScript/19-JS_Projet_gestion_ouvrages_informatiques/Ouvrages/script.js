@@ -13,13 +13,13 @@ var formatDate = {
 
 // -programme-
 //chargement et affichage auto API JSON via fonction "jsonOnLoad"
-window.addEventListener("load", jsonOnLoad());
+window.addEventListener("load", jsonOnLoad()); //première solution écriture
 
 //Affichage ouvrage par auteur via fonction "chargeByAuthor"
-document.getElementById('authorsList').addEventListener("change", function () { chargeByAuthor() });
+document.getElementById('authorsList').addEventListener("change", chargeByAuthor ); //deuxième solution écriture
 
 //Affichage ouvrage par cathégorie via fonction "chargeByCategorie"
-document.getElementById('categoriesList').addEventListener("change", function () { chargeByCategorie() });
+document.getElementById('categoriesList').addEventListener("change", function () { chargeByCategorie() }); //troisième solution écriture
 
 // -fonctions-
 //appel chargement fichier JSON
@@ -35,7 +35,7 @@ function jsonOnLoad() {
 }
 
 //création listes ouvrages, auteurs et cathégories à partir des données fichier JSON
-function createList (_data) {
+function createList(_data) {
     //pour liste ouvrages existants allant de 0 à xx alors
     for (var x = 0; x < _data.length; x++) {
         var book = _data[x]; //'variable locale' ouvrage de la liste
@@ -157,7 +157,7 @@ function showBooks(_booksList) {
 
         //Ajout contenu Card dans HTML
         document.getElementById('booksList').appendChild(bookCard); //ajout contenu cartes ouvrages dans fichier HTML
-    
+
         //Retrait affichage indicateur chargement (loading) CSS
         document.getElementById("loading").style.display = "none";
     }
