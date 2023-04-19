@@ -14,9 +14,7 @@
 <body>
 
     <div class="container">
-
         <h1>Liste des BD</h1>
-
         <div class="row">
             <div class="col-sm-4 col-lg-6">
 
@@ -54,24 +52,56 @@
         </div>
     </div>
 
-    <!-- Recherche BD -->
+
+    <!-- Indicateur chargement (loading) -->
+    <div id="loading">Loading&#8230;</div>
+
+    <!-- Panier achat -->
     <div>
+        <h1>Liste des achats</h1>
+        <div id="listPaniercomicsBD" class="container-fluid"></div>
+    </div>
+
+    <!-- Recherche BD -->
+    <div class="searchListBD">
         <h1>Recherche des BD</h1>
-        <!-- Boutons radios pour choix de la recherche  -->
-        <label for="author">Auteur :</label>
-        <input type="radio" name="author" value="Auteur">
+        <div>
+            <!-- Boutons radios pour choix de la recherche  -->
+            <label for="author">Auteur :</label>
+            <input type="radio" name="author" value="Auteur">
 
-        <label for="serie">Série :</label>
-        <input type="radio" name="serie" value="Série">
+            <label for="serie">Série :</label>
+            <input type="radio" name="serie" value="Série">
 
-        <label for="title">Titre :</label>
-        <input type="radio" name="title" value="Titre">
+            <label for="title">Titre :</label>
+            <input type="radio" name="title" value="Titre" checked="checked">
 
-        <!-- Saisie recherche  -->
-        <input type="text" name="search" id="searchBD" value="Saisir le nom de la recherche">
+            <!-- Sélection recherche  -->
+            <select id="searchBD" name="recherche" value="Recherchez"></select>
+            <!-- <input type="text" name="search" id="searchBD" value="Saisir le nom de la recherche"> -->
+        </div>
+    </div>
 
-        <!-- Affichage BD -->
-        <div id="comicsBD" class="container-fluid"></div>
+    <!-- Affichage BD -->
+    <div id="comicsBD" class="container-fluid"></div>
+
+    <!-- Affichage Modal BD -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Titre</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Infos BD</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermez</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 

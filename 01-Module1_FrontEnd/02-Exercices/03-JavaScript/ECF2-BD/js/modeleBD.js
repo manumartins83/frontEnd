@@ -1,9 +1,11 @@
 // -Variables globales-
-const srcImg = "images/"; // emplacement des images de l'appli
-const albumDefaultMini = srcImg + "noComicsMini.jpeg";
-const albumDefault = srcImg + "noComics.jpeg";
-const srcAlbumMini = "albumsMini/"; // emplacement des images des albums en petit
-const srcAlbum = "albums/"; // emplacement des images des albums en grand
+const srcImg = "images/"; //emplacement des images BD existantes
+const albumDefaultMini = srcImg + "noComicsMini.jpeg"; //emplacement des images par défaut des albums en petit
+const albumDefault = srcImg + "noComics.jpeg"; //emplacement des images par défaut des albums en grand
+const srcAlbumMini = "albumsMini/"; //emplacement des images des albums en petit
+const srcAlbum = "albums/"; //emplacement des images des albums en grand
+var keys = albums.keys(); //sélection numéros clefs du fichier "albums.js"
+
 
 
 // -Programme "Liste des BD" (JQUERY)-
@@ -17,6 +19,7 @@ jQuery(document).ready(function ($) {
 	var txtPrix = document.getElementById("prix");
 	var imgAlbum = document.getElementById("album");
 	var imgAlbumMini = document.getElementById("albumMini");
+	
 
 	imgAlbum.addEventListener("error", function () {
 		prbImg(this)
@@ -30,6 +33,9 @@ jQuery(document).ready(function ($) {
 	id.addEventListener("change", function () {
 		getAlbum(this)
 	});
+
+
+	
 
 
 	/**
@@ -112,6 +118,7 @@ jQuery(document).ready(function ($) {
 		else element.src = albumDefault;
 
 	}
+
 });
 
 
@@ -170,52 +177,183 @@ for(var [idAuteur, auteur] of auteurs.entries()) {
 //chargement et affichage auto "recherche des BD" via fonction "showListBD"
 window.addEventListener("load", showListBD());
 
+//ajout album BD panier via fonction "ajoutPanier"
+document.getElementById("btnAjoutBD").addEventListener("click", ajoutPanier());
+
+//affiche fenêtre Modal via fonction "afficheModal"
+
+
+//supprime fenêtre Modal via fonction "afficheModal"
+// document.getElementById("id").addEventListener("mouseout", deleteModal());
+
+
+
+
+// function getByValue(map, searchValue) {
+// 	for (let [key, value] of map.entries()) {
+// 		if (value === searchValue)
+// 			return key;
+// 	}
+// }
+
+
+
 
 //création listes BD , auteurs, series et titres à partir fichier data et album
 function showListBD() {
-
 	//liste albums BD existants
-	console.log("LISTES DES BD :");
+	// console.log("LISTES DES BD :");
 	albums.forEach(album => {
 		serie = series.get(album.idSerie); //série BD
 		auteur = auteurs.get(album.idAuteur); //Auteur BD
-		console.log(album.titre + "\n Série : " + serie.nom + "\n Auteur : " + auteur.nom + "\n Prix : " + album.prix + "€");//affiche dev
+		// console.log(album.titre + "\n Série : " + serie.nom + "\n Auteur : " + auteur.nom + "\n Prix : " + album.prix + "€");//affiche dev
+
+		var key = keys.next().value; //sélection numéro clef suivant du fichier "albums.js"
+		var elementListBd = document.getElementById('comicsBD'); //'variable locale' sélection "div" albums BD
+		var bdCard = document.createElement('div'); //'variable locale' création card image BD
+		bdCard.setAttribute('class', 'card'); //création attribu class "card et mb-4"
+
+		//Images Card
+		//si image BD inexistante ou non définie alors
+		const nomPhotoBD = serie.nom + "-" + album.numero + "-" + album.titre; //nom fichiers photos albums BD
+		var imgBD = srcAlbumMini + nomPhotoBD; //source fichiers photos mini albums BD
 
 		
-		var elementListBd = document.getElementById('comicsBD');//'variable locale' sélection "div" albums BD
-		var bdCard = document.createElement('div'); //'variable locale' création card image BD
-		bdCard.setAttribute('class', 'card mb-4'); //création attribu class "card et mb-4"
-
-		// Images Card
-		// si image BD inexistante ou non définie alors
-		const nomPhotoBD = serie.nom + "-" + album.numero + "-" + album.titre; // nom fichiers photos albums BD
-		var imgBD = srcAlbum + nomPhotoBD; // source fichiers photos albums BD
 
 
-		if (album === undefined) {
-			src = albumDefaultMini; //attribution image par défaut
+		//si photo album BD existante alors
+		if (key != "") {
+			src = imgBD + ".jpg"; //attribution image mini BD associée
 		}
-		//sinon
-		else {
-			src = imgBD + ".jpg"; //attribution image BD associée
-		}
+	
 
 
 		//Ajout contenu textuel HTML dans Card
 		bdCard.innerHTML =
-			'<img src="' + src + '"/>' +
-			'<h3 class="bdTitle">' + album.titre + '</h3>' +
-			'<h6 class="bdTitleSerie">' + '<strong>' + "Série : " + '</strong>' + serie.nom + '</h6>' +
-			'<h6 class="bdTitleAuthor">' + '<strong>' + "Auteur : " + '</strong>' + auteur.nom + '</h6>' +
-			'<h6 class="bdTitlePrice">' + '<strong>' + "Prix : " + '</strong>' + album.prix + "€" + '</h6>';
+			// '<img class="imgBD" id="img-' + album.id + '" onclick="infoBulleBD()" onmouseout="deleteInfoBulleBD()" src="' + src + '"/>' +
+			'<img class="imgBD" id="img-' + key + '"src="' + src + '"/>' +
+			'<ul>' +
+			'<li><h3 class="card-body bdTitleAlbum">' + album.titre + '</h3></li>' +
+			'<li><h6 class="card-body bdTitleInfo">' + '<strong>' + "Série : " + "&nbsp;" + '</strong>' + serie.nom + '</h6></li>' +
+			'<li><h6 class="card-body bdTitleInfo">' + '<strong>' + "Auteur : " + "&nbsp;" + '</strong>' + auteur.nom + '</h6></li>' +
+			'<li><h6 class="card-body bdTitleInfo">' + '<strong>' + "Prix : " + "&nbsp;" + '</strong>' + album.prix + "€" + '</h6></li>' +
+			'</ul>' +
+			'<button id="btnAjoutBD" class="btn">Ajoutez au panier</button>';
 
 		//Ajout contenu Card dans HTML
 		elementListBd.appendChild(bdCard); //ajout contenu cartes ouvrages dans fichier HTML
+
+		document.getElementById("img-" + key).addEventListener("click", afficheModal(key));
 	});
+
 }
 
 
 
+
+//affiche modal BD
+function afficheModal(_key) {
+	_album = albums.get(_key);
+	_serie = series.get(_album.idSerie); //série BD
+	_auteur = auteurs.get(_album.idAuteur); //Auteur BD
+
+console.log(_key);
+
+	$("#myModal").modal("show");
+
+}
+
+
+var imgBds=document.getElementsByClassName("imgBD");
+
+for (i=0;i<imgBds.length;i++){
+	imgBds[i].addEventListener("error", function () {
+		prbImg2(this)
+	});
+}
+	/**
+	 * Affichage de l'image par défaut si le chargement de l'image de l'album
+	 * ne s'est pas bien passé
+	 * 
+	 * @param {object HTML} element 
+	 */
+	function prbImg2(element) {
+
+		element.src = albumDefaultMini;
+
+
+}
+
+
+
+
+
+
+
+// //affiche info bulle BD
+// function infoBulleBD() {
+// 	var elementImgBD = document.querySelector('.imgBD'); //'variable locale' sélection "id" image albums BD
+// 	elementImgBD.classList.add('infoBulle'); //création class supplémentaire "infoBulle"
+// 	elementImgBD.setAttribute('title', "Titre : " + album.titre + "\nSérie : " + serie.nom + "\nAuteur : " + auteur.nom + "\nPrix : " + album.prix); //création attribu title 
+// }
+
+// //supprime info bulle BD
+// function deleteInfoBulleBD() {
+// 	var elementImgBD = document.querySelector('.imgBD'); //'variable locale' sélection "id" image albums BD
+// 	elementImgBD.classList.remove('infoBulle'); //suppression class "infoBulle"
+// 	elementImgBD.removeAttribute('title'); //suppression attribu title 
+// }
+
+
+
+
+
+
+
+
+
+//ajout album BD panier
+function ajoutPanier() {
+	console.log("ca marche");
+
+	// albums.forEach(album => {
+	// 	serie = series.get(album.idSerie); //série BD
+	// 	auteur = auteurs.get(album.idAuteur); //Auteur BD
+
+	// 	var elementListAchatBd = document.getElementById('listPaniercomicsBD'); //'variable locale' sélection "div" albums BD
+	// 	var bdAchatCard = document.createElement('div'); //'variable locale' création card image BD
+	// 	bdAchatCard.setAttribute('class', 'card'); //création attribu class "card et mb-4"
+
+	// 	//Images Card
+	// 	//si image BD inexistante ou non définie alors
+	// 	const nomPhotoBD = serie.nom + "-" + album.numero + "-" + album.titre; // nom fichiers photos albums BD
+	// 	var imgBD = srcAlbumMini + nomPhotoBD; // source fichiers photos albums BD
+
+	// 	//si album pas de photo alors
+	// 	if (album == undefined || album == null) {
+	// 		src = albumDefaultMini; //attribution image par défaut
+	// 	}
+	// 	//sinon
+	// 	else {
+	// 		src = imgBD + ".jpg"; //attribution image BD associée
+	// 	}
+
+	// 	//Ajout contenu textuel HTML dans Card
+	// 	bdAchatCard.innerHTML =
+	// 		'<img class="imgBD" src="' + src + '"/>' +
+	// 		'<ul>' +
+	// 		'<li><h3 class="card-body bdTitleAlbum">' + album.titre + '</h3></li>' +
+	// 		'<li><h6 class="card-body bdTitleInfo">' + '<strong>' + "Quantité : " + "&nbsp;" + '</strong>' + "quantité calcul" + '</h6></li>' +
+	// 		'<li><h6 class="card-body bdTitleInfo">' + '<strong>' + "Prix : " + "&nbsp;" + '</strong>' + album.prix + "€" + '</h6></li>' +
+	// 		'<li><h6 class="card-body bdTitleInfo">' + '<strong>' + "Total : " + "&nbsp;" + '</strong>' + "tarif calcul" + "€" + '</h6></li>' +
+	// 		'</ul>';
+
+	// 	//Ajout contenu Card dans HTML
+	// 	elementListAchatBd.appendChild(bdAchatCard); //ajout contenu cartes ouvrages dans fichier HTML
+	// });
+
+
+}
 
 
 

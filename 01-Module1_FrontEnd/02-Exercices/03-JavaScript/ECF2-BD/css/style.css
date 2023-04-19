@@ -1,4 +1,4 @@
-body {
+/* body {
   font: 1em sans-serif;
   padding: 0;
   margin: 0;
@@ -18,16 +18,16 @@ legend {
   background-color: #000;
   color: #fff;
   padding: 3px 6px;
-}
+} */
 
-input[type=text],
+/* input[type=text],
 input[type=email],
 input[type=number],
 textarea,
-fieldset {
-  /* requis pour composer de manière appropriée les éléments
+fieldset { */
+/* requis pour composer de manière appropriée les éléments
      de formulaire sur les navigateurs fondés sur WebKit */
-  -webkit-appearance: none;
+/* -webkit-appearance: none;
 
   width: 100%;
   border: 1px solid #333;
@@ -38,9 +38,9 @@ fieldset {
 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
+} */
 
-input:invalid {
+/* input:invalid {
   box-shadow: 0 0 5px 1px red;
 }
 
@@ -50,4 +50,100 @@ input:focus:invalid {
 
 #erreur {
   color: red;
+} */
+
+
+
+
+
+
+
+
+
+
+/* #### Mise en forme générale #### */
+* {
+  /* dimensionnement boite : padding+bordures */
+  box-sizing: border-box;
+}
+
+h1 {
+  /* marge extérieure */
+
+  margin: 20px;
+}
+
+.searchListBD {
+  /* couleur fond */
+  background-color: grey;
+}
+
+
+
+
+div>.card {
+  /* affichage block */
+  display: flex;
+  /* déplacement block */
+  flex-flow: row wrap;
+  /* déplacement horizontal */
+  justify-content: flex-start;
+}
+
+.imgBD {
+  /* largeur */
+  width: 200px;
+  /* hauteur */
+  height: 250px;
+  /* marge intérieure */
+  padding: 5px;
+  /* arrondi bordures */
+  border-radius: 10px;
+}
+
+.imgBD:modal {
+  border: 5px solid red;
+  background-color: yellow;
+  box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
+}
+
+ul {
+  /* marge extérieure */
+  margin: auto 0;
+  /* marge intérieure */
+  padding: auto;
+  /* affichage block */
+  display: flex;
+  /* déplacement block */
+  flex-flow: column nowrap;
+  /* déplacement horizontal */
+  justify-content: center;
+}
+
+ul>li {
+  /* style liste */
+  list-style-type: none;
+}
+
+div .bdTitleAlbum,
+div .bdTitleInfo {
+  /* espacement interligne */
+  line-height: 0;
+}
+
+#btnAjoutBD.btn {
+  /* marge extérieure */
+  margin: auto 50px auto auto;
+  /* marge intérieure */
+  padding: 10px 0;
+  /* largeur */
+  width: 200px;
+  /* hauteur */
+  height: 10%;
+  /* paramètres bordures */
+  border: 2px solid;
+  /* arrondi bordure */
+  border-radius: 5px;
+  /* épaisseur police */
+  font-weight: bolder;
 }
