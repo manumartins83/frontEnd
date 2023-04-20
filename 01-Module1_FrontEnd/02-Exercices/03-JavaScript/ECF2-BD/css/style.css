@@ -1,86 +1,156 @@
-/* body {
-  font: 1em sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
-form {
-  max-width: 300px;
-  margin: 0;
-  padding: 0 5px;
-}
-
-p>label {
-  display: block;
-}
-
-legend {
-  background-color: #000;
-  color: #fff;
-  padding: 3px 6px;
-} */
-
-/* input[type=text],
-input[type=email],
-input[type=number],
-textarea,
-fieldset { */
-/* requis pour composer de manière appropriée les éléments
-     de formulaire sur les navigateurs fondés sur WebKit */
-/* -webkit-appearance: none;
-
-  width: 100%;
-  border: 1px solid #333;
-  margin: 0;
-
-  font-family: inherit;
-  font-size: 90%;
-
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-} */
-
-/* input:invalid {
-  box-shadow: 0 0 5px 1px red;
-}
-
-input:focus:invalid {
-  outline: none;
-}
-
-#erreur {
-  color: red;
-} */
-
-
-
-
-
-
-
-
-
-
 /* #### Mise en forme générale #### */
 * {
   /* dimensionnement boite : padding+bordures */
   box-sizing: border-box;
+  /* style police */
+  font-family: 'Roboto', sans-serif;
 }
 
+/* #### Mise en forme "Titres" #### */
 h1 {
   /* marge extérieure */
-
-  margin: 20px;
+  margin: 0;
+  /* marge intérieure */
+  padding: 20px 0;
+  /* couleur police */
+  color: white;
+  /* alignement horizontal texte */
+  text-align: center;
+  /* alignement vertical texte */
+  vertical-align: center;
+  /* épaisseur police */
+  font-weight: bolder;
 }
 
-.searchListBD {
+/* #### Mise en forme "Liste et panier achats" #### */
+h1.position {
+  /* type positionnement */
+  position: fixed;
+  /* position */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* position arrière plan */
+  z-index: 2;
+}
+
+.panierList {
+  /* type positionnement */
+  position: fixed;
+  /* position */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* position arrière plan */
+  z-index: 1;
+  /* marge intérieure */
+  padding: 20px 0;
+  /* affichage block */
+  display: flex;
+  /* déplacement block */
+  flex-flow: row nowrap;
+  /* déplacement horizontal */
+  justify-content: space-between;
+  /* déplacement vertical */
+  align-items: center;
+  /* couleur fond */
+  background-color: black;
+}
+
+.btnCdePanier {
+  /* marge extérieure */
+  margin: 0 0 0 50px;
+  /* marge intérieure */
+  padding: 5px 0;
+  /* largeur */
+  width: 150px;
+  /* alignement horizontal texte */
+  text-align: center;
+  /* arrondi bordure */
+  border-radius: 5px;
+  /* paramètres bordures */
+  border: 2px double red;
+  /* épaisseur police */
+  font-weight: bolder;
   /* couleur fond */
   background-color: grey;
 }
 
+.imgPanier {
+  /* affichage block */
+  display: flex;
+ 
+  /* largeur */
+  width: 50px;
+  /* hauteur */
+  height: auto;
+}
 
+#quantite {
+  /* marge extérieure */
+  margin: 0 50px 0;
+  /* marge intérieure */
+  padding: 5px 0;
+  /* largeur */
+  width: 50px;
+  /* alignement horizontal texte */
+  text-align: center;
+  /* arrondi bordure */
+  border-radius: 5px;
+}
 
+/* #### Mise en forme "Recherche BD" #### */
+h1.marge {
+  /* marge extérieure */
+  margin: 150px 0 0;
+  /* couleur fond */
+  background-color: black;
+}
 
+.searchListBD {
+  /* affichage block */
+  display: flex;
+  /* déplacement block */
+  flex-flow: row nowrap;
+  /* déplacement horizontal */
+  justify-content: space-evenly;
+  /* déplacement vertical */
+  align-items: center;
+  /* couleur fond */
+  background-color: grey;
+  /* marge intérieure */
+  padding: 10px 0;
+}
+
+label {
+  /* marge extérieure */
+  margin: 0;
+}
+
+.btnRadio {
+  /* affichage block */
+  display: flex;
+  /* déplacement vertical */
+  align-items: center;
+}
+
+#author,
+#serie,
+#title {
+  /* largeur */
+  width: 20px;
+  /* hauteur */
+  height: 20px;
+}
+
+#searchBd {
+  /* largeur */
+  width: 250px;
+  /* hauteur */
+  height: auto;
+}
+
+/* #### Mise en forme "Affichage BD" #### */
 div>.card {
   /* affichage block */
   display: flex;
@@ -90,7 +160,7 @@ div>.card {
   justify-content: flex-start;
 }
 
-.imgBD {
+.imgBd {
   /* largeur */
   width: 200px;
   /* hauteur */
@@ -99,12 +169,6 @@ div>.card {
   padding: 5px;
   /* arrondi bordures */
   border-radius: 10px;
-}
-
-.imgBD:modal {
-  border: 5px solid red;
-  background-color: yellow;
-  box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
 }
 
 ul {
@@ -125,13 +189,12 @@ ul>li {
   list-style-type: none;
 }
 
-div .bdTitleAlbum,
 div .bdTitleInfo {
   /* espacement interligne */
   line-height: 0;
 }
 
-#btnAjoutBD.btn {
+.btnAjoutPanier {
   /* marge extérieure */
   margin: auto 50px auto auto;
   /* marge intérieure */
@@ -147,3 +210,13 @@ div .bdTitleInfo {
   /* épaisseur police */
   font-weight: bolder;
 }
+
+
+
+
+
+/* .imgsBD:modal {
+  border: 5px solid red;
+  background-color: yellow;
+  box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
+} */

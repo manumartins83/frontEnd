@@ -5,79 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Les BD</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Les BD</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Liste des BD</h1>
-        <div class="row">
-            <div class="col-sm-4 col-lg-6">
-
-                <p id="messageId">
-                    <label for="id">Id de l'album :</label>
-                    <input type="number" required id="id" value="0" min="0" title="Saisissez un numéro et validez">
-                </p>
-
-                <p>
-                    <label for="serie">Série :</label>
-                    <input type="text" id="serie" readonly>
-
-                    <label for="numero">Album N° :</label>
-                    <input type="text" id="numero" readonly>
-
-                    <label for="titre">Titre :</label>
-                    <input type="text" id="titre" readonly>
-
-                    <label for="auteur">Auteur :</label>
-                    <input type="text" id="auteur" readonly>
-
-                    <label for="prix">Prix :</label>
-                    <input type="number" id="prix" readonly>
-                </p>
-
-                <div is="toto">
-                    <img src="images/noComicsMini.jpeg" id="albumMini">
-                </div>
-            </div>
-
-            <div class="col-sm-8 col-lg-6">
-                <img src="images/noComics.jpeg" id="album">
-            </div>
-
-        </div>
-    </div>
-
-
     <!-- Indicateur chargement (loading) -->
-    <div id="loading">Loading&#8230;</div>
+    <!-- <div id="loading">Loading&#8230;</div> -->
 
-    <!-- Panier achat -->
+
+    <!-- Liste et panier achats -->
+    <h1 class="position">Liste des achats</h1>
+    <div class="panierList">
+        <button id="btnCde" class="btnCdePanier">Commandez</button>
+        <img class="imgPanier" id="panier" src="images/panier.png" />
+        <input type="text" id="quantite" value="0">
+    </div>
     <div>
-        <h1>Liste des achats</h1>
         <div id="listPaniercomicsBD" class="container-fluid"></div>
     </div>
 
     <!-- Recherche BD -->
+    <h1 class="marge">Recherche des BD</h1>
     <div class="searchListBD">
-        <h1>Recherche des BD</h1>
+        <!-- Boutons radios pour choix de la recherche  -->
+        <div class="btnRadio">
+            <label for="author"><strong>Auteur&nbsp;&nbsp;</strong></label>
+            <input id="author" type="radio" value="Auteur">
+        </div>
+        <div class="btnRadio">
+            <label for="serie"><strong>Série&nbsp;&nbsp;</strong></label>
+            <input id="serie" type="radio" value="Série">
+        </div>
+        <div class="btnRadio">
+            <label for="title"><strong>Titre&nbsp;&nbsp;</strong></label>
+            <input id="title" type="radio" value="Titre">
+        </div>
         <div>
-            <!-- Boutons radios pour choix de la recherche  -->
-            <label for="author">Auteur :</label>
-            <input type="radio" name="author" value="Auteur">
-
-            <label for="serie">Série :</label>
-            <input type="radio" name="serie" value="Série">
-
-            <label for="title">Titre :</label>
-            <input type="radio" name="title" value="Titre" checked="checked">
-
             <!-- Sélection recherche  -->
-            <select id="searchBD" name="recherche" value="Recherchez"></select>
+            <select id="searchBd">
+                <option value="selection">Sélectionnez</option>
+            </select>
             <!-- <input type="text" name="search" id="searchBD" value="Saisir le nom de la recherche"> -->
         </div>
     </div>
@@ -112,9 +85,8 @@
 
 
     <!-- Formulaire inscription -->
+    <!-- <h1>Inscription</h1> -->
     <!-- <div>
-        <h1>Inscription</h1>
-
         <form method="post" action="" onsubmit="return validerInscription()">
             <p>
                 <input type="text" id="nom" name="nom" value="Nom">
@@ -146,6 +118,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
     <script src="data/albums.js"></script>
     <script src="data/series.js"></script>
     <script src="data/auteurs.js"></script>
