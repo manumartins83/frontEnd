@@ -14,11 +14,11 @@ var selectListSearch = document.getElementById('searchBd'); //sélection liste r
 window.addEventListener("load", function () { showListBd() });
 
 //Sélection + affichage liste auteurs album BD via fonction "showListBdAuthor"
-btnRadioAuthor.addEventListener("click", function () { showListBdAuthor() });
+// btnRadioAuthor.addEventListener("click", function () { showListBdAuthor() });
 
 //Sélection + affichage liste titres album BD via fonction "showListBdTitle"
 btnRadioTitle.checked = true; //sélection bouton radio titre par défaut
-btnRadioTitle.addEventListener("click", function () { showListBdTitle() });
+// btnRadioTitle.addEventListener("click", function () { showListBdTitle() });
 
 //Sélection + affichage liste séries album BD via fonction "showListBdSerie"
 btnRadioSerie.addEventListener("click", function () { showListBdSerie() });
@@ -73,7 +73,11 @@ function showListBd() {
 		if (key != "") {
 			src = nomImgBd + ".jpg"; //attribution petite image BD associée
 		}
-
+		//pour images BD albums non existant alors 
+		for (i = 0; i < imgsBd.length; i++) {
+			//si erreur images alors appel fonction "prbImg"
+			imgsBd[i].addEventListener("error", function () { prbImg(this) });
+		}
 
 		//Ecriture contenu textuel HTML dans balise "div" class "card"
 		bdCard.innerHTML =
@@ -91,14 +95,58 @@ function showListBd() {
 		elementListBd.appendChild(bdCard);
 
 
-		//pour images BD albums non existant alors 
-		for (i = 0; i < imgsBd.length; i++) {
-			//si erreur images alors appel fonction "prbImg"
-			imgsBd[i].addEventListener("error", prbImg());
+
+
+
+
+
+
+
+		switch ((selectListSearch && btnRadioAuthor) || (selectListSearch && btnRadioTitle) || (selectListSearch && btnRadioSerie)) {
+			case btnRadioAuthor:
+
+				//Sélection + affichage liste auteurs album BD via fonction "showListBdAuthor"
+				btnRadioAuthor.addEventListener("click", function () { showListBdAuthor() });
+
+
+				break;
+			case btnRadioTitle:
+
+				//Sélection + affichage liste titres album BD via fonction "showListBdTitle"
+				btnRadioTitle.addEventListener("click", function () { showListBdTitle() });
+
+
+
+				break;
+			case btnRadioSerie:
+
+				//Sélection + affichage liste séries album BD via fonction "showListBdSerie"
+				btnRadioSerie.addEventListener("click", function () { showListBdSerie() });
+
+
+				break;
+			default:
+				break;
 		}
 
 		//Chargement + affichage auto liste auteurs album BD via fonction "showAlbumsAutor"
-		selectListSearch.addEventListener("load", showAlbumsAutor(key, auteur));
+		selectListSearch.addEventListener("click", showAlbumsAutor(key, auteur));
+
+
+		//Chargement + affichage auto liste auteurs album BD via fonction "showAlbumsAutor"
+		selectListSearch.addEventListener("click", showAlbumsTitle(key));
+
+
+		//Chargement + affichage auto liste auteurs album BD via fonction "showAlbumsAutor"
+		selectListSearch.addEventListener("click", showAlbumsSerie(key, serie));
+
+
+
+
+
+
+
+
 
 
 
@@ -115,6 +163,7 @@ function showListBd() {
 
 
 	});
+
 }
 
 
@@ -141,9 +190,9 @@ function showListBd() {
 
 
 
-//Affichage petites images BD par défaut (albums inexistants)
-function prbImg() {
-	src = albumDefaultMini;
+// Affichage petites images BD par défaut (albums inexistants)
+function prbImg(_imgDefault) {
+	_imgDefault.src = albumDefaultMini;
 }
 
 
@@ -152,11 +201,10 @@ function showListBdAuthor() {
 	// console.log('btn auteur activé');
 	btnRadioTitle.checked = false;
 	btnRadioSerie.checked = false;
-
-
 	selectListSearch = true;
 
-	// selectListSearch.addEventListener("load", function () { showAlbumsAutor(_key) });
+	//Chargement + affichage auto liste auteurs album BD via fonction "showAlbumsAutor"
+	selectListSearch.addEventListener("click", showAlbumsAutor(key, auteur));
 }
 
 function showAlbumsAutor(_key, _auteur) {
@@ -170,7 +218,7 @@ function showAlbumsAutor(_key, _auteur) {
 	var optionSelect = document.createElement('option'); //création balise "option" pour select list
 
 	//Création attribu value "Auteur-" pour select list
-	optionSelect.setAttribute('value', 'Auteur-' + _album.idAuteur);
+	optionSelect.setAttribute('value', 'auteur-' + _album.idAuteur);
 
 	//Ecriture contenu textuel HTML dans balise "option" value "Auteur-"
 	optionSelect.innerHTML = _auteur.nom;
@@ -185,21 +233,73 @@ function showListBdSerie() {
 	// console.log('btn série activé');
 	btnRadioTitle.checked = false;
 	btnRadioAuthor.checked = false;
+	selectListSearch = true;
 
-
-
+	//Chargement + affichage auto liste auteurs album BD via fonction "showAlbumsAutor"
+	selectListSearch.addEventListener("click", showAlbumsSerie(key, serie));
 }
 
+function showAlbumsSerie(_key, _serie) {
+	//Sélection fichier data "albums et auteurs"
+	_album = albums.get(_key); //sélection album par rapport numéro clef dans fichier "albums.js"
+	_serie = series.get(_album.idSerie); //sélection serie BD dans fichier "series.js"
+	// console.log(_key);
+	// console.log(_serie.nom);
+
+	//Variable locale
+	var optionSelect = document.createElement('option'); //création balise "option" pour select list
+
+	//Création attribu value "serie-" pour select list
+	optionSelect.setAttribute('value', 'serie-' + _album.idSerie);
+
+	//Ecriture contenu textuel HTML dans balise "option" value "serie-"
+	optionSelect.innerHTML = _serie.nom;
+
+	//Ajout contenu textuel HTML dans balise "option" value "serie-"
+	selectListSearch.appendChild(optionSelect);
+}
 
 //Affichage liste titres album BD à partir fichier data "albums"
 function showListBdTitle() {
 	// console.log('btn titre activé');
 	btnRadioAuthor.checked = false;
 	btnRadioSerie.checked = false;
+	selectListSearch = true;
 
-
-
+	//Chargement + affichage auto liste auteurs album BD via fonction "showAlbumsAutor"
+	selectListSearch.addEventListener("click", showAlbumsTitle(key));
 }
+
+function showAlbumsTitle(_key) {
+	//Sélection fichier data "albums et auteurs"
+	_album = albums.get(_key); //sélection album par rapport numéro clef dans fichier "albums.js"
+	// console.log(_key);
+	// console.log(_album.titre);
+
+	//Variable locale
+	var optionSelect = document.createElement('option'); //création balise "option" pour select list
+
+	//Création attribu value "titre-" pour select list
+	optionSelect.setAttribute('value', 'titre-' + _album.titre);
+
+	//Ecriture contenu textuel HTML dans balise "option" value "titre-"
+	optionSelect.innerHTML = _album.titre;
+
+	//Ajout contenu textuel HTML dans balise "option" value "titre-"
+	selectListSearch.appendChild(optionSelect);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

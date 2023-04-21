@@ -69,11 +69,11 @@ h1.position {
   /* arrondi bordure */
   border-radius: 5px;
   /* paramètres bordures */
-  border: 2px double red;
+  border: 2px solid rgb(255, 0, 0,0.7);
   /* épaisseur police */
   font-weight: bolder;
   /* couleur fond */
-  background-color: grey;
+  background-color: rgb(128, 128, 128);
 }
 
 .imgPanier {
