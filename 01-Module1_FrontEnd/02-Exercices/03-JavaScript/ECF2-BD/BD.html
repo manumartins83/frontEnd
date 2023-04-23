@@ -15,18 +15,16 @@
 
 <body>
 
-    <!-- Indicateur chargement (loading) -->
-    <!-- <div id="loading">Loading&#8230;</div> -->
-
-
     <!-- Liste et panier achats -->
     <h1 class="position">Liste des achats</h1>
     <div class="panierList">
-        <button id="btnCde" class="btnCdePanier">Commandez</button>
-        <img class="imgPanier" id="panier" src="images/panier.png" />
-        <input type="text" id="quantite" value="0">
+        <button id="btnCde" class="btnCdePanier btn">Commandez</button>
+        <div class="ensemblePanier">
+            <img class="imgPanier" id="panier" src="images/panier.png" />
+            <input type="text" id="quantite" readonly value="0">
+        </div>
     </div>
-    <div>
+    <div class="marge">
         <div id="listPaniercomicsBD" class="container-fluid"></div>
     </div>
 
@@ -64,11 +62,11 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Titre</h4>
+                    <h4 id="titleModal" class="modal-title">Titre</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>Infos BD</p>
+                    <p id="infosModal">Infos BD</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermez</button>
@@ -76,37 +74,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-    <!-- Formulaire inscription -->
-    <!-- <h1>Inscription</h1> -->
-    <!-- <div>
-        <form method="post" action="" onsubmit="return validerInscription()">
-            <p>
-                <input type="text" id="nom" name="nom" value="Nom">
-            </p>
-            <p>
-                <input type="text" id="prenom" name="prenom" value="Prénom">
-            </p>
-            <p>
-                <input type="text" id="email" name="email" value="Email">
-            </p>
-            <p>
-                <input type="text" id="pass" name="pass" value="Mot de passe">
-            </p>
-            <p>
-                <input type="submit" value="Validez">
-                <input type="reset" value="Effacer">
-            </p>
-        </form>
-    </div> -->
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -119,6 +86,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
+    <!-- Fichiers JS -->
     <script src="data/albums.js"></script>
     <script src="data/series.js"></script>
     <script src="data/auteurs.js"></script>
