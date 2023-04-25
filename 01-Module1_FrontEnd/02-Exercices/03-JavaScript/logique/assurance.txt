@@ -1,0 +1,269 @@
+/**Exercice 4.1
+LireHeure() : Cette fonction demande à l'utilisateur d'entrer l'heure (0-23) et les minutes (0-59) et retourne un objet contenant l'heure et les minutes.
+
+ajouterUneMinute(heure, minutes) : Cette fonction prend en paramètres l'heure et les minutes actuelles, puis ajoute une minute. Si les minutes dépassent 59, elles sont réinitialisées à 0 et une heure est ajoutée. Si l'heure dépasse 23, elle est réinitialisée à 0. La fonction retourne un objet contenant l'heure et les minutes après l'ajout d'une minute.
+
+afficherHeureFutur(heure, minutes) : Cette fonction prend en paramètres l'heure et les minutes après l'ajout d'une minute et affiche un message indiquant l'heure qu'il sera une minute plus tard.
+
+Dans la partie principale du code, on appelle d'abord la fonction lireHeure() pour obtenir l'heure et les minutes actuelles.
+
+Ensuite, on appelle la fonction ajouterUneMinute(heure, minutes) avec l'heure et les minutes actuelles pour obtenir l'heure et les minutes une minute plus tard.
+
+Enfin, on appelle la fonction afficherHeureFutur(heureFutur, minutesFutur) avec l'heure et les minutes une minute plus tard pour afficher le message à l'utilisateur.
+
++ Modif pour les secondes meme procede
+Secondes deja inregrer
+
+
+function lireHeure() {
+  const heure = parseInt(prompt("Entrez l'heure (0-23) :"));
+  const minutes = parseInt(prompt("Entrez les minutes (0-59) :"));
+  const secondes = parseInt(prompt("Entrez les secondes (0-59) :"))
+  return { heure, minutes, secondes };
+}
+
+function ajouterUneMinute(heure, minutes, secondes) {
+  secondes++;
+  if (secondes >= 60) {
+    secondes = 0;
+    minutes++;
+  }
+
+  if (minutes >= 60) {
+    minutes = 0;
+    heure++;
+  }
+
+  if (heure >= 24) {
+    heure = 0;
+  }
+
+
+  return { heure, minutes, secondes };
+}
+
+function afficherHeureFutur(heure, minutes, secondes) {
+  console.log(`Dans une minute, il sera ${heure} heure(s) ${minutes} et ${secondes} `);
+}
+
+let { heure, minutes, secondes } = lireHeure();
+let { heure: heureFutur, minutes: minutesFutur, secondes: secondesFutur } = ajouterUneMinute(heure, minutes, secondes);
+afficherHeureFutur(heureFutur, minutesFutur, secondesFutur); */
+
+
+// Path: 4.3
+//Pseudo code======================================================================>
+/**DEBUT
+  INITIALISER candidat1, candidat2, candidat3, candidat4 à 0
+  ECRIRE "Entrez le score du candidat 1 :"
+  LIRE candidat1
+  ECRIRE "Entrez le score du candidat 2 :"
+  LIRE candidat2
+  ECRIRE "Entrez le score du candidat 3 :"
+  LIRE candidat3
+  ECRIRE "Entrez le score du candidat 4 :"
+  LIRE candidat4
+
+  SI candidat1 > 50 ALORS
+    ECRIRE "Candidat 1 élu au premier tour."
+  SINON
+    INITIALISER ballottage à FAUX
+    SI candidat1 >= 12.5 ALORS
+      ballottage <- VRAI
+      ECRIRE "Candidat 1 participe au second tour."
+
+      SI candidat1 > candidat2 ET candidat1 > candidat3 ET candidat1 > candidat4 ALORS
+        ECRIRE "Candidat 1 en ballottage favorable."
+      SINON
+        ECRIRE "Candidat 1 en ballottage défavorable."
+      FIN SI
+    SINON
+      ECRIRE "Candidat 1 battu."
+    FIN SI
+  FIN SI
+FIN
+ 
+//<============================================================================Fin Pseudo code
+
+let candidat1 = 0;
+let candidat2 = 0;
+let candidat3 = 0;
+let candidat4 = 0;
+let ballottage = false;
+
+candidat1 = parseInt(prompt("Entrez le score du candidat 1 :"));
+candidat2 = parseInt(prompt("Entrez le score du candidat 2 :"));
+candidat3 = parseInt(prompt("Entrez le score du candidat 3 :"));
+candidat4 = parseInt(prompt("Entrez le score du candidat 4 :"));
+
+if (candidat1 > 50) {
+  console.log("Candidat 1 élu au premier tour.");
+}
+else {
+  if (candidat1 >= 12.5) {
+    ballottage = true;
+    console.log("Candidat 1 participe au second tour.");
+
+    if (candidat1 > candidat2 && candidat1 > candidat3 && candidat1 > candidat4) {
+      console.log("Candidat 1 en ballottage favorable.");
+    }
+    else {
+      console.log("Candidat 1 en ballottage défavorable.");
+    }
+  }
+  else {
+    console.log("Candidat 1 battu.");
+  }
+}*/
+
+// Path: 4.4
+//Pseudo code======================================================================>
+
+
+
+/**DEBUT
+  INITIALISER age, anneesPermis, nbAccidents, anneesClient à 0
+  ECRIRE "Entrez l'âge du conducteur :"
+  LIRE age
+  ECRIRE "Entrez le nombre d'années de détention du permis :"
+  LIRE anneesPermis
+  ECRIRE "Entrez le nombre d'accidents responsables :"
+  LIRE nbAccidents
+  ECRIRE "Entrez le nombre d'années en tant que client :"
+  LIRE anneesClient
+
+  SI age < 25 ET anneesPermis < 2 ALORS
+    SI nbAccidents == 0 ALORS
+      tarif <- "rouge"
+    SINON
+      ECRIRE "Refusé"
+      FIN
+    FIN SI
+  SINON SI (age < 25 ET anneesPermis >= 2) OU (age >= 25 ET anneesPermis < 2) ALORS
+    SI nbAccidents == 0 ALORS
+      tarif <- "orange"
+    SINON SI nbAccidents == 1 ALORS
+      tarif <- "rouge"
+    SINON
+      ECRIRE "Refusé"
+      FIN
+    FIN SI
+  SINON
+    SI nbAccidents == 0 ALORS
+      tarif <- "vert"
+    SINON SI nbAccidents == 1 ALORS
+      tarif <- "orange"
+    SINON SI nbAccidents == 2 ALORS
+      tarif <- "rouge"
+    SINON
+      ECRIRE "Refusé"
+      FIN
+    FIN SI
+  FIN SI
+
+  SI anneesClient > 5 ALORS
+    SI tarif == "rouge" ALORS
+      tarif <- "orange"
+    SINON SI tarif == "orange" ALORS
+      tarif <- "vert"
+    SINON SI tarif == "vert" ALORS
+      tarif <- "bleu"
+    FIN SI
+  FIN SI
+
+  ECRIRE "Le tarif pour ce client est : " + tarif
+FIN
+ 
+//<============================================================================Fin Pseudo code*/
+
+function tarif(age = 0, anneesPermis = 0, nbAccidents = 0, anneesClient = 0) {
+  let tarif = "";
+
+  age = parseInt(prompt("Entrez l'âge du conducteur :"));
+  anneesPermis = parseInt(prompt("Entrez le nombre d'années de détention du permis :"));
+  nbAccidents = parseInt(prompt("Entrez le nombre d'accidents responsables :"));
+  anneesClient = parseInt(prompt("Entrez le nombre d'années en tant que client :"));
+
+  switch (true) {
+    case age < 25 && anneesPermis < 2:
+      tarif = nbAccidents === 0 ? "rouge" : "Refusé";
+      break;
+    case (age < 25 && anneesPermis >= 2) || (age >= 25 && anneesPermis < 2):
+      switch (nbAccidents) {
+        case 0:
+          tarif = "orange";
+          break;
+        case 1:
+          tarif = "rouge";
+          break;
+        default:
+          tarif = "Refusé";
+      }
+      break;
+    default:
+      switch (nbAccidents) {
+        case 0:
+          tarif = "vert";
+          break;
+        case 1:
+          tarif = "orange";
+          break;
+        case 2:
+          tarif = "rouge";
+          break;
+        default:
+          tarif = "Refusé";
+      }
+  }
+
+  if (tarif === "Refusé") {
+    console.log(tarif);
+    return;
+  }
+
+  if (anneesClient > 5) {
+    switch (tarif) {
+      case "rouge":
+        tarif = "orange";
+        break;
+      case "orange":
+        tarif = "vert";
+        break;
+      case "vert":
+        tarif = "bleu";
+        break;
+    }
+  }
+  else {
+    if (nbAccidents == 0) {
+      tarif = "vert";
+    }
+    else if (nbAccidents == 1) {
+      tarif = "orange";
+    }
+    else if (nbAccidents == 2) {
+      tarif = "rouge";
+    }
+    else {
+      console.log("Refusé");
+      return;
+    }
+  }
+
+  if (anneesClient > 5) {
+    if (tarif == "rouge") {
+      tarif = "orange";
+    }
+    else if (tarif == "orange") {
+      tarif = "vert";
+    }
+    else if (tarif == "vert") {
+      tarif = "bleu";
+    }
+  }
+
+  console.log("Le tarif pour ce client est : " + tarif);
+}
+tarif();
+
+
