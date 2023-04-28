@@ -29,5 +29,10 @@
 
 
 do {
+    if (condition) {
+        
+    } else {
+        
+    }
     var i = prompt("Entrez un nombre entre 1 et 3");
 } while (i < 1 || i > 3);

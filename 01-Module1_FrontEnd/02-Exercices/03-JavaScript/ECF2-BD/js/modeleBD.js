@@ -12,7 +12,7 @@ var quantitePanier = document.getElementById('quantite'); //sélection input qua
 
 
 //Chargement et affichage auto albums BD via fonction "showListBd"
-window.addEventListener("load", function () { showListBd() });
+window.addEventListener("load", function () { showAlbumsListBd() });
 
 //Sélection + affichage liste auteurs album BD via fonction "showListBdAuthor"
 btnRadioAuthor.addEventListener("click", function () { showListBdAuthor() });
@@ -26,7 +26,7 @@ btnRadioSerie.addEventListener("click", function () { showListBdSerie() });
 
 
 //Création liste albums BD à partir fichier data "albums, series, auteurs"
-function showListBd() {
+function showAlbumsListBd() {
 	//Récupération liste albums BD
 	albums.forEach(album => {
 		//Sélection fichier data "séries et auteurs"
@@ -36,9 +36,13 @@ function showListBd() {
 
 		//Variables locales
 		var key = keys.next().value; //sélection numéro clef dans fichier "albums.js"
+		// console.log(key);
 		var elementListBd = document.getElementById('comicsBD'); //sélection id balise "div" HTML "Recherche BD"
 		var bdCard = document.createElement('div'); //création balise "div" pour card album BD
 		const nomPhotoBd = serie.nom + "-" + album.numero + "-" + album.titre; //récupération nom fichier photo album BD
+		// Utilisation d'une expression régulière pour supprimer 
+		// les caractères non autorisés dans les noms de fichiers : '!?.":$
+		// nomPhotoBd = nomPhotoBd.replace(/'|!|\?|\.|"|:|\$/g, "");
 		var nomImgBd = srcAlbumMini + nomPhotoBd; //sélection nom fichier petites images BD (albums existants)
 		var imgsBd = document.getElementsByClassName('imgBd'); //sélection class balise "img" 
 
@@ -72,7 +76,7 @@ function showListBd() {
 		elementListBd.appendChild(bdCard);
 
 		//Chargement + affichage auto liste auteurs, titres, séries album BD via fonction "showAlbumsBd"
-		selectListSearch.addEventListener("click", function () { showAlbumsBd(key, auteur, serie) });
+		selectListSearch.addEventListener("click", function () { showListBd(key, auteur, serie) });
 
 		//Ajout album BD dans panier achat via fonction "ajoutPanier"
 		document.getElementById('btnAjoutBD-' + key).addEventListener("click", function () { ajoutPanier(key, auteur, serie) });
@@ -124,7 +128,7 @@ function showListBdTitle() {
 	selectListSearch.innerHTML = '<option value="selection">Sélectionnez</option>';
 
 	//Chargement + affichage auto liste auteurs, titres, séries album BD via fonction "showAlbumsBd"
-	selectListSearch.addEventListener("load", function () { showAlbumsBd(_key, auteur, _serie) });
+	selectListSearch.addEventListener("load", function () { showListBd(_key, auteur, _serie) });
 }
 
 
@@ -139,7 +143,7 @@ function showListBdAuthor() {
 	selectListSearch.innerHTML = '<option value="selection">Sélectionnez</option>';
 
 	//Chargement + affichage auto liste auteurs, titres, séries album BD via fonction "showAlbumsBd"
-	selectListSearch.addEventListener("load", function () { showAlbumsBd(_key, _auteur, _serie) });
+	selectListSearch.addEventListener("load", function () { showAListBd(_key, _auteur, _serie) });
 }
 
 
@@ -154,12 +158,12 @@ function showListBdSerie() {
 	selectListSearch.innerHTML = '<option value="selection">Sélectionnez</option>';
 
 	//Chargement + affichage auto liste auteurs album BD via fonction "showAlbumsAutor"
-	selectListSearch.addEventListener("load", function () { showAlbumsBd(_key, _auteur, _serie) });
+	selectListSearch.addEventListener("load", function () { showListBd(_key, _auteur, _serie) });
 }
 
 
 //Création liste auteurs, titres, séries album BD à partir fichier data "albums, auteurs, series"
-function showAlbumsBd(_key, _auteur, _serie) {
+function showListBd(_key, _auteur, _serie) {
 	//Sélection fichier data "albums, auteurs, series"
 	_album = albums.get(_key); //sélection album par rapport numéro clef dans fichier "albums.js"
 	_auteur = auteurs.get(_album.idAuteur); //sélection auteur BD dans fichier "auteurs.js"
@@ -219,6 +223,17 @@ function showAlbumsBd(_key, _auteur, _serie) {
 			//Ajout contenu textuel HTML dans balise "option" value "Auteur-"
 			selectListSearch.appendChild(optionSelect);
 
+
+
+
+
+
+			//Affichage ouvrage par auteur via fonction "chargeByAuthor"
+			selectListSearch.addEventListener("change", chargeByAuthor(_key,_auteur,_serie)); //deuxième solution écriture
+
+
+
+
 			break; //fin sélection
 
 		//si pas de sélection alors "défault"
@@ -272,4 +287,50 @@ function ajoutPanier(_key, _auteur, _serie) {
 
 	//Ajout contenu textuel HTML dans balise "div" class "card"
 	elementListComicsBd.appendChild(bdCardPanier);
+}
+
+
+
+
+
+
+
+
+//Affichage ouvrage par auteur
+function chargeByAuthor(_key,_auteur,_serie) {
+	//Sélection fichier data "albums, auteurs, series"
+	_album = albums.get(_key); //sélection album par rapport numéro clef dans fichier "albums.js"
+	_auteur = auteurs.get(_album.idAuteur); //sélection auteur BD dans fichier "auteurs.js"
+	_serie = series.get(_album.idSerie); //sélection serie BD dans fichier "series.js"
+
+	// var elementCategorie = document.getElementById('categoriesList'); //'variable locale' sélection liste cathégories
+	// var elementAuthor = document.getElementById('authorsList'); //'variable locale' sélection liste auteurs
+	var choiceAuthors = selectListSearch.options[selectListSearch.selectedIndex].innerText; //'variable locale' sélection contenu liste
+	var booksListByAuthors = new Array(); //'variable locale' tableau liste ouvrages par auteurs
+
+	//sélectionne contenu vide
+	// elementCategorie.options[elementCategorie.selectedIndex].innerText = "";
+
+	//si contenu liste auteurs vide alors
+	if (choiceAuthors == "") {
+		showAlbumsListBd(_album.idAuteur); //sélectionne ouvrages via fonction "showBooks"
+	}
+	//sinon si contenu liste auteurs pas vide alors
+	else {
+		//pour ouvrages allant de 0 à yy alors
+		for (var y = 0; y < _album.idAuteur.length; y++) {
+			var bookByAuthor = _album.idAuteur[y]; //'variable locale' tableau liste ouvrages par auteur
+			console.log(bookByAuthor);
+			//si présence ouvrages auteur alors
+			if (bookByAuthor_auteur.nom.indexOf(choiceAuthors) != -1) {
+				booksListByAuthors.push(bookByAuthor); //incrémente ouvrages par auteur dans tableau
+			}
+		}
+	}
+
+	//tri alphabétiquement ouvrages de la liste
+	booksListByAuthors.sort();
+
+	//sélectionne ouvrages triés via fonction "showBooks"
+	showAlbumsListBd(booksListByAuthors);
 }
