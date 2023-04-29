@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Titre onglet -->
     <title>Les BD</title>
 
     <!-- Style CSS Bootstrap -->
@@ -18,16 +18,22 @@
 
 <body>
 
-    <!-- Liste et panier achats -->
-    <h1 class="position">Liste des achats</h1>
-    <div class="panierList">
-        <button id="btnCde" class="btnCdePanier btn">Commandez</button>
+    <!-- Panier achats -->
+    <div id="panierList">
+        <div class="btnCdePanierAchat">
+            <button id="btnCde" class="btnCdePanier btn">Commandez</button>
+        </div>
+        <div class="titrePanierAchat">
+            <h1 class="position">Liste des achats</h1>
+        </div>
         <div class="ensemblePanier">
             <img class="imgPanier" id="panier" src="images/panier.png" />
             <input type="text" id="quantite" readonly value="0">
         </div>
     </div>
-    <div class="marge">
+
+    <!-- Liste panier achats -->
+    <div class="listPanierAchat">
         <div id="listPaniercomicsBD" class="container-fluid"></div>
     </div>
 
@@ -50,7 +56,7 @@
         <div>
             <!-- Sélection recherche  -->
             <select id="searchBd">
-                <option value="selection">Sélectionnez</option>
+                <option id="selection" value="selection">Sélectionnez</option>
             </select>
             <!-- <input type="text" name="search" id="searchBD" value="Saisir le nom de la recherche"> -->
         </div>
@@ -96,7 +102,7 @@
     <script src="data/series.js"></script>
     <script src="data/auteurs.js"></script>
     <script src="js/modeleBD.js"></script>
-    <script src="js/mod.js"></script>
+    <!-- <script src="js/mod.js"></script> -->
 
 </body>
 

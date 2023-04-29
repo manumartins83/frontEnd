@@ -34,7 +34,7 @@ h1.position {
   z-index: 2;
 }
 
-.panierList {
+#panierList {
   /* type positionnement */
   position: fixed;
   /* position */
@@ -101,7 +101,7 @@ h1.position {
   border-radius: 5px;
 }
 
-.marge {
+.listPanierAchat {
   /* marge extérieure */
   margin-top: 150px;
 }
