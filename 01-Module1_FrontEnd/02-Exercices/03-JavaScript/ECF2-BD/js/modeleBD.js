@@ -149,107 +149,60 @@ function showAlbumsListBd() {
 
 
 
+
+
 		//si                   alors
 		if (document.getElementById('btnAjoutPanierBd-' + key) != false) {
 
-			//Ajout album BD dans panier achat via fonction "ajoutPanier"
-			document.getElementById('btnAjoutPanierBd-' + key).addEventListener("click", function () { ajoutPanier(key, auteur, serie) });
+			//si   alors
+			if (document.getElementById('btnPlusBd-' + key) != false) {
 
-			//Affiche augmentation quantité panier via click bouton "ajout panier"
-			document.getElementById('btnAjoutPanierBd-' + key).addEventListener("click", () => {
+				//Ajout album BD dans panier achat via fonction "ajoutPanier"
+				document.getElementById('btnAjoutPanierBd-' + key).addEventListener("click", function () { ajoutPanier(key, auteur, serie) });
 
-				// Variable locale
-				var quantiteBd = document.getElementById('quantiteBd-' + key); //sélection input quantité BD card associée
+				//Affiche augmentation quantité panier via click bouton "ajout panier"
+				document.getElementById('btnAjoutPanierBd-' + key).addEventListener("click", () => {
 
-				a++; //incrémentation quantité input panier achat de +1
+					// Variable locale
+					var quantiteBd = document.getElementById('quantiteBd-' + key); //sélection input quantité BD card associée
 
-				//si quantité <10 alors mise en forme chiffrage au format "xx" sinon "x"
-				a = (a < 10) ? "0" + a : a;
-				// console.log(a); //affiche dev
+					a++; //incrémentation quantité input panier achat de +1
 
-				//Ajout contenu textuel quantité dans input quantite panier
-				quantitePanier.value = a;
+					//si quantité <10 alors mise en forme chiffrage au format "xx" sinon "x"
+					a = (a < 10) ? "0" + a : a;
+					// console.log(a); //affiche dev
 
+					//Ajout contenu textuel quantité dans input quantite panier
+					quantitePanier.value = a;
 
+					//Ajout contenu textuel quantité dans input BD
+					quantiteBd.value = a;
+				});
+			}
+			//sinon
+			else {
+				//Ajout album BD dans panier achat via fonction "ajoutPanier"
+				document.getElementById('btnAjoutPanierBd-' + key).addEventListener("click", function () { ajoutPanier(key, auteur, serie) });
 
-				
+				//Affiche augmentation quantité panier via click bouton "ajout panier"
+				document.getElementById('btnAjoutPanierBd-' + key).addEventListener("click", () => {
 
-				//Ajout contenu textuel quantité dans input quantite BD
+					// Variable locale
+					var quantiteBd = document.getElementById('quantiteBd-' + key); //sélection input quantité BD card associée
 
-				quantiteBd.value = a;
+					a++; //incrémentation quantité input panier achat de +1
 
+					//si quantité <10 alors mise en forme chiffrage au format "xx" sinon "x"
+					a = (a < 10) ? "0" + a : a;
+					// console.log(a); //affiche dev
 
+					//Ajout contenu textuel quantité dans input panier
+					quantitePanier.value = a;
 
-
-
-
-				// //Affiche augmentation quantité BD via click bouton "+"
-				// document.getElementById('btnPlusBd-' + key).addEventListener("click", () => {
-
-
-				// 	var quantiteBd = document.getElementById('quantiteBd-' + key); //sélection input quantité BD card associée
-
-
-				// 	a++; //incrémentation quantité input BD de +1
-
-				// 	a = (a < 10) ? "0" + a : a; //si quantité BD <10 alors mise en forme chiffrage au format "xx" sinon "x"
-				// 	// console.log(a); //affiche dev
-
-				// 	//Ajout contenu textuel quantité dans input "quantiteBd"
-				// 	quantiteBd.value = a;
-				// });
-
-
-
-
-
-
-				// if (quantitePanier.value != 0) {
-
-
-				// 	var quantiteBd = document.getElementById('quantiteBd-' + key); //sélection input quantité BD card associée
-
-				// 	//Ajout contenu textuel quantité dans input "quantiteBd"
-				// 	quantiteBd.value = a;
-				// }
-
-
-
-
-				// if (quantitePanier.value != 0) {
-				// 	//Affiche augmentation quantité BD via click bouton "+"
-				// 	document.getElementById('btnPlusBd-' + key).addEventListener("click", () => {
-
-
-				// 		var quantiteBd = document.getElementById('quantiteBd-' + key); //sélection input quantité BD card associée
-
-
-				// 		a++; //incrémentation quantité input BD de +1
-
-				// 		a = (a < 10) ? "0" + a : a; //si quantité BD <10 alors mise en forme chiffrage au format "xx" sinon "x"
-				// 		// console.log(a); //affiche dev
-
-				// 		//Ajout contenu textuel quantité dans input "quantiteBd"
-				// 		quantiteBd.value = a;
-				// 	});
-				// }
-
-
-
-
-
-			});
-
-
-
-
-
-
-
-
-
-
-
+					//Ajout contenu textuel quantité dans input BD
+					quantiteBd.value = a;
+				});
+			}
 		}
 
 
