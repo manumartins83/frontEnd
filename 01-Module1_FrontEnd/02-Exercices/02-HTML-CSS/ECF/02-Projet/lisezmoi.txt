@@ -96,11 +96,14 @@ class pour MEF (Mise En Forme):
 SOURCES :
 - Photos -
 personnel + site Google
+
 - Dissuasion -
 https://www.google.com/search?q=type+de+dissuasion&rlz=1C1GCEU_frFR1045FR1045&oq=type+de+dissuasion&aqs=chrome..69i57j33i160l2.5952j1j7&sourceid=chrome&ie=UTF-8
 https://fr.wikipedia.org/wiki/Force_de_dissuasion_nucl%C3%A9aire_fran%C3%A7aise#:~:text=Les%20forces%20de%20dissuasion%20nucl%C3%A9aire,op%C3%A9rationnel%20de%20300%20t%C3%AAtes%20nucl%C3%A9aires.
 https://www.lamarinerecrute.fr/qui-sommes-nous/missions-et-organisation
+
 - Frontières -
 https://fr.wikipedia.org/wiki/Manche_(mer)
 https://fr.wikipedia.org/wiki/Mer_M%C3%A9diterran%C3%A9e
 https://fr.wikipedia.org/wiki/Oc%C3%A9an_Atlantique
+
