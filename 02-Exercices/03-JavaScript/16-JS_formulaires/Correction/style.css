@@ -1,0 +1,78 @@
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+label {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    /* modifier cette ligne */
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 10px;
+    transform: scale(1.5);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #cccccc;
+    background-color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: white;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+    padding: 5px 15px;
+    background-color: #2196f3;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+label {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #666;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: small;
+}
