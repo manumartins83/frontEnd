@@ -144,13 +144,13 @@ section {
 /* #### Mise en forme boites section #### */
 #cartes_membres {
     /* type affichage boites */
-    display: flex;
+    display: flex !important;
     /* deplacement boites : en ligne vers la droite uniquement */
-    flex-flow: row nowrap;
+    flex-flow: row nowrap !important;
     /* espacement horizontal boites */
-    justify-content: center;
+    justify-content: center !important;
     /* espacement vertical boites */
-    align-items: flex-end;
+    align-items: center !important;
 }
 
 /* #### Mise en forme boites photos #### */
@@ -423,7 +423,7 @@ h2 {
     /* #### Mise en forme boites section #### */
     #cartes_membres {
         /* deplacement boites : en ligne vers la droite et vers le bas */
-        flex-flow: row wrap;
+        flex-flow: row wrap !important;
     }
 
     /* ############# Contenu MAIN "discographie" ############# */
@@ -494,7 +494,7 @@ h2 {
     /* #### Mise en forme boites section #### */
     #cartes_membres {
         /* deplacement boites : en ligne vers la droite et vers le bas */
-        flex-flow: row wrap;
+        flex-flow: column nowrap !important;
     }
 
     /* ############# Contenu MAIN "discographie" ############# */
@@ -517,7 +517,8 @@ h2 {
     /* Néant */
     /* ############# Contenus SECTION>FOOTER ############# */
     /* #### Mise en forme titres #### */
-    .tiret_titre {
+    .tiret_titre,
+    .tiret2_titre {
         /* retrait affichage */
         display: none;
     }
